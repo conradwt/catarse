@@ -6,7 +6,6 @@ Catarse::Application.routes.draw do
 
   match "/abandamaisbonitadacidade" => "projects#banda", :as => :banda
 
-
   match "/guidelines" => "projects#guidelines", :as => :guidelines
   match "/faq" => "projects#faq", :as => :faq
   match "/terms" => "projects#terms", :as => :terms
@@ -17,55 +16,66 @@ Catarse::Application.routes.draw do
   match "/explore/:quick" => "projects#explore", :as => :explore_quick
   match "/credits" => "credits#index", :as => :credits
 
-  post "/pre_auth" => "sessions#pre_auth", :as => :pre_auth
-  get "/auth" => "sessions#auth", :as => :auth
-  get "/post_auth" => "sessions#post_auth", :as => :post_auth
+  post  "/pre_auth" => "sessions#pre_auth", :as => :pre_auth
+  get   "/auth" => "sessions#auth", :as => :auth
+  get   "/post_auth" => "sessions#post_auth", :as => :post_auth
+  
   match "/auth/:provider/callback" => "sessions#create"
   match "/auth/failure" => "sessions#failure"
   match "/logout" => "sessions#destroy", :as => :logout
+  
   if Rails.env == "test"
     match "/fake_login" => "sessions#fake_create", :as => :fake_login
   end
+  
   resources :projects, :only => [:index, :new, :create, :show] do
+  
     collection do
-      get 'explore'
-      get 'start'
+      get  'explore'
+      get  'start'
       post 'send_mail'
-      get 'guidelines'
-      get 'faq'
-      get 'terms'
-      get 'privacy'
-      get 'vimeo'
-      get 'cep'
-      get 'pending'
-      get 'pending_backers'
-      get 'thank_you'
+      get  'guidelines'
+      get  'faq'
+      get  'terms'
+      get  'privacy'
+      get  'vimeo'
+      get  'cep'
+      get  'pending'
+      get  'pending_backers'
+      get  'thank_you'
       post 'moip'
       post 'update_attribute_on_the_spot'
-      get 'banda'
+      get  'banda'
     end
+    
     member do
-      get 'back'
+      get  'back'
       post 'review'
-      put 'pay'
-      get 'backers'
-      get 'embed'
-      get 'video_embed'
-      get 'comments'
-      get 'updates'
+      put  'pay'
+      get  'backers'
+      get  'embed'
+      get  'video_embed'
+      get  'comments'
+      get  'updates'
     end
+    
   end
+  
   resources :users, :only => [:show] do
     post 'update_attribute_on_the_spot', :on => :collection
   end
+  
   resources :credits, :only => [:index] do
     collection do
-      get 'buy'
+      get  'buy'
       post 'refund'
     end
   end
+  
   resources :comments, :only => [:index, :show, :create, :destroy]
+  
   resources :sites, :only => [:show]
+  
   resources :paypal, :only => [] do
     member do
       get 'pay'
@@ -73,4 +83,5 @@ Catarse::Application.routes.draw do
       get 'cancel'
     end
   end
+  
 end
