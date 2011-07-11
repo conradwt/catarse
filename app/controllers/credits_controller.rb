@@ -1,10 +1,12 @@
 # coding: utf-8
 class CreditsController < ApplicationController
+  
   def index
     return unless require_login
     @title = t('credits.title')
     @refund_backs = current_user.backs.confirmed.can_refund.within_refund_deadline.order(:created_at).all
   end
+  
   def refund
     def error(message); render :json => { :ok => false, :backer_id => @backer.id, :credits => current_user.display_credits, :message => message }; end;
     @backer = Backer.find params[:backer_id]
@@ -20,4 +22,5 @@ class CreditsController < ApplicationController
   rescue
     return error(t('credits.refund.error'))
   end
+  
 end

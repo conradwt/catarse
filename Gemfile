@@ -1,8 +1,10 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
-gem 'rails', '3.0.3'
-gem 'rake', '0.8.7'
+
+gem 'rails', '3.0.9'
+# gem 'rake', '0.8.7'
 gem 'pg'
+# gem 'mysql2', "~> 0.2.6"
 gem 'haml'
 gem 'slim'
 gem 'compass'
@@ -30,12 +32,15 @@ gem 'mustache'
 gem 'unicode'
 gem 'routing-filter'
 gem 'http_accept_language'
+
 group :test, :development do
+  gem 'awesome_print'
   gem 'capybara', ">= 0.4.0"
-  gem 'launchy'
   gem 'database_cleaner'
+  gem 'hirb'
+  gem 'launchy'
+  gem 'rspec-rails', "~> 2.6.1"
   gem 'steak', "~> 1.1.0"
-  gem 'rspec-rails', "~> 2.0.1"
   gem 'rcov'
   gem 'factory_girl_rails'
   gem 'mocha'

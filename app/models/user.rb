@@ -1,13 +1,17 @@
 # coding: utf-8
 class User < ActiveRecord::Base
+  
   include ActionView::Helpers::NumberHelper
   include ActionView::Helpers::TextHelper
   include Rails.application.routes.url_helpers
+  
   sync_with_mailee :news => :newsletter, :list => "Newsletter"
+  
   validates_presence_of :provider, :uid, :site
   validates_uniqueness_of :uid, :scope => :provider
   validates_length_of :bio, :maximum => 140
   validates :email, :email => true, :allow_nil => true, :allow_blank => true
+  
   has_many :backs, :class_name => "Backer"
   has_many :projects
   has_many :notifications
@@ -15,6 +19,7 @@ class User < ActiveRecord::Base
   has_many :secondary_users, :class_name => 'User', :foreign_key => :primary_user_id
   belongs_to :site
   belongs_to :primary, :class_name => 'User', :foreign_key => :primary_user_id
+  
   scope :primary, :conditions => ["primary_user_id IS NULL"]
   scope :backers, :conditions => ["id IN (SELECT DISTINCT user_id FROM backers WHERE confirmed)"]
   #before_save :store_primary_user
@@ -58,24 +63,31 @@ class User < ActiveRecord::Base
     end
     u.primary.nil? ? u : u.primary
   end
+  
   def display_name
     name || nickname || I18n.t('user.no_name')
   end
+  
   def short_name
     truncate display_name, :length => 26
   end
+  
   def medium_name
     truncate display_name, :length => 42
   end
+  
   def display_image
     gravatar_url || image_url || '/images/user.png'
   end
+  
   def backer?
     backs.confirmed.not_anonymous.count > 0
   end
+  
   def total_backs
     backs.confirmed.not_anonymous.count
   end
+  
   def backs_text
     if total_backs == 2
       I18n.t('user.backs_text.two')
@@ -85,12 +97,15 @@ class User < ActiveRecord::Base
       I18n.t('user.backs_text.one')
     end
   end
+  
   def remember_me_hash
     Digest::MD5.new.update("#{self.provider}###{self.uid}").to_s
   end
+  
   def display_credits
     number_to_currency credits, :unit => 'R$', :precision => 0, :delimiter => '.'
   end
+  
   def merge_into!(new_user)
     self.primary = new_user
     new_user.credits += self.credits
@@ -102,6 +117,7 @@ class User < ActiveRecord::Base
     self.save
     new_user.save
   end
+  
   def as_json(options={})
     {
       :id => id,

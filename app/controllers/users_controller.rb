@@ -1,9 +1,14 @@
 # coding: utf-8
 class UsersController < ApplicationController
+  
   inherit_resources
+  
   actions :show
+  
   can_edit_on_the_spot
+  
   before_filter :can_update_on_the_spot?, :only => :update_attribute_on_the_spot
+  
   def show
     show!{
       return redirect_to(user_path(@user.primary)) if @user.primary
@@ -16,7 +21,9 @@ class UsersController < ApplicationController
       @projects = @projects.all
     }
   end
+  
   private
+  
   def can_update_on_the_spot?
     user_fields = ["email", "name", "bio", "newsletter", "project_updates"]
     notification_fields = ["dismissed"]
@@ -34,4 +41,5 @@ class UsersController < ApplicationController
       return render_error unless current_user.id == notification.user.id
     end
   end
+  
 end
