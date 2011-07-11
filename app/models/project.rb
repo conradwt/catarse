@@ -1,12 +1,15 @@
 # coding: utf-8
 VIMEO_REGEX = /\Ahttp:\/\/(www\.)?vimeo.com\/(\d+)\z/
 class Project < ActiveRecord::Base
+  
   include ActionView::Helpers::NumberHelper
   include ActionView::Helpers::TextHelper
   include ActionView::Helpers::UrlHelper
   include ERB::Util
   include Rails.application.routes.url_helpers
+  
   acts_as_commentable
+  
   belongs_to :user
   belongs_to :category
   belongs_to :site
@@ -16,7 +19,9 @@ class Project < ActiveRecord::Base
   has_many :updates, :as => :commentable, :class_name => "Comment", :conditions => {:project_update => true}
   has_many :projects_sites
   has_many :sites_present, :through => :projects_sites, :source => :site
+  
   accepts_nested_attributes_for :rewards
+  
   auto_html_for :about do
     html_escape :map => { 
       '&' => '&amp;',  
@@ -26,6 +31,7 @@ class Project < ActiveRecord::Base
     redcloth :target => :_blank
     link :target => :_blank
   end
+  
   scope :visible, where("projects_sites.visible = true")
   scope :home_page, where("projects_sites.home_page = true")
   scope :not_home_page, where("projects_sites.home_page = false")
@@ -39,22 +45,28 @@ class Project < ActiveRecord::Base
   scope :not_successful, where("NOT (goal <= (SELECT sum(value) FROM backers WHERE project_id = projects.id AND confirmed) AND expires_at < current_timestamp)")
   scope :unsuccessful, where("goal > (SELECT sum(value) FROM backers WHERE project_id = projects.id AND confirmed) AND expires_at < current_timestamp")
   scope :not_unsuccessful, where("NOT (goal > (SELECT sum(value) FROM backers WHERE project_id = projects.id AND confirmed) AND expires_at < current_timestamp)")
+  
   validates_presence_of :name, :user, :category, :about, :headline, :goal, :expires_at, :video_url, :site
   validates_length_of :headline, :maximum => 140
   validates_format_of :video_url, :with => VIMEO_REGEX, :message => I18n.t('project.vimeo_regex_validation')
   validate :verify_if_video_exists_on_vimeo
+  
   before_create :store_image_url
+  
   def store_image_url
     self.image_url = vimeo["thumbnail_large"] unless self.image_url
   end
+  
   def verify_if_video_exists_on_vimeo
     unless vimeo and vimeo["id"].to_s == vimeo_id
       errors.add(:video_url, I18n.t('project.verify_if_video_exists_on_vimeo'))
     end
   end
+  
   def to_param
     "#{self.id}-#{self.name.parameterize}"
   end
+  
   def vimeo
     return @vimeo if @vimeo
     return unless vimeo_id
@@ -67,6 +79,7 @@ class Project < ActiveRecord::Base
   rescue
     @vimeo = nil
   end
+  
   def vimeo_id
     return @vimeo_id if @vimeo_id
     return unless video_url
@@ -74,50 +87,64 @@ class Project < ActiveRecord::Base
       @vimeo_id = result[2]
     end
   end
+  
   def video_embed_url
     "http://player.vimeo.com/video/#{vimeo_id}"
   end
+  
   def display_image
     return image_url if image_url
     return "user.png" unless vimeo and vimeo["thumbnail_large"]
     vimeo["thumbnail_large"]
   end
+  
   def display_expires_at
     I18n.l(expires_at.to_date)
   end
+  
   def display_pledged
     number_to_currency pledged, :unit => 'R$', :precision => 0, :delimiter => '.'
   end
+  
   def display_goal
     number_to_currency goal, :unit => 'R$', :precision => 0, :delimiter => '.'
   end
+  
   def pledged
     backers.confirmed.sum(:value)
   end
+  
   def total_backers
     backers.confirmed.count
   end
+  
   def successful?
     pledged >= goal
   end
+  
   def expired?
     expires_at < Time.now
   end
+  
   def waiting_confirmation?
     return false if successful?
     expired? and Time.now < 3.weekdays_from(expires_at)
   end
+  
   def in_time?
     expires_at >= Time.now
   end
+  
   def percent
     ((pledged / goal * 100).abs).round.to_i
   end
+  
   def display_percent
     return 100 if successful?
     return 8 if percent > 0 and percent < 8
     percent
   end
+  
   def time_to_go
     if expires_at >= 1.day.from_now
       time = ((expires_at - Time.now).abs/60/60/24).round
@@ -135,18 +162,23 @@ class Project < ActiveRecord::Base
       {:time => 0, :unit => pluralize_without_number(0, I18n.t('datetime.prompts.second').downcase)}
     end
   end
+  
   def present_on_site?(site)
     projects_sites.where("site_id = #{site.id}").count > 0
   end
+  
   def visible?(site)
     projects_sites.where("visible AND site_id = #{site.id}").count > 0
   end
+  
   def rejected?(site)
     projects_sites.where("rejected AND site_id = #{site.id}").count > 0
   end
+  
   def can_back?(site)
     visible?(site) and not expired? and not rejected?(site)
   end
+  
   def finish!
     return unless expired? and can_finish and not finished
     backers.confirmed.each do |backer|
@@ -176,6 +208,7 @@ class Project < ActiveRecord::Base
     end
     self.update_attribute :finished, true
   end
+  
   def as_json(options={})
     {
       :id => id,
@@ -183,4 +216,5 @@ class Project < ActiveRecord::Base
       :user => user
     }
   end
+  
 end

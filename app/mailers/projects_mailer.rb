@@ -1,5 +1,7 @@
 class ProjectsMailer < ActionMailer::Base
+  
   include ERB::Util
+  
   default :from => "Catarse <system@catarse.me>"
 
   def start_project_email(about, rewards, links, contact, user, site)
@@ -11,4 +13,5 @@ class ProjectsMailer < ActionMailer::Base
     @site = site
     mail(:to => "projetos@catarse.me", :subject => t('projects_mailer.start_project_email.subject', :name => @user.name))
   end
+  
 end

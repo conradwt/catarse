@@ -8,11 +8,13 @@ class SessionsController < ApplicationController
     session[:remember_me] = params[:remember_me]
     redirect_to Site.auth_gateway.full_url("/auth/?provider=#{params[:provider]}&return_site_id=#{current_site.id}&return_session_id=#{session[:session_id]}")
   end
+  
   def auth
     session[:return_site_id] = params[:return_site_id]
     session[:return_session_id] = params[:return_session_id]
     redirect_to "/auth/#{params[:provider]}"
   end
+  
   def create
     auth = request.env["omniauth.auth"]
     user = User.find_with_omni_auth(auth["provider"], auth["uid"].to_s)
@@ -31,6 +33,7 @@ class SessionsController < ApplicationController
     session[:return_session_id] = nil
     redirect_to redirect_url
   end
+  
   def post_auth
     user = User.find(params[:user_id])
     if user.session_id != session[:session_id]
@@ -48,6 +51,7 @@ class SessionsController < ApplicationController
     flash[:success] = t('sessions.post_auth.success', :name => user.display_name)
     redirect_back_or_default :root
   end
+  
   def destroy
     session[:user_id] = nil
     cookies.delete :remember_me_id if cookies[:remember_me_id]
@@ -55,10 +59,12 @@ class SessionsController < ApplicationController
     flash[:success] = t('sessions.destroy.success')
     redirect_to :root
   end
+  
   def failure
     flash[:failure] = t('sessions.failure.error')
     redirect_to :root
   end
+  
   def fake_create
     raise "Forbiden" unless Rails.env == "test"
     user = Factory(:user, :uid => 'fake_login')
@@ -66,4 +72,5 @@ class SessionsController < ApplicationController
     flash[:success] = t('sessions.post_auth.success', :name => user.display_name)
     redirect_to :root
   end
+  
 end
