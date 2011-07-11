@@ -68,6 +68,7 @@ class ApplicationController < ActionController::Base
     @current_site = Factory(:site, :name => "Catarse", :path => "catarse") unless @current_site
     @current_site
   end
+  
   def current_user
     return @current_user if @current_user
     if session[:user_id]
@@ -81,10 +82,12 @@ class ApplicationController < ActionController::Base
   rescue
     session[:user_id] = nil
   end
+  
   def redirect_back_or_default(default)
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
   end
+  
   def require_condition(condition, message)
     unless condition
       flash[:failure] = message
@@ -94,10 +97,13 @@ class ApplicationController < ActionController::Base
       true
     end
   end
+  
   def require_login
     require_condition(current_user, t('require_login'))
   end
+  
   def require_admin
     require_condition((current_user and current_user.admin), t('require_admin'))
   end
+  
 end
