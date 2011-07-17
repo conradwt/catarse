@@ -94,6 +94,10 @@ class ProjectsController < ApplicationController
     @title = t('projects.guidelines.title', :site => current_site.the_name)
   end
   
+  def about
+    @title = 'About Us'    
+  end
+  
   def faq
     @title = t('projects.faq.title')
   end
