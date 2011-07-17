@@ -7,6 +7,7 @@ Catarse::Application.routes.draw do
   match "/abandamaisbonitadacidade" => "projects#banda", :as => :banda
 
   match "/guidelines" => "projects#guidelines", :as => :guidelines
+  match "/about" => "projects#about", :as => :about
   match "/faq" => "projects#faq", :as => :faq
   match "/terms" => "projects#terms", :as => :terms
   match "/privacy" => "projects#privacy", :as => :privacy
