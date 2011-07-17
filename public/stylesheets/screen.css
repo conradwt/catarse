@@ -4036,3 +4036,22 @@ body#site #banda #banda_more {
 body#site #banda #banda_more p {
   padding-bottom: 12px;
 }
+
+ul.list-style {
+  position:relative;
+  left:25px;
+  list-style-type:square;
+}
+
+ol.list-style {
+  position:relative;
+  left:25px;
+  list-style-type:decimal;
+}
+
+ul.list-style li, ol.list-style li {
+  padding:2px 2px 2px 0px;
+}
+
+
+
