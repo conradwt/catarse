@@ -95,7 +95,7 @@ class ProjectsController < ApplicationController
   end
   
   def about
-    @title = 'About Us'    
+    @title = t('projects.about.title')   
   end
   
   def faq
