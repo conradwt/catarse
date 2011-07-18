@@ -228,6 +228,8 @@ en:
       title: Terms of use
     privacy:
       title: Privacy policy
+    about:
+      title: About Us
     explore:
       title: Explore the projects
       quick_explore: Quick explore
