@@ -53,15 +53,14 @@ class PaypalController < ApplicationController
   protected
   
   def initialize_paypal
-
     # TODO remove the sandbox! when ready
     Paypal.sandbox!
     # TODO remove the sandbox! when ready
     
     @paypal = Paypal::Express::Request.new(
-      :username   => Configuration.find_by_name('paypal_username').value,
-      :password   => Configuration.find_by_name('paypal_password').value,
-      :signature  => Configuration.find_by_name('paypal_signature').value
+      :username   => 'conrad_1310974255_biz@opinionatedsoftware.com' # Configuration.find_by_name('paypal_username').value,
+      :password   => '1310974294' #Configuration.find_by_name('paypal_password').value,
+      :signature  => 'ABAmIt2oCCHng.uuR65FQMeF26CPAtYIozV47TtcBySxUpusa99WOT5F' # Configuration.find_by_name('paypal_signature').value
     )
   end
   
