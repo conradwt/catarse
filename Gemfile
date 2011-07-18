@@ -35,6 +35,8 @@ gem 'routing-filter'
 gem 'slim'
 gem 'spectator-validates_email', :require => 'validates_email'
 
+gem 'thin'
+
 gem 'unicode'
 gem 'unicorn'
 
