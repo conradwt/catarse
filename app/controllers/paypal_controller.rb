@@ -55,7 +55,7 @@ class PaypalController < ApplicationController
   def initialize_paypal
 
     # TODO remove the sandbox! when ready
-    #Paypal.sandbox!
+    Paypal.sandbox!
     # TODO remove the sandbox! when ready
     
     @paypal = Paypal::Express::Request.new(
@@ -67,7 +67,7 @@ class PaypalController < ApplicationController
   
   def paypal_payment(backer)
     Paypal::Payment::Request.new(
-      :currency_code => :BRL,
+      :currency_code => :USD,
       :amount => backer.value,
       :description => t('projects.pay.paypal_description'),
       :items => [{
