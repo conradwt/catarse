@@ -22,7 +22,7 @@ gem 'mailee', '0.5.4', :git => 'https://github.com/danielweinmann/mailee-api.git
 gem "meta_search"
 gem 'moip', :git => 'https://github.com/danielweinmann/moip-ruby.git'
 gem 'mustache'
-gem 'mysql2'
+gem "mysql2", "~> 0.2.11"
 
 gem 'omniauth'
 gem "on_the_spot"
