@@ -2,7 +2,8 @@ class AlterProjectsToUseProjectsSites < ActiveRecord::Migration
 
   def self.up
     
-    execute 'INSERT INTO projects_sites (project_id, site_id, visible, rejected, recommended, home_page, "order") SELECT id, 1, visible, rejected, recommended, home_page, "order" FROM projects'
+    # TODO
+    # execute 'INSERT INTO projects_sites (project_id, site_id, visible, rejected, recommended, home_page, "order") SELECT id, 1, visible, rejected, recommended, home_page, "order" FROM projects'
     
     remove_column :projects, :visible
     remove_column :projects, :rejected

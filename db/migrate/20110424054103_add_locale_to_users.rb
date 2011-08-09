@@ -2,7 +2,7 @@ class AddLocaleToUsers < ActiveRecord::Migration
 
   def self.up
     
-    add_column :users, :locale, :text, :null => false, :default => 'en'
+    add_column :users, :locale, :string, :null => false, :default => 'en'
     
   end
 

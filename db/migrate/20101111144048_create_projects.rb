@@ -3,7 +3,7 @@ class CreateProjects < ActiveRecord::Migration
   def self.up
     
     create_table :projects do |t|
-      t.text :name, :null => false
+      t.string :name, :null => false
       t.references :user, :null => false
       t.references :category, :null => false
       t.decimal :goal, :null => false
