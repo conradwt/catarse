@@ -1,5 +1,7 @@
 class AddPaymentFieldsToUsers < ActiveRecord::Migration
+
   def self.up
+    
     add_column :users, :full_name, :text
     add_column :users, :address_street, :text
     add_column :users, :address_number, :text
@@ -9,9 +11,11 @@ class AddPaymentFieldsToUsers < ActiveRecord::Migration
     add_column :users, :address_state, :text
     add_column :users, :address_zip_code, :text
     add_column :users, :phone_number, :text
+    
   end
 
   def self.down
+    
     remove_column :users, :full_name
     remove_column :users, :address_street
     remove_column :users, :address_number
@@ -21,6 +25,8 @@ class AddPaymentFieldsToUsers < ActiveRecord::Migration
     remove_column :users, :address_state
     remove_column :users, :address_zip_code
     remove_column :users, :phone_number
+    
   end
+  
 end
 

@@ -6,6 +6,7 @@ gem 'rails', '3.0.9'
 gem "acts_as_commentable"
 gem "auto_html", '>= 1.3.5'
 
+gem 'capistrano'
 gem 'compass'
 
 gem 'brcep'
@@ -18,16 +19,15 @@ gem 'http_accept_language'
 gem 'inherited_resources', '>= 1.1.2'
 
 gem 'mailee', '0.5.4', :git => 'https://github.com/danielweinmann/mailee-api.git'
-gem 'maxim-sexy_pg_constraints'
 gem "meta_search"
 gem 'moip', :git => 'https://github.com/danielweinmann/moip-ruby.git'
 gem 'mustache'
+gem 'mysql2'
 
 gem 'omniauth'
 gem "on_the_spot"
 
 gem 'paypal-express', :require => 'paypal'
-gem 'pg'
 
 gem "RedCloth"
 gem 'routing-filter'
