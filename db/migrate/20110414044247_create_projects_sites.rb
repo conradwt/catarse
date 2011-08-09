@@ -1,7 +1,7 @@
-# coding: utf-8
-require 'sexy_pg_constraints'
 class CreateProjectsSites < ActiveRecord::Migration
+
   def self.up
+
     create_table :projects_sites do |t|
       t.references :project, :null => false
       t.references :site, :null => false
@@ -12,14 +12,13 @@ class CreateProjectsSites < ActiveRecord::Migration
       t.integer :order
       t.timestamps
     end
-    constrain :projects_sites do |t|
-      t.project_id :reference => {:projects => :id}
-      t.site_id :reference => {:sites => :id}
-      t[:project_id, :site_id].all :unique => true
-    end
+
   end
 
   def self.down
+    
     drop_table :projects_sites
+    
   end
+  
 end
