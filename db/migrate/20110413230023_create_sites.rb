@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class CreateSites < ActiveRecord::Migration
 
   def self.up

@@ -4,13 +4,13 @@ class CreateUsers < ActiveRecord::Migration
     
     create_table :users do |t|
       t.integer :primary_user_id
-      t.text :provider, :null => false
-      t.text :uid, :null => false
-      t.text :email
-      t.text :name
-      t.text :nickname
-      t.text :bio
-      t.text :image_url
+      t.text    :provider, :null => false
+      t.string  :uid, :null => false
+      t.string  :email
+      t.string  :name
+      t.text    :nickname
+      t.text    :bio
+      t.text    :image_url
       t.boolean :newsletter, :default => false
       t.boolean :project_updates, :default => false
       t.timestamps
