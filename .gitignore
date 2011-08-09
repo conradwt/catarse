@@ -10,3 +10,5 @@ db/development_structure.sql
 coverage
 *.tmproj
 .DS_Store
+Capfile
+config/deploy.rb
