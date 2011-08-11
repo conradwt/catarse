@@ -4,8 +4,7 @@ class AddKeyToBackers < ActiveRecord::Migration
     
     add_column :backers, :key, :integer
     
-    # TODO:  PostgreSQL to MySQL
-    # execute( "UPDATE backers SET key = id" )
+    execute( "UPDATE backers SET key = id" )
     
   end
 
