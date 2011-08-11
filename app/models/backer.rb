@@ -1,3 +1,27 @@
+# == Schema Information
+#
+# Table name: backers
+#
+#  id               :integer(4)      not null, primary key
+#  project_id       :integer(4)      not null
+#  user_id          :integer(4)      not null
+#  reward_id        :integer(4)
+#  value            :integer(10)     not null
+#  confirmed        :boolean(1)      default(FALSE), not null
+#  confirmed_at     :datetime
+#  created_at       :datetime
+#  updated_at       :datetime
+#  display_notice   :boolean(1)      default(FALSE)
+#  anonymous        :boolean(1)      default(FALSE)
+#  key              :integer(4)
+#  can_refund       :boolean(1)      default(FALSE)
+#  requested_refund :boolean(1)      default(FALSE)
+#  refunded         :boolean(1)      default(FALSE)
+#  credits          :boolean(1)      default(FALSE)
+#  notified_finish  :boolean(1)      default(FALSE)
+#  site_id          :integer(4)      default(1), not null
+#
+
 # coding: utf-8
 class Backer < ActiveRecord::Base
   

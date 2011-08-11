@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id               :integer(4)      not null, primary key
+#  title            :text
+#  comment          :text            default(""), not null
+#  comment_html     :text
+#  commentable_id   :integer(4)      not null
+#  commentable_type :string(255)     not null
+#  user_id          :integer(4)      not null
+#  project_update   :boolean(1)      default(FALSE)
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 class Comment < ActiveRecord::Base
 
   include ActionView::Helpers::DateHelper

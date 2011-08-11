@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: rewards
+#
+#  id              :integer(4)      not null, primary key
+#  project_id      :integer(4)      not null
+#  minimum_value   :integer(10)     not null
+#  maximum_backers :integer(4)
+#  description     :text            default(""), not null
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 # coding: utf-8
 class Reward < ActiveRecord::Base
   

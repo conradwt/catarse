@@ -1,3 +1,26 @@
+# == Schema Information
+#
+# Table name: projects
+#
+#  id          :integer(4)      not null, primary key
+#  name        :string(255)     not null
+#  user_id     :integer(4)      not null
+#  category_id :integer(4)      not null
+#  goal        :integer(10)     not null
+#  expires_at  :datetime        not null
+#  about       :text            default(""), not null
+#  headline    :text            default(""), not null
+#  video_url   :text            default(""), not null
+#  image_url   :text
+#  short_url   :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#  can_finish  :boolean(1)      default(FALSE)
+#  finished    :boolean(1)      default(FALSE)
+#  about_html  :text
+#  site_id     :integer(4)      default(1), not null
+#
+
 # coding: utf-8
 VIMEO_REGEX = /\Ahttp:\/\/(www\.)?vimeo.com\/(\d+)\z/
 class Project < ActiveRecord::Base

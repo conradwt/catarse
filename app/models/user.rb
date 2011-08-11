@@ -1,3 +1,36 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                    :integer(4)      not null, primary key
+#  primary_user_id       :integer(4)
+#  provider              :text            default(""), not null
+#  uid                   :string(255)     not null
+#  email                 :string(255)
+#  name                  :string(255)
+#  nickname              :text
+#  bio                   :text
+#  image_url             :text
+#  newsletter            :boolean(1)      default(FALSE)
+#  project_updates       :boolean(1)      default(FALSE)
+#  created_at            :datetime
+#  updated_at            :datetime
+#  admin                 :boolean(1)      default(FALSE)
+#  full_name             :text
+#  address_street        :text
+#  address_number        :text
+#  address_complement    :text
+#  address_neighbourhood :text
+#  address_city          :text
+#  address_state         :text
+#  address_zip_code      :text
+#  phone_number          :text
+#  credits               :integer(10)     default(0)
+#  site_id               :integer(4)      default(1), not null
+#  session_id            :text
+#  locale                :string(255)     default("en"), not null
+#
+
 # coding: utf-8
 class User < ActiveRecord::Base
   
