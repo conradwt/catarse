@@ -3,6 +3,8 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 config/database.yml
+config/database.mysql.yml
+config/database.postgresql.yml
 db/development_structure.sql
 .rvmrc
 # Vim
