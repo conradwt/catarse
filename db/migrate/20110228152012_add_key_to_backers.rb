@@ -4,10 +4,7 @@ class AddKeyToBackers < ActiveRecord::Migration
     
     add_column :backers, :key, :integer
     
-    Backer.reset_column_information
-    
-    # TODO
-    # execute( "UPDATE backers SET key = id" )
+    execute( "UPDATE backers SET key = id" )
     
   end
 

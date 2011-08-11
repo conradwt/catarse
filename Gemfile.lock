@@ -132,7 +132,6 @@ GEM
     multi_xml (0.2.2)
     multipart-post (1.1.2)
     mustache (0.99.4)
-    mysql2 (0.2.11)
     net-ldap (0.2.2)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
@@ -186,6 +185,7 @@ GEM
       attr_required (>= 0.0.3)
       i18n
       restclient_with_cert
+    pg (0.11.0)
     polyglot (0.3.1)
     pyu-ruby-sasl (0.0.3.3)
     rack (1.2.3)
@@ -308,10 +308,10 @@ DEPENDENCIES
   mocha
   moip!
   mustache
-  mysql2 (~> 0.2.11)
   omniauth
   on_the_spot
   paypal-express
+  pg
   rails (= 3.0.9)
   rcov
   routing-filter
