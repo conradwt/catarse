@@ -2,7 +2,7 @@ class CreateKeyBackersIndex < ActiveRecord::Migration
 
   def self.up
     
-    # TODO    
+    # TODO:  PostgreSQL to MySQL
     # execute "
     # CREATE INDEX index_backers_on_key ON backers (key);
     # "
