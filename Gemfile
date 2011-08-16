@@ -18,9 +18,9 @@ gem 'http_accept_language'
 
 gem 'inherited_resources', '>= 1.1.2'
 
-gem 'mailee', '0.5.4', :git => 'https://github.com/danielweinmann/mailee-api.git'
+gem 'mailee', '0.5.4', :git => 'git://github.com/danielweinmann/mailee-api.git'
 gem "meta_search"
-gem 'moip', :git => 'https://github.com/danielweinmann/moip-ruby.git'
+gem 'moip', :git => 'git://github.com/danielweinmann/moip-ruby.git'
 gem 'mustache'
 
 gem 'omniauth'
