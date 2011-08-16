@@ -27,7 +27,7 @@ gem 'omniauth'
 gem "on_the_spot"
 
 gem 'paypal-express', :require => 'paypal'
-gem 'pg'
+gem "pg", "~> 0.11.0"
 
 gem "RedCloth"
 gem 'routing-filter'
