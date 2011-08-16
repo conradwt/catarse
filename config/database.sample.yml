@@ -25,7 +25,7 @@ defaults: &defaults
 development:
   <<: *defaults
   database: smartn_development
-  username: 
+  username:
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -41,5 +41,5 @@ test:
 production:
   <<: *defaults
   database: smartn_production
-  username: 
+  username:
   password: 
