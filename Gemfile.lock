@@ -1,24 +1,24 @@
 GIT
-  remote: git://github.com/jeremyolliver/annotate_models.git
-  revision: 4d57e4fe6360125f17886168120a48091a268e45
-  branch: rake_compatibility
-  specs:
-    annotate (2.4.0)
-
-GIT
-  remote: https://github.com/danielweinmann/mailee-api.git
+  remote: git://github.com/danielweinmann/mailee-api.git
   revision: cd530ef488cb82f5ef01f2646c2b6222fab61c57
   specs:
     mailee (0.5.4)
 
 GIT
-  remote: https://github.com/danielweinmann/moip-ruby.git
+  remote: git://github.com/danielweinmann/moip-ruby.git
   revision: db1b879358c623b597dc1c221b53336f9f06db0e
   specs:
     moip (1.0.2)
       activesupport (>= 2.3.2)
       httparty (~> 0.6.1)
       nokogiri (~> 1.4.3)
+
+GIT
+  remote: git://github.com/jeremyolliver/annotate_models.git
+  revision: 4d57e4fe6360125f17886168120a48091a268e45
+  branch: rake_compatibility
+  specs:
+    annotate (2.4.0)
 
 GEM
   remote: http://rubygems.org/
