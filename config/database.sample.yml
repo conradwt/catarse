@@ -34,7 +34,6 @@ development:
 test:
   <<: *defaults
   database: smartn_test
-  pool: 5
   username: 
   password:
 
