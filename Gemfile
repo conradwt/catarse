@@ -31,6 +31,7 @@ gem "pg", "~> 0.11.0"
 
 gem "RedCloth"
 gem 'routing-filter'
+gem 'rspec'
 
 gem 'slim'
 gem 'spectator-validates_email', :require => 'validates_email'
