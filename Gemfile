@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '3.0.9'
+gem 'rails', '3.0.10'
 
 gem "acts_as_commentable"
 gem "auto_html", '>= 1.3.5'
