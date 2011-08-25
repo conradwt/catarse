@@ -1,12 +1,12 @@
 en:
   sites:
-    catarse:
-      title: The first crowdfunding platform from Brazil
+    smartn:
+      title: The first crowdfunding platform from the United States
       back_header:
         title: Oohh yeah!
         subtitle: You're few steps away from making a difference and becoming part of this project.
       logo:
-        title: Catarse
+        title: Smartn.me
       pre_header:
         content_html: Want to know how to back a project? %{link} for a step-by-step guide we published on our blog.
         help_link: Click here
