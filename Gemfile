@@ -36,7 +36,6 @@ gem 'slim'
 gem 'spectator-validates_email', :require => 'validates_email'
 
 gem 'unicode'
-gem 'unicorn'
 
 gem 'validation_reflection'
 gem 'vimeo'
