@@ -52,11 +52,12 @@ group :test, :development do
   gem 'capybara', ">= 0.4.0"
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'ruby-growl'
+  gem 'guard-rspec'
   gem 'hirb'
   gem 'launchy'
   gem 'mocha'
   gem 'rcov'
   gem 'rspec-rails', "~> 2.6.1"
+  gem 'ruby-growl'
   gem 'steak', "~> 1.1.0"
 end
