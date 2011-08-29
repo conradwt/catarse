@@ -298,7 +298,7 @@ DEPENDENCIES
   brcep
   bullet (~> 2.0.1)
   capistrano
-  capybara (>= 0.4.0)
+  capybara
   compass
   database_cleaner
   factory_girl_rails
