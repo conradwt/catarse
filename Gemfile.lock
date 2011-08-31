@@ -92,7 +92,7 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    factory_girl (2.0.4)
+    factory_girl (2.0.5)
     factory_girl_rails (1.1.0)
       factory_girl (~> 2.0.0)
       railties (>= 3.0.0)
@@ -308,6 +308,7 @@ DEPENDENCIES
   capybara
   compass
   database_cleaner
+  factory_girl (~> 2.0.5)
   factory_girl_rails (~> 1.1.0)
   formtastic (~> 1.1.0)
   guard-rspec

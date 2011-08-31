@@ -1,65 +1,79 @@
-Factory.sequence :name do |n|
-  "Foo bar #{n}"
-end
-Factory.sequence :email do |n|
-  "person#{n}@example.com"
-end
-Factory.sequence :uid do |n|
-  "#{n}"
-end
-Factory.define :site do |f|
-  f.name { Factory.next(:name) }
-  f.title { Factory.next(:name) }
-  f.path { Factory.next(:name) }
-  f.host { Factory.next(:name) }
-  f.gender "male"
-  f.email { Factory.next(:email) }
-  f.twitter "foobar"
-  f.facebook "http://www.facebook.com/FooBar"
-  f.blog "http://blog.foo.bar"
-end
-Factory.define :user do |f|
-  f.provider "twitter"
-  f.uid { Factory.next(:uid) }
-  f.name "Foo bar"
-  f.email { Factory.next(:email) }
-  f.bio "This is Foo bar's biography."
-  f.association :site, :factory => :site
-end
-Factory.define :category do |f|
-  f.name { Factory.next(:name) }
-end
-Factory.define :project do |f|
-  f.name "Foo bar"
-  f.association :site, :factory => :site
-  f.association :user, :factory => :user
-  f.association :category, :factory => :category
-  f.about "Foo bar"
-  f.headline "Foo bar"
-  f.goal 10000
-  f.expires_at { 1.month.from_now }
-  f.video_url 'http://vimeo.com/17298435'
-end
-Factory.define :reward do |f|
-  f.association :project, :factory => :project
-  f.minimum_value 1.00
-  f.description "Foo bar"
-end
-Factory.define :backer do |f|
-  f.association :project, :factory => :project
-  f.association :user, :factory => :user
-  f.association :site, :factory => :site
-  f.confirmed true
-  f.value 10.00
-end
-Factory.define :oauth_provider do |f|
-  f.name 'GitHub'
-  f.strategy 'GitHub'
-  f.path 'github'
-  f.key 'test_key'
-  f.secret 'test_secret'
-end
-Factory.define :configuration do |f|
-  f.name 'Foo'
-  f.value 'Bar'
+FactoryGirl.define do
+
+  sequence :name do |n|
+    "Foo bar #{n}"
+  end
+
+  sequence :email do |n|
+    "person#{n}@example.com"
+  end
+
+  sequence :uid do |n|
+    "#{n}"
+  end
+
+  factory :site do |f|
+    name { Factory.next(:name) }
+    title { Factory.next(:name) }
+    path { Factory.next(:name) }
+    host { Factory.next(:name) }
+    gender "male"
+    email { Factory.next(:email) }
+    twitter "foobar"
+    facebook "http://www.facebook.com/FooBar"
+    blog "http://blog.foo.bar"
+  end
+
+  factory :user do |f|
+    provider "twitter"
+    uid { Factory.next(:uid) }
+    name "Foo bar"
+    email { Factory.next(:email) }
+    bio "This is Foo bar's biography."
+    :site, :factory => :site
+  end
+
+  factory :category do
+    name { Factory.next(:name) }
+  end
+
+  factory :project do
+    name "Foo bar"
+    :site, :factory => :site
+    :user, :factory => :user
+    :category, :factory => :category
+    about "Foo bar"
+    headline "Foo bar"
+    goal 10000
+    expires_at { 1.month.from_now }
+    video_url 'http://vimeo.com/17298435'
+  end
+
+  factory :reward do
+    :project, :factory => :project
+    minimum_value 1.00
+    description "Foo bar"
+  end
+
+  factory :backer do
+    :project, :factory => :project
+    :user, :factory => :user
+    :site, :factory => :site
+    confirmed true
+    value 10.00
+  end
+
+  factory :oauth_provider do
+    name 'GitHub'
+    strategy 'GitHub'
+    path 'github'
+    key 'test_key'
+    secret 'test_secret'
+  end
+
+  factory :configuration do
+    name 'Foo'
+    value 'Bar'
+  end
+
 end

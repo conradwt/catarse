@@ -51,6 +51,7 @@ group :test, :development do
   gem "bullet", "~> 2.0.1"
   gem 'capybara'
   gem 'database_cleaner'
+  gem "factory_girl", "~> 2.0.5"
   gem 'factory_girl_rails', "~> 1.1.0"
   gem 'guard-rspec'
   gem 'hirb'
