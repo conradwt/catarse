@@ -29,7 +29,7 @@ gem "on_the_spot"
 gem 'paypal-express', :require => 'paypal'
 gem "pg", "~> 0.11.0"
 
-gem "RedCloth"
+gem "RedCloth", "~> 4.2.8"
 gem 'routing-filter'
 
 gem 'slim'
