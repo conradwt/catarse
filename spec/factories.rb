@@ -72,8 +72,8 @@ FactoryGirl.define do
   end
 
   factory :configuration do
-    name 'Foo'
-    value 'Bar'
+    name          'Foo'
+    value         'Bar'
   end
 
 end
