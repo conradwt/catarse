@@ -308,7 +308,7 @@ DEPENDENCIES
   capybara
   compass
   database_cleaner
-  factory_girl_rails
+  factory_girl_rails (~> 1.1.0)
   formtastic (~> 1.1.0)
   guard-rspec
   haml
@@ -338,5 +338,5 @@ DEPENDENCIES
   validation_reflection
   vimeo
   weekdays
-  will_paginate
+  will_paginate (~> 3.0.0)
   wirble
