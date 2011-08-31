@@ -42,7 +42,7 @@ gem 'validation_reflection'
 gem 'vimeo'
 
 gem 'weekdays'
-gem 'will_paginate'
+gem 'will_paginate', "~> 3.0.0"
 gem 'wirble'
 
 group :test, :development do
@@ -51,7 +51,7 @@ group :test, :development do
   gem "bullet", "~> 2.0.1"
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', "~> 1.1.0"
   gem 'guard-rspec'
   gem 'hirb'
   gem 'launchy'
