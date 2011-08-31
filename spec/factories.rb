@@ -30,7 +30,7 @@ FactoryGirl.define do
     name "Foo bar"
     email { Factory.next(:email) }
     bio "This is Foo bar's biography."
-    :site, :factory => :site
+    association :site
   end
 
   factory :category do
@@ -39,26 +39,26 @@ FactoryGirl.define do
 
   factory :project do
     name "Foo bar"
-    :site, :factory => :site
-    :user, :factory => :user
-    :category, :factory => :category
-    about "Foo bar"
-    headline "Foo bar"
-    goal 10000
+    association  :site
+    assocication :user
+    association  :category
+    about        "Foo bar"
+    headline     "Foo bar"
+    goal         10000
     expires_at { 1.month.from_now }
     video_url 'http://vimeo.com/17298435'
   end
 
   factory :reward do
-    :project, :factory => :project
+    association   :project
     minimum_value 1.00
-    description "Foo bar"
+    description   "Foo bar"
   end
 
   factory :backer do
-    :project, :factory => :project
-    :user, :factory => :user
-    :site, :factory => :site
+    association :project
+    association :user
+    association :site
     confirmed true
     value 10.00
   end
