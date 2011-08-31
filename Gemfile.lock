@@ -87,6 +87,7 @@ GEM
       fssm (>= 0.2.7)
       sass (~> 3.1)
     crack (0.1.8)
+    daemon_controller (0.2.6)
     database_cleaner (0.6.7)
     diff-lcs (1.1.2)
     erubis (2.6.6)
@@ -99,6 +100,7 @@ GEM
       addressable (~> 2.2.4)
       multipart-post (~> 1.1.0)
       rack (< 2, >= 1.1.0)
+    fastthread (1.0.7)
     ffi (1.0.9)
     formtastic (1.1.0)
       actionpack (>= 2.3.0)
@@ -188,6 +190,11 @@ GEM
       oa-openid (= 0.2.6)
     on_the_spot (0.0.13)
       json_pure (>= 1.4.6)
+    passenger (3.0.8)
+      daemon_controller (>= 0.2.5)
+      fastthread (>= 1.0.1)
+      rack
+      rake (>= 0.8.1)
     paypal-express (0.4.0)
       activesupport (>= 2.3)
       attr_required (>= 0.0.3)
@@ -316,6 +323,7 @@ DEPENDENCIES
   mustache
   omniauth
   on_the_spot
+  passenger (= 3.0.8)
   paypal-express
   pg (~> 0.11.0)
   rails (= 3.0.10)
