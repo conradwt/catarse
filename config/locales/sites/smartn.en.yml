@@ -31,7 +31,7 @@ en:
         comum: Comum Group
       notification_email_footer:
         salutation: With love,
-        signature: Catarse Team
+        signature: Smartn.me Team
       notification_email_header:
         alt: You must enable images to correctly see this message.
       project_warning:
@@ -41,9 +41,9 @@ en:
         text_html: <p>A Banda Mais Bonita da Cidade has always been a collective band. Thus, its album is going to be produced with everybody's collaboration.</p><p>With your support, you're going to receive rewards, follow the process of the album's production and help choosing the songs.</p>
         submit: Click here and see how you can be part of this album
         title_html: |
-          Yey!<div class="retrospective">finally discover</div> what is the<div class="surprise">amazing surprise</div> from <div class="catarse">Catarse</div>
+          Yey!<div class="retrospective">finally discover</div> what is the<div class="surprise">amazing surprise</div> from <div class="catarse">Smartn.me</div>
       press: 
-        title: Check out what they are saying about Catarse on the press
+        title: Check out what they are saying about Smartn.me in the press
       projects:
         home_page_projects:
           title: Our cathartic selection!
@@ -53,7 +53,7 @@ en:
           subtitle: Uh! Time's almost up for these ones...back'em while you can!
         recent:
           title: Fresh and new
-          subtitle: Projects that just arrived on Catarse. Smell as if they just came out of the oven...
+          subtitle: Projects that just arrived on Smartn.me. Smell as if they just came out of the oven...
         successful:
           title: Successful projects
           subtitle: Meet our newest prides :) tomorrow your project might be here!
