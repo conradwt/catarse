@@ -15,3 +15,5 @@ coverage
 Capfile
 config/deploy.rb
 docs/txt/hostingrails.txt
+.sass-cache/
+public/assets/
