@@ -19,8 +19,8 @@ class ApplicationController < ActionController::Base
     if params[:controller] == "projects" and params[:action] == "index"
       return render "sites/multidao/new_multidao", :layout => false
     end
-    catarse = Site.find_by_path "catarse"
-    return redirect_to catarse.full_url(request.fullpath)
+    site = Site.find_by_path "smartn"
+    return redirect_to site.full_url(request.fullpath)
   end
   # TODO remove this when we launch the new Multidão
   
@@ -64,8 +64,8 @@ class ApplicationController < ActionController::Base
     return @current_site = Site.find_by_path(session[:current_site]) if session[:current_site]
     site_host = request.host.gsub "www.", ""
     @current_site = Site.find_by_host site_host
-    @current_site = Site.find_by_path("catarse") unless @current_site
-    @current_site = Factory(:site, :name => "Catarse", :path => "catarse") unless @current_site
+    @current_site = Site.find_by_path("smartn") unless @current_site
+    @current_site = Factory(:site, :name => "Smartn", :path => "smartn") unless @current_site
     @current_site
   end
   
