@@ -15,5 +15,6 @@
 //= require backbone/backbone-min
 //= require mustache/mustache
 //= require waypoints/waypoints.min
+//= require jquery/jquery.jeditable.mini
 //= require on_the_spot
 //= require jquery_ujs
