@@ -397,7 +397,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 37, ../../app/stylesheets/screen.sass */
 body#site {
-  background: url("/images/bg.jpg") repeat;
+  background: image-url( "bg.jpg" ) repeat;
   text-rendering: optimizeLegibility;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222222;
@@ -3598,7 +3598,7 @@ body#site #footer #colophon a#softa_logo {
   margin-right: 12px;
   float: left;
   background-color: transparent;
-  background-image: url("/images/softa_logo.png");
+  background-image: image-url( "softa_logo.png" );
   background-attachment: scroll;
   background-repeat: no-repeat;
   border: 0 none;
