@@ -1,7 +1,7 @@
 = content_for :content_header do
   %h1= t('.title', :site => current_site.the_name)
   %h2= t('.subtitle', :site => current_site.the_name)
-#how_it_works= render 'how_it_works'
+/ #how_it_works= render 'how_it_works'
 #more_tips.hide= render 'more_tips'
 = render 'guidelines_text'
 = form_tag(start_projects_path, :method => :get, :id => 'guidelines_form') do
