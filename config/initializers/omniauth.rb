@@ -9,7 +9,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   # provider :github, 'CLIENT ID', 'SECRET'
   
   # generic openid
-  provider :openid, OpenID::Store::Filesystem.new('./tmp'), :name => 'openid'
+  # provider :openid, OpenID::Store::Filesystem.new('./tmp'), :name => 'openid'
   
   # dedicated openid
   provider :openid, OpenID::Store::Filesystem.new('./tmp'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id'
@@ -19,6 +19,11 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :openid, OpenID::Store::Filesystem.new('./tmp'), :name => 'yahoo', :identifier => 'yahoo.com' 
   # provider :openid, OpenID::Store::Filesystem.new('./tmp'), :name => 'aol', :identifier => 'openid.aol.com'
   # provider :openid, OpenID::Store::Filesystem.new('./tmp'), :name => 'myopenid', :identifier => 'myopenid.com'
+  
+  # Sign-up urls for Facebook, Twitter, and Github
+  # https://developers.facebook.com/setup
+  # https://github.com/account/applications/new
+  # https://developer.twitter.com/apps/new
   
   begin
     OauthProvider.all.each do |p|
