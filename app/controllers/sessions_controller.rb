@@ -73,4 +73,10 @@ class SessionsController < ApplicationController
     redirect_to :root
   end
   
+  protected
+  
+  def handle_unverified_request
+    true
+  end
+  
 end
