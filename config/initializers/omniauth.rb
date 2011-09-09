@@ -4,8 +4,8 @@ require 'openid/store/filesystem'
 Rails.application.config.middleware.use OmniAuth::Builder do  
   
   # providers with id/secret, you need to sign up for their services (see below) and enter the parameters here
-  # provider :facebook, 'APP_ID', 'APP_SECRET'
-  # provider :twitter, 'CONSUMER_KEY', 'CONSUMER_SECRET'
+  provider :facebook, '208022819261318',        '98a6efcc7cae54d8653c8af662980a52'
+  provider :twitter,  'Ql8dPmmWCvOuedGtKPRIQ',  'EjtnYSza0UrKgJb5EfGPN7MepbldEcX5VylV2yyo8Y'
   # provider :github, 'CLIENT ID', 'SECRET'
   
   # generic openid
