@@ -57,7 +57,7 @@ group :test, :development do
   gem 'hirb'
   gem 'launchy'
   gem 'mocha'
-  gem 'rcov'
+  # gem 'rcov'
   gem 'rspec-rails', "~> 2.6.1"
   gem 'ruby-growl'
   gem 'steak', "~> 1.1.0"
