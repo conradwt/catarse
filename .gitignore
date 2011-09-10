@@ -16,3 +16,4 @@ Capfile
 config/deploy.rb
 docs/txt/hostingrails.txt
 config/initializers/omniauth.rb
+config/initializers/setup_mail.rb
