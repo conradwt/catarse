@@ -219,6 +219,8 @@ GEM
       activesupport (= 3.0.10)
       bundler (~> 1.0)
       railties (= 3.0.10)
+    rails-footnotes (3.7.4)
+      rails (>= 3.0.0)
     railties (3.0.10)
       actionpack (= 3.0.10)
       activesupport (= 3.0.10)
@@ -327,6 +329,7 @@ DEPENDENCIES
   paypal-express
   pg (~> 0.11.0)
   rails (= 3.0.10)
+  rails-footnotes (>= 3.7)
   routing-filter
   rspec-rails (~> 2.6.1)
   ruby-growl
