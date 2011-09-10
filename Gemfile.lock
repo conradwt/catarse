@@ -329,7 +329,7 @@ DEPENDENCIES
   paypal-express
   pg (~> 0.11.0)
   rails (= 3.0.10)
-  rails-footnotes (>= 3.7)
+  rails-footnotes (~> 3.7.4)
   routing-filter
   rspec-rails (~> 2.6.1)
   ruby-growl

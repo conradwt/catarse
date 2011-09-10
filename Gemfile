@@ -57,7 +57,7 @@ group :test, :development do
   gem 'hirb'
   gem 'launchy'
   gem 'mocha'
-  gem 'rails-footnotes', '>= 3.7'
+  gem "rails-footnotes", "~> 3.7.4"
   # gem 'rcov'
   gem 'rspec-rails', "~> 2.6.1"
   gem 'ruby-growl'
