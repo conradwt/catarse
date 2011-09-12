@@ -26,7 +26,7 @@ gem 'mustache'
 gem 'omniauth'
 gem "on_the_spot"
 
-gem 'passenger', "= 3.0.8"
+gem 'passenger', "~> 3.0.9"
 gem 'paypal-express', :require => 'paypal'
 gem "pg", "~> 0.11.0"
 
