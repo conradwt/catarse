@@ -63,7 +63,7 @@ en:
         minimum_value: This is the minimum amount to choose this reward.
         maximum_backers: If your reward is limited, tell us the maximum backers.
       backer:
-        value: You chose the amount ;) starting with R$10, any amount is great.
+        value: You chose the amount ;) starting with $10, any amount is great.
         credits: You have <strong>%{credits}</strong> in credits and can back with up to this amount without needing to make a new payment.
   "yes": Yes
   "no": No
@@ -307,7 +307,7 @@ en:
       international:
         title: Want to make an international payment?
         description: You can use PayPal to make international payments
-        important_html: "<p>The use of PayPal is destinated mostly for international payments. That's because you'll have only 60 days to receive an eventual refund without paying any fee.</p><p>In case you can make the regular payment through MoIP, we recommend you to do it.</p><p>But if that's not possible, don't worry: you'll always be able to receive your money back. Only, in case your refund is made more than 60 days after your payment, you'll have to pay PayPal's fee, which is 5,4% + R$0,60 per transaction.</p>"
+        important_html: "<p>The use of PayPal is destinated mostly for international payments. That's because you'll have only 60 days to receive an eventual refund without paying any fee.</p><p>In case you can make the regular payment through MoIP, we recommend you to do it.</p><p>But if that's not possible, don't worry: you'll always be able to receive your money back. Only, in case your refund is made more than 60 days after your payment, you'll have to pay PayPal's fee, which is 2.9% + $0.30 per transaction.</p>"
         submit: "Proceed to PayPal's checkout"
     pay:
       no_credits: You don't have enough credits to back this project.
