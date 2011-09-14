@@ -71,9 +71,13 @@ class ProjectsController < ApplicationController
   end
   
   def create
+    
     params[:project][:expires_at] += (23.hours + 59.minutes + 59.seconds) if params[:project][:expires_at]
+    
     validate_rewards_attributes if params[:project][:rewards_attributes].present?
+    
     create!(:notice => t('projects.create.success'))
+    
     # When don't create the project the @project don't exists so causes a record not found
     # because @project.reload *words only with created records*
     unless @project.new_record?
@@ -81,6 +85,7 @@ class ProjectsController < ApplicationController
       @project.update_attribute :short_url, bitly
       @project.projects_sites.create :site => current_site
     end
+    
   end
    
   def show
@@ -311,6 +316,15 @@ class ProjectsController < ApplicationController
   end
   
   private
+  
+  # Just to fix a minor bug,
+  # when user submit the project without some rewards.
+  def validate_rewards_attributes
+    rewards = params[:project][:rewards_attributes]
+    rewards.each do |r|
+      rewards.delete(r[0]) unless Reward.new(r[1]).valid?
+    end
+  end
   
   def bitly
     require 'net/http'
