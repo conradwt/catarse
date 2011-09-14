@@ -126,11 +126,11 @@ class Project < ActiveRecord::Base
   end
   
   def display_pledged
-    number_to_currency pledged, :unit => I18n.locale, :precision => 0, :delimiter => '.'
+    number_to_currency pledged, :locale => I18n.locale
   end
   
   def display_goal
-    number_to_currency goal, :unit => I18n.locale, :precision => 0, :delimiter => '.'
+    number_to_currency goal, :locale => I18n.locale
   end
   
   def pledged

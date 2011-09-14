@@ -11,7 +11,7 @@
     - else
       = t('.review_without_reward_html', :value => @backer.display_value)
   - if @backer.credits
-    #credits_notice= t('.credits_notice_html', :credits => number_to_currency((current_user.credits - @backer.value), :unit => I18n.locale, :precision => 0, :delimiter => '.'))
+    #credits_notice= t('.credits_notice_html', :credits => number_to_currency((current_user.credits - @backer.value), :locale => I18n.locale))
   = semantic_form_for current_user, :url => pay_project_path(@backer.project), :html => { :id => 'review_form' } do |form|
     = hidden_field_tag 'backer_id', @backer.id
     = hidden_field_tag 'backer_credits', @backer.credits

@@ -88,7 +88,7 @@ class Backer < ActiveRecord::Base
   end
   
   def display_value
-    number_to_currency value, :unit => I18n.locale, :precision => 0, :delimiter => '.'
+    number_to_currency value, :local => I18n.locale
   end
   
   def display_confirmed_at
