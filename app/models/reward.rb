@@ -46,7 +46,7 @@ class Reward < ActiveRecord::Base
   end
   
   def display_minimum
-    number_to_currency minimum_value, :unit => 'R$', :precision => 0, :delimiter => '.'
+    number_to_currency minimum_value, :unit => I18n.locale, :precision => 0, :delimiter => '.'
   end
   
   def short_description
