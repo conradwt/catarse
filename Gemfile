@@ -11,8 +11,6 @@ gem 'compass'
 
 gem 'brcep'
 
-gem 'execjs'
-
 gem 'formtastic', '~> 1.1.0'
 
 gem 'haml'
@@ -39,6 +37,8 @@ gem 'routing-filter'
 
 gem 'slim'
 gem 'spectator-validates_email', :require => 'validates_email'
+
+gem 'therubyracer'
 
 gem 'unicode'
 
