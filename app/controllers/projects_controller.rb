@@ -87,7 +87,7 @@ class ProjectsController < ApplicationController
     end
     
   end
-   
+
   def show
     show!{
       unless @project.present_on_site?(current_site)

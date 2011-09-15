@@ -150,7 +150,7 @@ class User < ActiveRecord::Base
     self.save
     new_user.save
   end
-  
+
   def as_json(options={})
     {
       :id => id,

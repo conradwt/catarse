@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails', '3.0.10'
+gem 'rails', '3.1.0'
 
 gem "acts_as_commentable"
 gem "auto_html", '>= 1.3.5'
@@ -18,12 +18,14 @@ gem 'http_accept_language'
 
 gem 'inherited_resources', '>= 1.1.2'
 
+gem 'jquery-rails'
+
 gem 'mailee', '0.5.4', :git => 'git://github.com/danielweinmann/mailee-api.git'
 gem "meta_search"
 gem 'moip', :git => 'git://github.com/danielweinmann/moip-ruby.git'
 gem 'mustache'
 
-gem 'omniauth'
+gem 'omniauth', "~> 0.2.6"
 gem "on_the_spot"
 
 gem 'passenger', "~> 3.0.9"
@@ -43,7 +45,19 @@ gem 'vimeo'
 
 gem 'weekdays'
 gem 'will_paginate', "~> 3.0.0"
-gem 'wirble'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'uglifier'
+end
+
+group :test do
+  # Pretty printed test output
+  gem 'turn', :require => false
+end
 
 group :test, :development do
   gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
@@ -62,4 +76,5 @@ group :test, :development do
   gem 'rspec-rails', "~> 2.6.1"
   gem 'ruby-growl'
   gem 'steak', "~> 1.1.0"
+  gem 'wirble'
 end

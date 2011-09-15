@@ -4,5 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Catarse::Application.config.secret_token = '8f3af8dc08112fa30556493dffc1e8ce971209c8e40f41499ba5c7b8fc62fd1a40418451cffba9a18fdfb19e04b891fc671d183934bcafbd314553462524e71f'
-
+Catarse::Application.config.secret_token = 'd4712b9d0044bf347896fc44848f34fcf667f504e0ae1c9fb6abfed2e2f0a92a32158d39efdc14448422aff1357d0f194d785db9e5027fb92d73b18fb01eaf9d'
