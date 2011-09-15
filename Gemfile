@@ -11,6 +11,8 @@ gem 'compass'
 
 gem 'brcep'
 
+gem 'execjs'
+
 gem 'formtastic', '~> 1.1.0'
 
 gem 'haml'
