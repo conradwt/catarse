@@ -7,6 +7,7 @@
   #no_backs
     - if current_user and @user == current_user
       = t('.no_backs_current_user_html')
+      = link_to t('start_now'), explore_path
     - else
       = t('.no_backs', :name => @user.display_name)
 - else

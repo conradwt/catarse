@@ -378,7 +378,7 @@ pt:
       title: Projetos que %{name} já apoiou
       title_current_user: Projetos que já apoiei
       no_backs: %{name} ainda não apoiou nenhum projeto. Mas a gente sabe que é só questão de tempo! :D
-      no_backs_current_user_html: Você ainda não apoiou nenhum projeto. Que tal <a href="/">começar agora</a>?
+      no_backs_current_user_html: Você ainda não apoiou nenhum projeto.
       anonymous: Apoio anônimo.
       your_reward: Sua recompensa
       no_reward: Você não selecionou nenhuma recompensa
@@ -411,3 +411,4 @@ pt:
       hello: Olá
       mailee: Mensagem entregue pelo Mailee.me
   my_data:  Meus dados
+  start_now: Começo agora?

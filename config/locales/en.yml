@@ -380,7 +380,7 @@ en:
       title: Projects %{name} has backed
       title_current_user: Projects I've backed
       no_backs: %{name} haven't backed any project yet. But we know it's just a matter of time! :D
-      no_backs_current_user_html: You haven't backed any project yet. What about <%= link_to( 'starting_now' ), explore_path %>?
+      no_backs_current_user_html: You haven't backed any project yet.
       anonymous: Anonymous back.
       your_reward: Your reward
       no_reward: You didn't pick a reward
@@ -413,4 +413,5 @@ en:
       hello: Hi
       mailee: Message delivered by Mailee.me
   my_data:  My data
+  start_now: Start now?
 
