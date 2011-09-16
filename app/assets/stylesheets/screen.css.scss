@@ -202,7 +202,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 8, ../../app/stylesheets/_on_the_spot.sass */
 .on_the_spot_editing:after {
-  content: " " url(/images/pencil_16.png);
+  content: " " image-url( "pencil_16.png" );
 }
 /* line 11, ../../app/stylesheets/_on_the_spot.sass */
 .on_the_spot_editing form input, .on_the_spot_editing form textarea, .on_the_spot_editing form select {
@@ -556,7 +556,7 @@ body#site form input[type=submit]:disabled {
 }
 /* line 65, ../../app/stylesheets/_form.sass */
 body#site form input.ok, body#site form textarea.ok {
-  background: url("/images/tick_16.png") no-repeat 99% center;
+  background: image-url("tick_16.png") no-repeat 99% center;
 }
 /* line 67, ../../app/stylesheets/_form.sass */
 body#site form input.ok:focus, body#site form textarea.ok:focus {
@@ -565,7 +565,7 @@ body#site form input.ok:focus, body#site form textarea.ok:focus {
 }
 /* line 70, ../../app/stylesheets/_form.sass */
 body#site form input.error, body#site form textarea.error {
-  background: url("/images/delete_16.png") no-repeat 99% center;
+  background: image-url("/images/delete_16.png") no-repeat 99% center;
 }
 /* line 72, ../../app/stylesheets/_form.sass */
 body#site form input.error:focus, body#site form textarea.error:focus {
@@ -574,7 +574,7 @@ body#site form input.error:focus, body#site form textarea.error:focus {
 }
 /* line 75, ../../app/stylesheets/_form.sass */
 body#site form input.loading, body#site form textarea.loading {
-  background: url("/images/sites/catarse/loading.gif") no-repeat 99% center;
+  background: image-url( "sites/smartn/loading.gif" ) no-repeat 99% center;
 }
 /* line 77, ../../app/stylesheets/_form.sass */
 body#site form input.loading:focus, body#site form textarea.loading:focus {
@@ -583,7 +583,7 @@ body#site form input.loading:focus, body#site form textarea.loading:focus {
 }
 /* line 80, ../../app/stylesheets/_form.sass */
 body#site form select.ok {
-  background: url("/images/tick_16.png") no-repeat 86% center;
+  background: image-url( "tick_16.png" ) no-repeat 86% center;
 }
 /* line 82, ../../app/stylesheets/_form.sass */
 body#site form select.ok:focus {
@@ -592,7 +592,7 @@ body#site form select.ok:focus {
 }
 /* line 85, ../../app/stylesheets/_form.sass */
 body#site form select.error {
-  background: url("/images/delete_16.png") no-repeat 86% center;
+  background: image-url( "delete_16.png" ) no-repeat 86% center;
 }
 /* line 87, ../../app/stylesheets/_form.sass */
 body#site form select.error:focus {
@@ -601,7 +601,7 @@ body#site form select.error:focus {
 }
 /* line 90, ../../app/stylesheets/_form.sass */
 body#site form select.loading {
-  background: url("/images/sites/catarse/loading.gif") no-repeat 86% center;
+  background: image-url( "sites/smartn/loading.gif" ) no-repeat 86% center;
 }
 /* line 92, ../../app/stylesheets/_form.sass */
 body#site form select.loading:focus {
@@ -1328,11 +1328,11 @@ body#site #profile_header .info h2 .on_the_spot_editing form textarea {
 }
 /* line 37, ../../app/stylesheets/_profile.sass */
 body#site #profile_header .info h2 .on_the_spot_editing form textarea.ok {
-  background: #ccffcc url("/images/tick_16.png") no-repeat 96% center;
+  background: #ccffcc image-url( "tick_16.png" ) no-repeat 96% center;
 }
 /* line 39, ../../app/stylesheets/_profile.sass */
 body#site #profile_header .info h2 .on_the_spot_editing form textarea.error {
-  background: #ccffcc url("/images/delete_16.png") no-repeat 96% center;
+  background: #ccffcc image-url( "delete_16.png" ) no-repeat 96% center;
 }
 /* line 41, ../../app/stylesheets/_profile.sass */
 body#site #user_feed {
@@ -2509,7 +2509,7 @@ body#site #project_back_info #back_project .project_warning .text {
 }
 /* line 465, ../../app/stylesheets/_projects.sass */
 body#site #project_back_info #back_project .successful {
-  background: url(/images/bg_top_green.png) top left repeat-x, url(/images/bg_bottom_green.png) bottom left repeat-x;
+  background: image-url( "bg_top_green.png" ) top left repeat-x, image-url( "bg_bottom_green.png" ) bottom left repeat-x;
 }
 /* line 467, ../../app/stylesheets/_projects.sass */
 body#site #project_back_info #back_project .successful .text {
@@ -2517,7 +2517,7 @@ body#site #project_back_info #back_project .successful .text {
 }
 /* line 469, ../../app/stylesheets/_projects.sass */
 body#site #project_back_info #back_project .not_successful {
-  background: url(/images/bg_top_red.png) top left repeat-x, url(/images/bg_bottom_red.png) bottom left repeat-x;
+  background: image-url( "bg_top_red.png" ) top left repeat-x, image-url( "bg_bottom_red.png" ) bottom left repeat-x;
 }
 /* line 471, ../../app/stylesheets/_projects.sass */
 body#site #project_back_info #back_project .not_successful .text {
@@ -2525,7 +2525,7 @@ body#site #project_back_info #back_project .not_successful .text {
 }
 /* line 473, ../../app/stylesheets/_projects.sass */
 body#site #project_back_info #back_project .waiting_confirmation {
-  background: url(/images/bg_top_yellow.png) top left repeat-x, url(/images/bg_bottom_yellow.png) bottom left repeat-x;
+  background: image-url( "bg_top_yellow.png" ) top left repeat-x, image-url( "bg_bottom_yellow.png" ) bottom left repeat-x;
 }
 /* line 475, ../../app/stylesheets/_projects.sass */
 body#site #project_back_info #back_project .waiting_confirmation .text {
@@ -3860,14 +3860,14 @@ body#site #promo_video #promo_title .surprise {
   color: #008800;
 }
 /* line 23, ../../app/stylesheets/_promo_video.sass */
-body#site #promo_video #promo_title .catarse {
+body#site #promo_video #promo_title .smartn {
   font-family: "museo-700";
   color: #222222;
   font-size: 42px;
 }
 /* line 27, ../../app/stylesheets/_promo_video.sass */
 body#site #promo_video #correntedobem {
-  background: url(/images/sites/catarse/bg_correntedobem.gif) top left no-repeat;
+  background: image-url( "sites/smartn/bg_correntedobem.gif" ) top left no-repeat;
   width: 100%;
 }
 /* line 30, ../../app/stylesheets/_promo_video.sass */
