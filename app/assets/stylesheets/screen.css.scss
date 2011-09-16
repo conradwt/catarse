@@ -565,7 +565,7 @@ body#site form input.ok:focus, body#site form textarea.ok:focus {
 }
 /* line 70, ../../app/stylesheets/_form.sass */
 body#site form input.error, body#site form textarea.error {
-  background: image-url("/images/delete_16.png") no-repeat 99% center;
+  background: image-url( "delete_16.png" ) no-repeat 99% center;
 }
 /* line 72, ../../app/stylesheets/_form.sass */
 body#site form input.error:focus, body#site form textarea.error:focus {
@@ -2751,11 +2751,11 @@ body#site #back_options #backer_form input[type=text]:focus {
 }
 /* line 607, ../../app/stylesheets/_projects.sass */
 body#site #back_options #backer_form input.ok, body#site #back_options #backer_form textarea.ok {
-  background: url("/images/tick_32.png") no-repeat 96% center;
+  background: image-url( "tick_32.png" ) no-repeat 96% center;
 }
 /* line 609, ../../app/stylesheets/_projects.sass */
 body#site #back_options #backer_form input.error, body#site #back_options #backer_form textarea.error {
-  background: url("/images/delete_32.png") no-repeat 96% center;
+  background: image-url( "delete_32.png" ) no-repeat 96% center;
 }
 /* line 611, ../../app/stylesheets/_projects.sass */
 body#site #back_options #backer_form p.inline-hints {
