@@ -209,7 +209,7 @@ en:
       anonymous_description: Opted to remain incognito
       no_reward: This backer has not picked a reward
     form:
-      important_html: Please notice that %{site} will charge 5% if your project is successful, and %{link} charges between 6% and 7% per transaction. Add this values to your budget in order to execute the project with no surprises.
+      important_html: Please notice that %{site} will charge 5% if your project is successful, and %{link} charges 2.9% + $0.30 USD per transaction. Add this values to your budget in order to execute the project with no surprises.
       rewards_title: Rewards
       rewards_description: We believe that the best way to inspire people to back a project is offering excelent – and creative! – rewards. Everybody loves limited editions, unique things and joyfull experiences (parties, candies, balloon traveling!). Spend some time devising creative rewards and people will be interested.
       add_reward: Add reward

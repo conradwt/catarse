@@ -9,7 +9,7 @@
     = form.input :headline, :input_html => { :maxlength => 140 }
     = form.input :category, :collection => Category.all
     = form.input :goal
-    .important= t('.important_html', :site => current_site.the_name, :link => link_to("MoIP", "http://www.moip.com.br/", :target => :_blank))
+    .important= t('.important_html', :site => current_site.the_name, :link => link_to("PayPal", "http://www.paypal.com/", :target => :_blank))
     = form.input :expires_at, :as => :string
     #project_rewards
       :javascript
