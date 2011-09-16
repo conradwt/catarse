@@ -14,7 +14,7 @@
 
 jQuery.fn.maxlength = function(){
 	
-	$("textarea[@maxlength]").keypress(function(event){ 
+	$("textarea[maxlength]").keypress(function(event){ 
 		var key = event.which;
 		
 		//all keys including return.
