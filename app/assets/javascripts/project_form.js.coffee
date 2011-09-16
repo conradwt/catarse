@@ -15,10 +15,13 @@ $("#add_reward").click (e) ->
 
 video_valid = null
 everything_ok = ->
+  
   all_ok = true
+  
   unless video_valid?
     all_ok = false
     verify_video()
+    
   all_ok = false  unless ok("#project_name")
   all_ok = false  unless video_ok()
   all_ok = false  unless ok("#project_about")
@@ -28,8 +31,6 @@ everything_ok = ->
   all_ok = false  unless expires_at_ok()
   all_ok = false  unless rewards_ok()
   all_ok = false  unless accepted_terms()
-  
-  alert all_ok
   
   if all_ok
     $("#project_submit").attr "disabled", false
