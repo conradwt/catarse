@@ -28,6 +28,9 @@ everything_ok = ->
   all_ok = false  unless expires_at_ok()
   all_ok = false  unless rewards_ok()
   all_ok = false  unless accepted_terms()
+  
+  alert all_ok
+  
   if all_ok
     $("#project_submit").attr "disabled", false
   else
