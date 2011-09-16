@@ -2,10 +2,15 @@ class AddCategories < ActiveRecord::Migration
   
   def self.up
     
-    # Add some educational categories.
-    [ 'High School', 'Undergraduate', 'Graduate' ].each do | category |
-      Category.create!( :name => category )
-    end
+    [ 'Undergraduate Studies', 
+      'Graduate Studies', 
+      'Post Graduate Studies', 
+      'Professional Studies', 
+      'Independent Studies', 
+      'Language & Cultural Studies',
+      'Volunteering', 
+      'Other'
+    ].each { | category | Category.create!( :name => category ) }
       
   end
 
