@@ -57,7 +57,8 @@ gem 'will_paginate',              "~> 3.0.0"
 group :assets do
   gem 'coffee-rails',             "~> 3.1.0"
   gem 'sass-rails',               "~> 3.1.0"
-  gem 'uglifier'
+  # gem 'uglifier'
+  gem 'closure-compiler'
 end
 
 group :test do
