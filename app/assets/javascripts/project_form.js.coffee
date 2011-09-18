@@ -1,4 +1,3 @@
-var accepted_terms, everything_ok, expires_at_ok, goal_ok, headline_ok, ok, rewards_ok, verify_video, video_ok, video_valid;
 $("#add_reward").click(function(e) {
   var new_reward;
   e.preventDefault();
