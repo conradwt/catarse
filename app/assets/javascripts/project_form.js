@@ -50,9 +50,9 @@ everything_ok = function() {
     all_ok = false;
   }
   if (all_ok) {
-    return $("#project_submit").attr("disabled", false);
+    return $( "input.create" ).attr("disabled", false);
   } else {
-    return $("#project_submit").attr("disabled", true);
+    return $( "input.create" ).attr("disabled", true);
   }
 };
 ok = function(id) {
