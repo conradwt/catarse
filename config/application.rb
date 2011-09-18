@@ -65,6 +65,6 @@ module Catarse
     config.assets.version = '1.0'
     
     # You can add additional (fully qualified) paths to the pipeline.
-    config.assets.paths << File.join(Rails.root, 'app', 'assets', 'fonts')
+    # config.assets.paths << File.join(Rails.root, 'app', 'assets', 'fonts')
   end
 end
