@@ -4,7 +4,7 @@
 / #how_it_works= render 'how_it_works'
 #more_tips.hide= render 'more_tips'
 = render 'guidelines_text'
-= form_tag(start_projects_path, :method => :get, :id => 'guidelines_form') do
+= form_tag( new_project_path, :method => :get ) do
   %fieldset
     = check_box_tag 'accept'
     = label_tag 'accept', t('.accept', :site => current_site.the_name)
