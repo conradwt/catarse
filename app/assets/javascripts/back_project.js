@@ -6,9 +6,9 @@ everything_ok = function(){
   if(!reward_ok())
     all_ok = false
   if(all_ok){
-    $('#backer_submit').attr('disabled', false)
+    $('input.create').attr('disabled', false)
   } else {
-    $('#backer_submit').attr('disabled', true)
+    $('input.create').attr('disabled', true)
   }
 }
 check_credits = function(){
