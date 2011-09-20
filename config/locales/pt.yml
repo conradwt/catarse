@@ -292,7 +292,7 @@ pt:
       title: Apoie o %{name}
       no_reward: Obrigado. Eu só quero ajudar o projeto.
       cannot_back: Não é possível apoiar este projeto no momento. Por favor, apoie outros projetos.
-      submit: Revisar e realizar pagamento
+      submit: Verificação geral
     review:
       title: Preencha e revise seus dados
       subtitle: Último passo para fazer a diferença e se tornar parte deste projeto.

@@ -294,7 +294,7 @@ en:
       title: Back %{name}
       no_reward: Thanks. I just want to help the project.
       cannot_back: It's not possible to back this project right now. Please, back other projects.
-      submit: Review and proceed to checkout
+      submit: Checkout
     review:
       title: Fill in and review your data
       subtitle: This is the last step to make the difference and become part of this project.
