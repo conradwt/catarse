@@ -25,10 +25,11 @@ class ApplicationController < ActionController::Base
   # TODO remove this when we launch the new Multidão
   
   def set_locale
-    return unless params[:locale]
-    I18n.locale = params[:locale]
-    return unless current_user
-    current_user.update_attribute :locale, params[:locale] if params[:locale] != current_user.locale
+    # return unless params[:locale]
+    # I18n.locale = params[:locale]
+    # return unless current_user
+    # current_user.update_attribute :locale, params[:locale] if params[:locale] != current_user.locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
   
   def detect_locale
