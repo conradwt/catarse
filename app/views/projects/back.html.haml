@@ -1,6 +1,6 @@
 = render :partial => "/sites/#{current_site.path}/back_header"
 #back_options
-  = semantic_form_for @backer, :url => pay_paypal_path(@backer), :html => { :id => 'backer_form' } do |form|
+  = semantic_form_for @backer, :url => pay_paypal_path(@project), :html => { :id => 'backer_form' } do |form|
     = form.inputs do
       = hidden_field_tag 'credits', ("%0.0f" % current_user.credits)
       = form.input :value, :required => false
