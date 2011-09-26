@@ -32,7 +32,12 @@ Catarse::Application.routes.draw do
   
   resources :projects, :only => [:index, :new, :create, :show] do
     
-    resources :backers, :only => [ :new, :create ]
+    resources :backers, :only => [ :new, :create ] do
+      collection do
+        get 'success'
+        get 'cancel'
+      end
+    end
   
     collection do
       get  'explore'
