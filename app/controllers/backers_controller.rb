@@ -9,9 +9,11 @@ class BackersController < ApplicationController
   # GET /projects/:id/new.json
   def new
     
+    # Locate the current project.
     @project = Project.find( params[:project_id] )
 
-    @backer = @project.build
+    # Instantiate a backer for this project.
+    @backer = @project.backers.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -22,7 +24,10 @@ class BackersController < ApplicationController
 
   def create
     
+    # Locate the current project.
     project = Project.find( params[:project_id] )
+    
+    # Create a backer for this project.
     backer = project.backers.create!( params[:backer] )
 
     begin
