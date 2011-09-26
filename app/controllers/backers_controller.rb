@@ -27,9 +27,9 @@ class BackerssController < ApplicationController
 
     begin
       paypal_response = @paypal.setup(
-        paypal_payment(backer),
-        success_paypal_url(backer),
-        cancel_paypal_url(backer),
+        paypal_payment( backer ),
+        success_project_backers( backer ),
+        cancel_project_backers( backer ),
         :no_shipping => true
       )
       redirect_to paypal_response.redirect_uri
@@ -85,7 +85,7 @@ class BackerssController < ApplicationController
   #   )
   # end
   
-  def paypal_payment(backer)
+  def paypal_payment( backer )
     Paypal::Payment::Request.new(
       :currency_code => :USD,
       :amount => backer.value,
