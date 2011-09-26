@@ -31,6 +31,8 @@ Catarse::Application.routes.draw do
   end
   
   resources :projects, :only => [:index, :new, :create, :show] do
+    
+    resources :backers, :only => [ :new, :create ]
   
     collection do
       get  'explore'
