@@ -1,5 +1,5 @@
 # coding: utf-8
-class BackerssController < ApplicationController
+class BackersController < ApplicationController
   
   rescue_from Paypal::Exception::APIError, with: :paypal_api_error
   
