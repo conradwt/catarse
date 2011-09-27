@@ -118,7 +118,7 @@ class BackersController < ApplicationController
   def handle_callback
     
     # Locate the current project.
-    project = Project.find( params[:product_id] )
+    project = Project.find( params[:project_id] )
     
     # Find the backer by toeken.
     backer = project.backers.find_by_token! params[:token]
