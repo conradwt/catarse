@@ -56,7 +56,7 @@ class BackersController < ApplicationController
     backer.site = current_site
     backer.save!
     
-    backer.setup!( ssuccess_project_backers_url, cancel_project_backers_url )
+    backer.setup!( success_project_backers_url, cancel_project_backers_url )
     
     if payment.popup?
       redirect_to payment.popup_uri
@@ -115,7 +115,13 @@ class BackersController < ApplicationController
   private
 
   def handle_callback
-    backer = Backer.find_by_token! params[:token]
+    
+    # Locate the current project.
+    project = Project.find( params[:product_id] )
+    
+    # Find the backer by toeken.
+    backer = project.backers.find_by_token! params[:token]
+    
     @redirect_uri = yield backer
     if backer.popup?
       render :close_flow, layout: false
