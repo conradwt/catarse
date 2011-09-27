@@ -187,6 +187,7 @@ class Backer < ActiveRecord::Base
       self.identifier = response.payment_info.first.transaction_id
     end
     self.completed = true
+    self.confirmed = true
     self.save!
     self
   end
