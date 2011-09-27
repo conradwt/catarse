@@ -2,7 +2,7 @@
 #
 # Table name: categories
 #
-#  id         :integer(4)      not null, primary key
+#  id         :integer         not null, primary key
 #  name       :string(255)     not null
 #  created_at :datetime
 #  updated_at :datetime

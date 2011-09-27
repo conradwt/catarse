@@ -2,19 +2,19 @@
 #
 # Table name: sites
 #
-#  id           :integer(4)      not null, primary key
-#  name         :text            default(""), not null
-#  title        :text            default(""), not null
-#  path         :text            default(""), not null
-#  host         :text            default(""), not null
-#  gender       :text            default(""), not null
-#  email        :text            default(""), not null
-#  twitter      :text            default(""), not null
-#  facebook     :text            default(""), not null
-#  blog         :text            default(""), not null
+#  id           :integer         not null, primary key
+#  name         :text            not null
+#  title        :text            not null
+#  path         :text            not null
+#  host         :text            not null
+#  gender       :text            not null
+#  email        :text            not null
+#  twitter      :text            not null
+#  facebook     :text            not null
+#  blog         :text            not null
 #  created_at   :datetime
 #  updated_at   :datetime
-#  auth_gateway :boolean(1)      default(FALSE), not null
+#  auth_gateway :boolean         default(FALSE), not null
 #  port         :text
 #
 

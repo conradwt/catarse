@@ -2,14 +2,14 @@
 #
 # Table name: projects_sites
 #
-#  id          :integer(4)      not null, primary key
-#  project_id  :integer(4)      not null
-#  site_id     :integer(4)      not null
-#  visible     :boolean(1)      default(FALSE), not null
-#  rejected    :boolean(1)      default(FALSE), not null
-#  recommended :boolean(1)      default(FALSE), not null
-#  home_page   :boolean(1)      default(FALSE), not null
-#  order       :integer(4)
+#  id          :integer         not null, primary key
+#  project_id  :integer         not null
+#  site_id     :integer         not null
+#  visible     :boolean         default(FALSE), not null
+#  rejected    :boolean         default(FALSE), not null
+#  recommended :boolean         default(FALSE), not null
+#  home_page   :boolean         default(FALSE), not null
+#  order       :integer
 #  created_at  :datetime
 #  updated_at  :datetime
 #

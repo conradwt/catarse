@@ -2,24 +2,32 @@
 #
 # Table name: backers
 #
-#  id               :integer(4)      not null, primary key
-#  project_id       :integer(4)      not null
-#  user_id          :integer(4)      not null
-#  reward_id        :integer(4)
-#  value            :integer(10)     not null
-#  confirmed        :boolean(1)      default(FALSE), not null
+#  id               :integer         not null, primary key
+#  project_id       :integer         not null
+#  user_id          :integer         not null
+#  reward_id        :integer
+#  value            :decimal(, )     not null
+#  confirmed        :boolean         default(FALSE), not null
 #  confirmed_at     :datetime
 #  created_at       :datetime
 #  updated_at       :datetime
-#  display_notice   :boolean(1)      default(FALSE)
-#  anonymous        :boolean(1)      default(FALSE)
-#  key              :integer(4)
-#  can_refund       :boolean(1)      default(FALSE)
-#  requested_refund :boolean(1)      default(FALSE)
-#  refunded         :boolean(1)      default(FALSE)
-#  credits          :boolean(1)      default(FALSE)
-#  notified_finish  :boolean(1)      default(FALSE)
-#  site_id          :integer(4)      default(1), not null
+#  display_notice   :boolean         default(FALSE)
+#  anonymous        :boolean         default(FALSE)
+#  key              :integer
+#  can_refund       :boolean         default(FALSE)
+#  requested_refund :boolean         default(FALSE)
+#  refunded         :boolean         default(FALSE)
+#  credits          :boolean         default(FALSE)
+#  notified_finish  :boolean         default(FALSE)
+#  site_id          :integer         default(1), not null
+#  token            :string(255)
+#  identifier       :string(255)
+#  payer_id         :string(255)
+#  recurring        :boolean         default(FALSE)
+#  digital          :boolean         default(FALSE)
+#  popup            :boolean         default(FALSE)
+#  completed        :boolean         default(FALSE)
+#  canceled         :boolean         default(FALSE)
 #
 
 # coding: utf-8
@@ -36,6 +44,8 @@ class Backer < ActiveRecord::Base
   validates_presence_of :project, :user, :value, :site
   validates_numericality_of :value, :greater_than_or_equal_to => 10.00
   validate :reward_must_be_from_project
+  validates :token, uniqueness: true
+  validates :identifier, uniqueness: true
   
   scope :anonymous, where(:anonymous => true)
   scope :not_anonymous, where(:anonymous => false)
@@ -44,6 +54,9 @@ class Backer < ActiveRecord::Base
   scope :display_notice, where(:display_notice => true)
   scope :can_refund, where(:can_refund => true)
   scope :within_refund_deadline, where("current_timestamp < (created_at + interval '180 days')")
+  scope :recurring, where(recurring: true)
+  scope :digital,   where(digital: true)
+  scope :popup,     where(popup: true)
   
   def self.project_visible(site)
     joins(:project).joins("INNER JOIN projects_sites ON projects_sites.project_id = projects.id").where("projects_sites.site_id = #{site.id} AND projects_sites.visible = true")
@@ -119,6 +132,114 @@ class Backer < ActiveRecord::Base
       :user => user,
       :reward => reward
     }
+  end
+  
+  def goods_type
+     digital? ? :digital : :real
+   end
+
+   def payment_type
+     recurring? ? :recurring : :instant
+   end
+
+   def ux_type
+     popup? ? :popup : :redirect
+   end
+
+   def details
+     if recurring?
+       client.subscription(self.identifier)
+     else
+       client.details(self.token)
+     end
+   end
+  
+  attr_reader :redirect_uri, :popup_uri
+  
+  def setup!(return_url, cancel_url)
+    response = client.setup(
+      payment_request,
+      return_url,
+      cancel_url,
+      pay_on_paypal: true,
+      no_shipping: self.digital?
+    )
+    self.token = response.token
+    self.save!
+    @redirect_uri = response.redirect_uri
+    @popup_uri = response.popup_uri
+    self
+  end
+
+  def cancel!
+    self.canceled = true
+    self.save!
+    self
+  end
+
+  def complete!(payer_id = nil)
+    if self.recurring?
+      response = client.subscribe!(self.token, recurring_request)
+      self.identifier = response.recurring.identifier
+    else
+      response = client.checkout!(self.token, payer_id, payment_request)
+      self.payer_id = payer_id
+      self.identifier = response.payment_info.first.transaction_id
+    end
+    self.completed = true
+    self.save!
+    self
+  end
+  
+  def unsubscribe!
+    client.renew!(self.identifier, :Cancel)
+    self.cancel!
+  end
+
+  private
+
+  def client
+    Paypal::Express::Request.new PAYPAL_CONFIG
+  end
+
+  DESCRIPTION = {
+    item: 'PayPal Express Sample Item',
+    instant: 'PayPal Express Sample Instant Payment',
+    recurring: 'PayPal Express Sample Recurring Payment'
+  }
+
+  def payment_request
+    request_attributes = if self.recurring?
+      {
+        billing_type: :RecurringPayments,
+        billing_agreement_description: DESCRIPTION[:recurring]
+      }
+    else
+      item = {
+        name: DESCRIPTION[:item],
+        description: DESCRIPTION[:item],
+        amount: self.amount
+      }
+      item[:category] = :Digital if self.digital?
+      {
+        amount: self.amount,
+        description: DESCRIPTION[:instant],
+        items: [item]
+      }
+    end
+    Paypal::Payment::Request.new request_attributes
+  end
+
+  def recurring_request
+    Paypal::Payment::Recurring.new(
+      start_date: Time.now,
+      description: DESCRIPTION[:recurring],
+      billing: {
+        period: :Month,
+        frequency: 1,
+        amount: self.amount
+      }
+    )
   end
   
 end

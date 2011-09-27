@@ -2,8 +2,8 @@
 #
 # Table name: configurations
 #
-#  id         :integer(4)      not null, primary key
-#  name       :text            default(""), not null
+#  id         :integer         not null, primary key
+#  name       :text            not null
 #  value      :text
 #  created_at :datetime
 #  updated_at :datetime

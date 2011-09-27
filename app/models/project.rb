@@ -2,23 +2,23 @@
 #
 # Table name: projects
 #
-#  id          :integer(4)      not null, primary key
+#  id          :integer         not null, primary key
 #  name        :string(255)     not null
-#  user_id     :integer(4)      not null
-#  category_id :integer(4)      not null
-#  goal        :integer(10)     not null
+#  user_id     :integer         not null
+#  category_id :integer         not null
+#  goal        :decimal(, )     not null
 #  expires_at  :datetime        not null
-#  about       :text            default(""), not null
-#  headline    :text            default(""), not null
-#  video_url   :text            default(""), not null
+#  about       :text            not null
+#  headline    :text            not null
+#  video_url   :text            not null
 #  image_url   :text
 #  short_url   :text
 #  created_at  :datetime
 #  updated_at  :datetime
-#  can_finish  :boolean(1)      default(FALSE)
-#  finished    :boolean(1)      default(FALSE)
+#  can_finish  :boolean         default(FALSE)
+#  finished    :boolean         default(FALSE)
 #  about_html  :text
-#  site_id     :integer(4)      default(1), not null
+#  site_id     :integer         default(1), not null
 #
 
 # coding: utf-8
