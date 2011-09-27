@@ -59,10 +59,10 @@ class BackersController < ApplicationController
     
     backer.setup!( success_project_backers_url, cancel_project_backers_url )
     
-    if payment.popup?
-      redirect_to payment.popup_uri
+    if backer.popup?
+      redirect_to backer.popup_uri
     else
-      redirect_to payment.redirect_uri
+      redirect_to backer.redirect_uri
     end
 
   end
