@@ -216,14 +216,15 @@ class Backer < ActiveRecord::Base
       }
     else
       item = {
-        name: DESCRIPTION[:item],
-        description: DESCRIPTION[:item],
-        amount: self.amount
+        :currency_code  => :USD,
+        :name           => self.project.name,
+        :description    => t('projects.pay.paypal_description')
+        :amount         => self.value
       }
       item[:category] = :Digital if self.digital?
       {
-        amount: self.amount,
-        description: DESCRIPTION[:instant],
+        :amount       => self.value,
+        :description  => t('projects.pay.paypal_description'),
         items: [item]
       }
     end
