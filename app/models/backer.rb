@@ -47,10 +47,10 @@ class Backer < ActiveRecord::Base
   validates :token, uniqueness: true
   validates :identifier, uniqueness: true
   
-  scope :anonymous, where( :anonymous => true)
-  scope :not_anonymous, where( :anonymous => false)
-  scope :confirmed, where( :completed => true)
-  scope :pending, where( :completed => false)
+  scope :anonymous, where( :anonymous => true )
+  scope :not_anonymous, where( :anonymous => false )
+  scope :confirmed, where( :completed => true )
+  scope :pending, where( :completed => false )
   scope :display_notice,  where( :display_notice => true )
   scope :can_refund,  where( :can_refund => true )
   scope :within_refund_deadline, where( "current_timestamp < (created_at + interval '180 days')" )

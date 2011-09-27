@@ -54,6 +54,7 @@ class BackersController < ApplicationController
     backer = project.backers.build( params[:backer] )
     backer.user = current_user
     backer.site = current_site
+    backer.digital = true
     backer.save!
     
     backer.setup!( success_project_backers_url, cancel_project_backers_url )
