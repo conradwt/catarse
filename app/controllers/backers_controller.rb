@@ -55,51 +55,41 @@ class BackersController < ApplicationController
     backer.user = current_user
     backer.site = current_site
     backer.save!
-
-    begin
-      paypal_response = @paypal.setup(
-        paypal_payment( backer ),
-        success_project_backers_url( backer ),
-        cancel_project_backers_url( backer ),
-        :no_shipping => true
-      )
-      redirect_to paypal_response.redirect_uri
-    #rescue Paypal::Exception::APIError => e
-    #  raise "Message: #{e.message}<br/>Response: #{e.response.inspect}<br/>Details: #{e.response.details.inspect}"
-    rescue
-      flash[:failure] = t('projects.pay.paypal_error')
-      return redirect_to new_project_backer_path( project )
+    
+    backer.setup!( ssuccess_project_backers_url, cancel_project_backers_url )
+    
+    if payment.popup?
+      redirect_to payment.popup_uri
+    else
+      redirect_to payment.redirect_uri
     end
+
   end
 
   def success
-    backer = Backer.find params[:id]
-    begin
-      details = @paypal.details(params[:token])
-      checkout = @paypal.checkout!(
-        params[:token],
-        details.payer.identifier,
-        paypal_payment(backer)
-      )
-      if checkout.payment_info.first.payment_status == "Completed"
-        backer.update_attribute :key, checkout.payment_info.first.transaction_id
-        backer.confirm!
-        flash[:success] = t('projects.pay.success')
-        redirect_to thank_you_path
-      else
-        flash[:failure] = t('projects.pay.paypal_error')
-        return redirect_to new_project_backer_path( project )
-      end
-    rescue
-      flash[:failure] = t('projects.pay.paypal_error')
-      return redirect_to new_project_backer_path( project )
+    
+    # Locate the current project.
+    project = Project.find( params[:project_id] )
+    
+    handle_callback do | backer |
+      backer.complete!( params[:PayerID] )
+      flash[:notice] = t('projects.pay.success')
+      new_project_backer_path( project )
     end
+
   end
   
   def cancel
-    backer = Backer.find params[:id]
-    flash[:failure] = t('projects.pay.paypal_cancel')
-    redirect_to new_project_backer_path( project )
+    
+    # Locate the current project.
+    project = Project.find( params[:project_id] )
+  
+    handle_callback do | backer |
+      backer.cancel!
+      flash[:warn] = t('projects.pay.paypal_cancel')
+      new_project_backer_path( project )
+    end
+
   end
 
   protected
@@ -124,15 +114,15 @@ class BackersController < ApplicationController
   
   private
 
-  # def handle_callback
-  #   backer = Backer.find_by_token! params[:token]
-  #   @redirect_uri = yield backer
-  #   if backer.popup?
-  #     render :close_flow, layout: false
-  #   else
-  #     redirect_to @redirect_uri
-  #   end
-  # end
+  def handle_callback
+    backer = Backer.find_by_token! params[:token]
+    @redirect_uri = yield backer
+    if backer.popup?
+      render :close_flow, layout: false
+    else
+      redirect_to @redirect_uri
+    end
+  end
 
   def paypal_api_error(e)
     redirect_to root_url, error: e.response.details.collect(&:long_message).join('<br />')

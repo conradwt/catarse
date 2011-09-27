@@ -47,16 +47,16 @@ class Backer < ActiveRecord::Base
   validates :token, uniqueness: true
   validates :identifier, uniqueness: true
   
-  scope :anonymous, where(:anonymous => true)
-  scope :not_anonymous, where(:anonymous => false)
-  scope :confirmed, where(:confirmed => true)
-  scope :pending, where(:confirmed => false)
-  scope :display_notice, where(:display_notice => true)
-  scope :can_refund, where(:can_refund => true)
-  scope :within_refund_deadline, where("current_timestamp < (created_at + interval '180 days')")
-  scope :recurring, where(recurring: true)
-  scope :digital,   where(digital: true)
-  scope :popup,     where(popup: true)
+  scope :anonymous, where( :anonymous => true)
+  scope :not_anonymous, where( :anonymous => false)
+  scope :confirmed, where( :completed => true)
+  scope :pending, where( :completed => false)
+  scope :display_notice,  where( :display_notice => true )
+  scope :can_refund,  where( :can_refund => true )
+  scope :within_refund_deadline, where( "current_timestamp < (created_at + interval '180 days')" )
+  scope :recurring, where( recurring: true )
+  scope :digital, where( digital: true )
+  scope :popup, where( popup: true )
   
   def self.project_visible(site)
     joins(:project).joins("INNER JOIN projects_sites ON projects_sites.project_id = projects.id").where("projects_sites.site_id = #{site.id} AND projects_sites.visible = true")
