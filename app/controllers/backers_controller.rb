@@ -56,8 +56,8 @@ class BackersController < ApplicationController
     begin
       paypal_response = @paypal.setup(
         paypal_payment( backer ),
-        success_project_backers( backer ),
-        cancel_project_backers( backer ),
+        success_project_backers_url( backer ),
+        cancel_project_backers_url( backer ),
         :no_shipping => true
       )
       redirect_to paypal_response.redirect_uri
