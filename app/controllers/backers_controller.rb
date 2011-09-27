@@ -7,7 +7,7 @@ class BackersController < ApplicationController
   
   actions :new, :create
   
-  # before_filter :initialize_paypal
+  before_filter :initialize_paypal
   
   # GET /projects/:id/new
   # GET /projects/:id/new.json
@@ -104,17 +104,14 @@ class BackersController < ApplicationController
 
   protected
   
-  # def initialize_paypal
-  #   # TODO remove the sandbox! when ready
-  #   Paypal.sandbox!
-  #   # TODO remove the sandbox! when ready
-  #   
-  #   @paypal = Paypal::Express::Request.new(
-  #     :username   => 'seller_1316500625_biz_api1.yahoo.com', # Configuration.find_by_name('paypal_username').value,
-  #     :password   => '1316500662', #Configuration.find_by_name('paypal_password').value,
-  #     :signature  => 'Ay0WGeDNE3scjpjgVSFjMHA6ARRFACyjEgEFZfKzqqRzGIEnfyLN0RDx' # Configuration.find_by_name('paypal_signature').value
-  #   )
-  # end
+  def initialize_paypal
+    @paypal = Paypal::Express::Request.new(
+      :username   => PAYPAL_CONFIG['paypal_username'],
+      :password   => PAYPAL_CONFIG['paypal_password'],
+      :signature  => PAYPAL_CONFIG['paypal_signature'],
+      :sandbox    => PAYPAL_CONFIG['paypal_sandbox']
+    )
+  end
   
   def paypal_payment( backer )
     Paypal::Payment::Request.new(
