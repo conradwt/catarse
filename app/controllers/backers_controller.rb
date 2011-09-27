@@ -3,23 +3,46 @@ class BackersController < ApplicationController
   
   rescue_from Paypal::Exception::APIError, with: :paypal_api_error
   
+  inherit_resources
+  
+  actions :new, :create
+  
   # before_filter :initialize_paypal
   
   # GET /projects/:id/new
   # GET /projects/:id/new.json
   def new
     
-    # Locate the current project.
-    @project = Project.find( params[:project_id] )
-
-    # Instantiate a backer for this project.
-    @backer = @project.backers.build
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @project }
-    end
+    return unless require_login
     
+    new! do
+      
+      # Locate the current project.
+      @project = Project.find( params[:project_id] )
+       
+      unless @project.can_back?(current_site)
+        flash[:failure] = t('projects.back.cannot_back')
+        return redirect_to :root
+      end
+
+      # Instantiate a backer for this project.
+      @backer = @project.backers.new( :user => current_user, :site => current_site )
+      
+      @title = t('projects.back.title', :name => @project.name)
+     
+      empty_reward = Reward.new(:id => 0, :minimum_value => 0, :description => t('projects.back.no_reward'))
+     
+      @rewards = [empty_reward] + @project.rewards.order(:minimum_value)
+      @reward = @project.rewards.find params[:reward_id] if params[:reward_id]
+      @reward = nil if @reward and @reward.sold_out?
+      
+      if @reward
+        @backer.reward = @reward
+        @backer.value = "%0.0f" % @reward.minimum_value
+      end
+      
+    end
+        
   end
 
   def create
