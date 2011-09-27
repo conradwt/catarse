@@ -13,7 +13,7 @@
           rewards[#{reward.id || 0}] = #{reward.minimum_value}
       = form.input :reward, :as => :radio, :collection => @rewards
       = form.input :anonymous
-      #anonymous_warning.important.hide= render 'anonymous_warning'
+      #anonymous_warning.important.hide= render 'projects/anonymous_warning'
     = form.buttons do
       = form.commit_button t('.submit'), :button_html => {:disabled => true}
 #back_info
@@ -23,6 +23,6 @@
     .project_owner #{t('for')} #{link_to @project.user.display_name, user_path(@project.user)}
     .project_expires_at #{@project.time_to_go[:time]} #{@project.time_to_go[:unit]} #{pluralize_without_number(@project.time_to_go[:time], t('remaining_singular'), t('remaining_plural'))}
   .clear
-  = render 'back_text'
+  = render 'projects/back_text'
 .clear
 = javascript_include_tag 'back_project'
