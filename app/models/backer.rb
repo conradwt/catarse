@@ -218,7 +218,7 @@ class Backer < ActiveRecord::Base
       item = {
         :currency_code  => :USD,
         :name           => self.project.name,
-        :description    => t('projects.pay.paypal_description')
+        :description    => t('projects.pay.paypal_description'),
         :amount         => self.value
       }
       item[:category] = :Digital if self.digital?
