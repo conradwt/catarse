@@ -105,12 +105,7 @@ class BackersController < ApplicationController
   protected
   
   def initialize_paypal
-    @paypal = Paypal::Express::Request.new(
-      :username   => PAYPAL_CONFIG['paypal_username'],
-      :password   => PAYPAL_CONFIG['paypal_password'],
-      :signature  => PAYPAL_CONFIG['paypal_signature'],
-      :sandbox    => PAYPAL_CONFIG['paypal_sandbox']
-    )
+    @paypal = Paypal::Express::Request.new( PAYPAL_CONFIG )
   end
   
   def paypal_payment( backer )
