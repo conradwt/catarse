@@ -50,8 +50,11 @@ class BackersController < ApplicationController
     # Locate the current project.
     project = Project.find( params[:project_id] )
     
-    # Create a backer for this project.
-    backer = project.backers.create!( params[:backer] )
+    # Instantiate a backer for this project.
+    backer = project.backers.build( params[:backer] )
+    backer.user = current_user
+    backer.site = current_site
+    backer.save!
 
     begin
       paypal_response = @paypal.setup(
