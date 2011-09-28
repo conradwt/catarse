@@ -132,7 +132,7 @@ class BackersController < ApplicationController
   end
 
   def paypal_api_error(e)
-    redirect_to root_url, :alert => e.response.details.collect(&:long_message).join('<br />')
+    redirect_to root_url, :failure => e.response.details.collect(&:long_message).join('<br />')
   end
   
 end
