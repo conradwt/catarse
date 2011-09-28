@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     # return unless current_user
     # current_user.update_attribute :locale, params[:locale] if params[:locale] != current_user.locale
 
-    I18n.locale = params[:locale] || (current_user.locale if current_user) || I18n.default_locale
+    I18n.locale = params[:locale] || I18n.default_locale
     
     if current_user && current_user.locale != I18n.locale
       current_user.update_attribute :locale, I18n.locale
