@@ -672,13 +672,13 @@ body#site .flash .success.wrapper, body#site .flash .notice.wrapper {
 }
 
 body#site .flash .warn.wrapper {
-  background-color: #FFFF33;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FFFF99), color-stop(50%, #FFFF66), color-stop(100%, #FFFF33));
-  background-image: -webkit-linear-gradient(top, #FFFF99, #FFFF66, #FFFF33);
-  background-image: -moz-linear-gradient(top, #FFFF99, #FFFF66, #FFFF33);
-  background-image: -o-linear-gradient(top, #FFFF99, #FFFF66, #FFFF33);
-  background-image: -ms-linear-gradient(top, #FFFF99, #FFFF66, #FFFF33);
-  background-image: linear-gradient(top, #FFFF99, #FFFF66, #FFFF33);
+  background-color: #FFCC00;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FFCC66), color-stop(50%, #FFCC33), color-stop(100%, #FFCC00));
+  background-image: -webkit-linear-gradient(top, #FFCC66, #FFCC33, #FFCC00);
+  background-image: -moz-linear-gradient(top, #FFCC66, #FFCC33, #FFCC00);
+  background-image: -o-linear-gradient(top, #FFCC66, #FFCC33, #FFCC00);
+  background-image: -ms-linear-gradient(top, #FFCC66, #FFCC33, #FFCC00);
+  background-image: linear-gradient(top, #FFCC66, #FFCC33, #FFCC00);
 }
 
 /* line 15, ../../app/stylesheets/_flash.sass */
