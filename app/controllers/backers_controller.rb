@@ -75,7 +75,7 @@ class BackersController < ApplicationController
     handle_callback do | backer |
       backer.complete!( params[:PayerID] )
       flash[:notice] = t('projects.pay.success')
-      new_project_backer_path( project )
+      project_path( project )
     end
 
   end
@@ -88,7 +88,7 @@ class BackersController < ApplicationController
     handle_callback do | backer |
       backer.cancel!
       flash[:warn] = t('projects.pay.paypal_cancel')
-      new_project_backer_path( project )
+      project_path( project )
     end
 
   end
@@ -132,7 +132,7 @@ class BackersController < ApplicationController
   end
 
   def paypal_api_error(e)
-    redirect_to root_url, :alert => e.response.details.collect(&:long_message).join('<br />')
+    redirect_to root_url, :warn => e.response.details.collect(&:long_message).join('<br />')
   end
   
 end
