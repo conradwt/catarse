@@ -1,36 +1,29 @@
 # coding: utf-8
 class ApplicationController < ActionController::Base
+  
+  extend ActiveSupport::Memoizable
+  memoize :current_site
 
   protect_from_forgery
 
-  # TODO this is a temporary thing while we don't build the new Multidão
-  before_filter :multidao_redirect
-  # TODO remove this when we launch the new Multidão
-  
   helper_method :current_user, :current_site, :replace_locale
   before_filter :set_locale
   before_filter :detect_locale
   
   private
 
-  # TODO this is a temporary thing while we don't build the new Multidão
-  def multidao_redirect
-    return unless current_site.path == "multidao"
-    if params[:controller] == "projects" and params[:action] == "index"
-      return render "sites/multidao/new_multidao", :layout => false
-    end
-    site = Site.find_by_path "smartn"
-    return redirect_to site.full_url(request.fullpath)
-  end
-  # TODO remove this when we launch the new Multidão
-  
   def set_locale
-    return unless params[:locale]
-    I18n.locale = params[:locale]
-    return unless current_user
-    current_user.update_attribute :locale, params[:locale] if params[:locale] != current_user.locale
 
-    # I18n.locale = (current_user.locale if current_user) || session[:locale] || I18n.default_locale
+    # return unless params[:locale]
+    # I18n.locale = params[:locale]
+    # return unless current_user
+    # current_user.update_attribute :locale, params[:locale] if params[:locale] != current_user.locale
+
+    I18n.locale = params[:locale] || (current_user.locale if current_user) || I18n.default_locale
+    
+    if current_user && current_user.locale != I18n.locale
+      current_user.update_attribute :locale, I18n.locale
+    end
     
   end
   
@@ -63,13 +56,8 @@ class ApplicationController < ActionController::Base
   end
   
   def current_site
-    return @current_site if @current_site
-    return @current_site = Site.find_by_path(session[:current_site]) if session[:current_site]
-    site_host = request.host.gsub "www.", ""
-    @current_site = Site.find_by_host site_host
-    @current_site = Site.find_by_path("smartn") unless @current_site
-    @current_site = Factory(:site, :name => "SmartnMe", :path => "smartn") unless @current_site
-    @current_site
+    # Let's set the default theme to smartn.
+    Site.find_by_path( "smartn" )
   end
   
   def current_user
@@ -102,11 +90,11 @@ class ApplicationController < ActionController::Base
   end
   
   def require_login
-    require_condition(current_user, t('require_login'))
+    require_condition( current_user, t('require_login') )
   end
   
   def require_admin
-    require_condition((current_user and current_user.admin), t('require_admin'))
+    require_condition( ( current_user and current_user.admin), t('require_admin') )
   end
   
 end
