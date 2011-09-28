@@ -7,7 +7,7 @@ class BackersController < ApplicationController
   
   actions :new, :create
   
-  before_filter :initialize_paypal
+  # before_filter :initialize_paypal
   
   # GET /projects/:id/new
   # GET /projects/:id/new.json
@@ -95,23 +95,23 @@ class BackersController < ApplicationController
 
   protected
   
-  def initialize_paypal
-    @paypal = Paypal::Express::Request.new( PAYPAL_CONFIG )
-  end
-  
-  def paypal_payment( backer )
-    Paypal::Payment::Request.new(
-      :currency_code => :USD,
-      :amount => backer.value,
-      :description => t('projects.pay.paypal_description'),
-      :items => [{
-          :name => backer.project.name,
-          :description => t('projects.pay.paypal_description'),
-          :amount => backer.value#,
-          #:category => :Digital
-        }]
-    )
-  end
+  # def initialize_paypal
+  #   @paypal = Paypal::Express::Request.new( PAYPAL_CONFIG )
+  # end
+  # 
+  # def paypal_payment( backer )
+  #   Paypal::Payment::Request.new(
+  #     :currency_code => :USD,
+  #     :amount => backer.value,
+  #     :description => t('projects.pay.paypal_description'),
+  #     :items => [{
+  #         :name => backer.project.name,
+  #         :description => t('projects.pay.paypal_description'),
+  #         :amount => backer.value#,
+  #         #:category => :Digital
+  #       }]
+  #   )
+  # end
   
   private
 
