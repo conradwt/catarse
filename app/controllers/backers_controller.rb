@@ -110,7 +110,7 @@ class BackersController < ApplicationController
   end
 
   def paypal_api_error(e)
-    flash[:failure] = e.response.details.collect(&:long_message).join('<br />')
+    flash[:error] = e.response.details.collect(&:long_message).join('<br />')
     redirect_to root_url
   end
   
