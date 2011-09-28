@@ -135,24 +135,24 @@ class Backer < ActiveRecord::Base
   end
   
   def goods_type
-     digital? ? :digital : :real
-   end
+    digital? ? :digital : :real
+  end
 
-   def payment_type
-     recurring? ? :recurring : :instant
-   end
+  def payment_type
+    recurring? ? :recurring : :instant
+  end
 
-   def ux_type
-     popup? ? :popup : :redirect
-   end
+  def ux_type
+    popup? ? :popup : :redirect
+  end
 
-   def details
-     if recurring?
-       client.subscription(self.identifier)
-     else
-       client.details(self.token)
-     end
-   end
+  def details
+    if recurring?
+      client.subscription(self.identifier)
+    else
+      client.details(self.token)
+    end
+  end
   
   attr_reader :redirect_uri, :popup_uri
   
@@ -234,13 +234,13 @@ class Backer < ActiveRecord::Base
 
   def recurring_request
     Paypal::Payment::Recurring.new(
-      start_date: Time.now,
-      description: DESCRIPTION[:recurring],
-      billing: {
-        period: :Month,
-        frequency: 1,
-        amount: self.amount
-      }
+    start_date: Time.now,
+    description: DESCRIPTION[:recurring],
+    billing: {
+      period: :Month,
+      frequency: 1,
+      amount: self.amount
+    }
     )
   end
   
