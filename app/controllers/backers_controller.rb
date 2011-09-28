@@ -87,7 +87,7 @@ class BackersController < ApplicationController
   
     handle_callback do | backer |
       backer.cancel!
-      flash[:warn] = t('projects.pay.paypal_cancel')
+      flash[:failure] = t('projects.pay.paypal_cancel')
       project_path( project )
     end
 
