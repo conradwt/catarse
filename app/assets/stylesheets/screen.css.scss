@@ -670,8 +670,19 @@ body#site .flash .success.wrapper, body#site .flash .notice.wrapper {
   background-image: -ms-linear-gradient(top, #51c252, #49b249, #44a546);
   background-image: linear-gradient(top, #51c252, #49b249, #44a546);
 }
+
+body#site .flash .warn.wrapper {
+  background-color: #FFFF33;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FFFF99), color-stop(50%, #FFFF66), color-stop(100%, #FFFF33));
+  background-image: -webkit-linear-gradient(top, #FFFF99, #FFFF66, #FFFF33);
+  background-image: -moz-linear-gradient(top, #FFFF99, #FFFF66, #FFFF33);
+  background-image: -o-linear-gradient(top, #FFFF99, #FFFF66, #FFFF33);
+  background-image: -ms-linear-gradient(top, #FFFF99, #FFFF66, #FFFF33);
+  background-image: linear-gradient(top, #FFFF99, #FFFF66, #FFFF33);
+}
+
 /* line 15, ../../app/stylesheets/_flash.sass */
-body#site .flash .failure.wrapper, body#site .flash .error.wrapper {
+body#site .flash .failure.wrapper, body#site .flash .error.wrapper, body#site .flash .alert.wrapper {
   background-color: #aa3333;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc3333), color-stop(50%, #bb3333), color-stop(100%, #aa3333));
   background-image: -webkit-linear-gradient(top, #cc3333, #bb3333, #aa3333);
