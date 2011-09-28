@@ -7,8 +7,6 @@ class BackersController < ApplicationController
   
   actions :new, :create
   
-  # before_filter :initialize_paypal
-  
   # GET /projects/:id/new
   # GET /projects/:id/new.json
   def new
@@ -95,26 +93,6 @@ class BackersController < ApplicationController
 
   protected
   
-  # def initialize_paypal
-  #   @paypal = Paypal::Express::Request.new( PAYPAL_CONFIG )
-  # end
-  # 
-  # def paypal_payment( backer )
-  #   Paypal::Payment::Request.new(
-  #     :currency_code => :USD,
-  #     :amount => backer.value,
-  #     :description => t('projects.pay.paypal_description'),
-  #     :items => [{
-  #         :name => backer.project.name,
-  #         :description => t('projects.pay.paypal_description'),
-  #         :amount => backer.value#,
-  #         #:category => :Digital
-  #       }]
-  #   )
-  # end
-  
-  private
-
   def handle_callback
     
     # Locate the current project.
@@ -132,7 +110,8 @@ class BackersController < ApplicationController
   end
 
   def paypal_api_error(e)
-    redirect_to root_url, :failure => e.response.details.collect(&:long_message).join('<br />')
+    flash[:failure] = e.response.details.collect(&:long_message).join('<br />')
+    redirect_to root_url
   end
   
 end
