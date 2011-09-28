@@ -1,6 +1,6 @@
 Catarse::Application.routes.draw do
 
-  filter :locale
+  # filter :locale
   
   root :to => "projects#index"
 
