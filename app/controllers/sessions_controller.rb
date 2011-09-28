@@ -1,7 +1,7 @@
 # coding: utf-8
 class SessionsController < ApplicationController
 
-  skip_before_filter :detect_locale
+  # skip_before_filter :detect_locale
   
   def pre_auth
     session[:return_to] = params[:return_to]
