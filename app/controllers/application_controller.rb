@@ -26,6 +26,10 @@ class ApplicationController < ActionController::Base
     
   end
   
+  def default_url_options( options )
+    { :locale => I18n.locale }
+  end
+  
   def detect_locale
     return unless request.method == "GET"
     return if params[:locale]
