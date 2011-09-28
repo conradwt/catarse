@@ -2,7 +2,6 @@
 class ApplicationController < ActionController::Base
   
   extend ActiveSupport::Memoizable
-  memoize :current_site
 
   protect_from_forgery
 
@@ -96,5 +95,7 @@ class ApplicationController < ActionController::Base
   def require_admin
     require_condition( ( current_user and current_user.admin), t('require_admin') )
   end
+  
+  memoize :current_site
   
 end
