@@ -2,7 +2,7 @@ class ProjectsMailer < ActionMailer::Base
   
   include ERB::Util
   
-  default :from => "Smartn.me <contact@smartn.me>"
+  default :from => "smartn.me <contact@smartn.me>"
 
   def start_project_email(about, rewards, links, contact, user, site)
     @about = h(about).gsub("\n", "<br>").html_safe
