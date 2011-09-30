@@ -12,6 +12,7 @@ gem "compass",                    "~> 0.11.5"
 
 gem "brcep",                      "~> 3.0.4"
 
+gem "errship",                    "~> 2.1.1"
 gem "execjs",                     "~> 1.2.6"
 
 gem 'formtastic',                 '~> 1.1.0'

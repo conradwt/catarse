@@ -1,6 +1,9 @@
 # coding: utf-8
 class ApplicationController < ActionController::Base
   
+  include Errship::Rescuers
+  include Errship::ActiveRecord::Rescuers
+  
   extend ActiveSupport::Memoizable
 
   protect_from_forgery
@@ -8,11 +11,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :current_site, :replace_locale
   before_filter :set_locale
   # before_filter :detect_locale
-  
-  def not_found
-    raise ActionController::RoutingError.new('Not Found')
-  end
-  
+    
   private
 
   def set_locale
