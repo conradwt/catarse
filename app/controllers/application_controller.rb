@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   # before_filter :detect_locale
   
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+  
   private
 
   def set_locale
