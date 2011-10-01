@@ -1,0 +1,22 @@
+<% content_for :head do %>
+<%= stylesheet_link_tag 'errship', :media => 'screen, projection' %>
+<% end %>
+
+<% content_for :content_header do %>
+  <% if controller.action_name == 'render_404_error' %>
+    <h1>Page Not Found</h1>
+  <% else %>
+    <h1>Server Error<h1>
+  <% end %>
+<% end %>
+
+<div class='errship'>
+  <h1 class='error_code'><%= status_code %></h1>
+  <% if errship_scope %>
+  <h2><%= t "errship.#{status_code}.#{errship_scope}.title" %></h2>
+  <p><%= t "errship.#{status_code}.#{errship_scope}.description" %></p>
+  <% else %>
+  <h2><%= t "errship.#{status_code}.title" %></h2>
+  <p><%= t "errship.#{status_code}.description" %></p>
+  <% end %>
+</div>
