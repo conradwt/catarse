@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem 'rails',                      '3.1.1'
+gem "rails",                      "~> 3.1.1"
 
 gem "acts_as_commentable",        "~> 3.0.1"
 gem "addressable",                "~> 2.2.4"
@@ -58,9 +58,9 @@ gem 'will_paginate',              "~> 3.0.0"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'coffee-rails',             "~> 3.1.0"
-  gem 'sass-rails',               "~> 3.1.0"
-  gem 'uglifier'
+  gem 'coffee-rails',             "~> 3.1.1"
+  gem 'sass-rails',               "~> 3.1.4"
+  gem "uglifier",                 "~> 1.0.3"
   # gem 'closure-compiler'
 end
 
