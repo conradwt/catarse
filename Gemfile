@@ -7,7 +7,7 @@ gem "acts_as_commentable",        "~> 3.0.1"
 gem "addressable",                "~> 2.2.4"
 gem "auto_html",                  "~> 1.4.2"
 
-gem "capistrano",                 "~> 2.8.0"
+gem "capistrano",                 "~> 2.9.0"
 gem "compass",                    "~> 0.11.5"
 
 gem "brcep",                      "~> 3.0.4"

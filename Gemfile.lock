@@ -68,7 +68,7 @@ GEM
     builder (3.0.0)
     bullet (2.0.1)
       uniform_notifier (~> 1.0.0)
-    capistrano (2.8.0)
+    capistrano (2.9.0)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -352,7 +352,7 @@ DEPENDENCIES
   awesome_print (~> 0.4.0)
   brcep (~> 3.0.4)
   bullet (~> 2.0.1)
-  capistrano (~> 2.8.0)
+  capistrano (~> 2.9.0)
   capybara (~> 1.1.1)
   coffee-rails (~> 3.1.1)
   compass (~> 0.11.5)
