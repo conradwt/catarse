@@ -383,7 +383,7 @@ DEPENDENCIES
   passenger (~> 3.0.9)
   paypal-express (~> 0.4.0)
   pg (~> 0.11.0)
-  rails (~> 3.1.0)
+  rails (~> 3.1.1)
   rails-footnotes (~> 3.7.5.rc4)
   rails_autolink (~> 1.0.2)
   routing-filter (~> 0.2.4)
