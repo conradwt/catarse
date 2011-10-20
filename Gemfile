@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem "rails",                      "~> 3.1.1"
+gem "rails",                      "~> 3.1.1.rc1"
 
 gem "acts_as_commentable",        "~> 3.0.1"
 gem "addressable",                "~> 2.2.4"
