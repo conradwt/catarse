@@ -912,7 +912,7 @@ body#site #login a.close:hover, body#site #login a.close:focus {
 }
 /* line 50, ../../app/stylesheets/screen.sass */
 body#site #pre_header {
-  background-color: #0084b9;
+  background-color: #080a00;
   text-align: center;
   padding: 8px 0;
   margin-bottom: 8px;
@@ -926,7 +926,7 @@ body#site #pre_header {
 }
 /* line 10, ../../app/stylesheets/_pre_header.sass */
 body#site #pre_header a {
-  color: white;
+  color: #ff00cc;
   text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px;
   font-weight: bold;
   text-decoration: none;
@@ -1044,7 +1044,6 @@ body#site #menu ul li.last {
 /* line 8, ../../app/stylesheets/_menu.sass */
 body#site #menu ul li a {
   text-decoration: none;
-  font-weight: bold;
 }
 /* line 58, ../../app/stylesheets/screen.sass */
 body#site #user {
@@ -1181,17 +1180,7 @@ body#site #content_wrapper #content_header {
   color: white;
   padding: 20px;
   background-color: #009600;
-  background-color: rgba(0, 150, 0, 0.7);
-  -moz-border-radius-topleft: 6px;
-  -webkit-border-top-left-radius: 6px;
-  -o-border-top-left-radius: 6px;
-  -ms-border-top-left-radius: 6px;
-  -khtml-border-top-left-radius: 6px;
-  border-top-left-radius: 6px;
-  -moz-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
-  -o-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
+
 }
 /* line 15, ../../app/stylesheets/_content.sass */
 body#site #content_wrapper #content_header h1 {
@@ -3537,14 +3526,13 @@ body#site #footer #footer_menu ul li.last {
 /* line 11, ../../app/stylesheets/_footer.sass */
 body#site #footer #footer_menu ul li a {
   text-decoration: none;
-  font-weight: bold;
 }
 /* line 14, ../../app/stylesheets/_footer.sass */
 body#site #footer #social_menu {
   margin: 0 auto;
   width: 488px;
   padding-bottom: 40px;
-  font-size: 16px;
+  font-size: 14px;
 }
 /* line 19, ../../app/stylesheets/_footer.sass */
 body#site #footer #social_menu img {
@@ -3586,7 +3574,6 @@ body#site #footer #social_menu ul li.last {
 /* line 26, ../../app/stylesheets/_footer.sass */
 body#site #footer #social_menu ul li a {
   text-decoration: none;
-  font-weight: bold;
 }
 /* line 29, ../../app/stylesheets/_footer.sass */
 body#site #footer #colophon {
@@ -3615,8 +3602,8 @@ body#site #footer #colophon a#softa_logo {
   border: 0 none;
   overflow: hidden;
   display: block;
-  height: 50px;
-  width: 110px;
+  height: 0px;
+  width: 0px;
   -moz-transition: none;
   -webkit-transition: none;
   -o-transition: none;
