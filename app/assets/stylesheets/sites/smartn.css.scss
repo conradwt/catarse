@@ -1,10 +1,10 @@
 /* line 4, ../../../app/stylesheets/sites/catarse.sass */
 body#site a {
-  color: #498c36;
+  color: #6db008;
 }
 /* line 6, ../../../app/stylesheets/sites/catarse.sass */
 body#site a:hover {
-  color: #68a852;
+  color: #66cc00;
 }
 /* line 8, ../../../app/stylesheets/sites/catarse.sass */
 body#site #main {
@@ -12,7 +12,7 @@ body#site #main {
 }
 /* line 10, ../../../app/stylesheets/sites/catarse.sass */
 body#site #header {
-  width: 936px;
+  width: 920px;
   margin: 0 auto;
 }
 /* line 13, ../../../app/stylesheets/sites/catarse.sass */
@@ -21,13 +21,13 @@ body#site #header h1 {
 }
 /* line 15, ../../../app/stylesheets/sites/catarse.sass */
 body#site #content_header_wrapper {
-  background-color: #68a852;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #498c36), color-stop(100%, #68a852));
-  background-image: -webkit-linear-gradient(top, #498c36, #68a852);
-  background-image: -moz-linear-gradient(top, #498c36, #68a852);
-  background-image: -o-linear-gradient(top, #498c36, #68a852);
-  background-image: -ms-linear-gradient(top, #498c36, #68a852);
-  background-image: linear-gradient(top, #498c36, #68a852);
+  background-color: #000000;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6db008), color-stop(100%, #66cc00));
+  background-image: -webkit-linear-gradient(top, #6db008, #66cc00);
+  background-image: -moz-linear-gradient(top, #6db008, #66cc00);
+  background-image: -o-linear-gradient(top, #6db008, #66cc00);
+  background-image: -ms-linear-gradient(top, #6db008, #66cc00);
+  background-image: linear-gradient(top, #6db008, #66cc00);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -73,11 +73,11 @@ body#site #content_wrapper #content {
 }
 /* line 38, ../../../app/stylesheets/sites/catarse.sass */
 body#site #content_wrapper #content h1 {
-  color: #498c36;
+  color: #6db008;
 }
 /* line 40, ../../../app/stylesheets/sites/catarse.sass */
 body#site #content_wrapper #content h2 {
-  color: #498c36;
+  color: #6db008;
 }
 /* line 44, ../../../app/stylesheets/sites/catarse.sass */
 body#site #content_wrapper #content #project_back_info #rewards h1 {
@@ -89,20 +89,19 @@ body#site #content_wrapper #content #project_back_info #rewards ul li h1 {
 }
 /* line 48, ../../../app/stylesheets/sites/catarse.sass */
 body#site #footer {
-  text-shadow: transparent, 0, 0, 0;
+  text-shadow: none;
   margin-top: 40px;
   padding-top: 40px;
-  background-color: #333333;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #cccccc;
+  background-color: #080a00;
+  color: #ccff33;
 }
 /* line 55, ../../../app/stylesheets/sites/catarse.sass */
 body#site #footer a {
-  color: #cccccc;
+  color: #ccff33;
 }
 /* line 57, ../../../app/stylesheets/sites/catarse.sass */
 body#site #footer a:hover {
-  color: #eeeeee;
+  color: #ccff33;
 }
 /* line 60, ../../../app/stylesheets/sites/catarse.sass */
 body#site #project_header h1 {
@@ -166,56 +165,56 @@ body#site .project_box {
 }
 /* line 93, ../../../app/stylesheets/sites/catarse.sass */
 body#site .progress_bar .progress {
-  background-color: #68a852;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #498c36), color-stop(100%, #68a852));
-  background-image: -webkit-linear-gradient(top, #498c36, #68a852);
-  background-image: -moz-linear-gradient(top, #498c36, #68a852);
-  background-image: -o-linear-gradient(top, #498c36, #68a852);
-  background-image: -ms-linear-gradient(top, #498c36, #68a852);
-  background-image: linear-gradient(top, #498c36, #68a852);
+  background-color: #66cc00;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6db008), color-stop(100%, #66cc00));
+  background-image: -webkit-linear-gradient(top, #6db008, #66cc00);
+  background-image: -moz-linear-gradient(top, #6db008, #66cc00);
+  background-image: -o-linear-gradient(top, #6db008, #66cc00);
+  background-image: -ms-linear-gradient(top, #6db008, #66cc00);
+  background-image: linear-gradient(top, #6db008, #66cc00);
 }
 /* line 101, ../../../app/stylesheets/sites/catarse.sass */
 body#site #project_description #project_menu ul li a:hover {
-  background-color: #68a852;
+  background-color: #66cc00;
 }
 /* line 104, ../../../app/stylesheets/sites/catarse.sass */
 body#site #project_description #project_menu ul li.selected a {
-  background-color: #498c36;
+  background-color: #6db008;
 }
 /* line 110, ../../../app/stylesheets/sites/catarse.sass */
 body#site #explore_projects #explore_menu ul li a:hover {
-  background-color: #68a852;
+  background-color: #66cc00;
 }
 /* line 112, ../../../app/stylesheets/sites/catarse.sass */
 body#site #explore_projects #explore_menu ul li a.selected {
-  background-color: #498c36;
+  background-color: #6db008;
 }
 /* line 117, ../../../app/stylesheets/sites/catarse.sass */
 body#site #project_back_info #back_project form input[type=submit] {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #68a852), color-stop(100%, #498c36));
-  background-image: -webkit-linear-gradient(top, #68a852, #498c36);
-  background-image: -moz-linear-gradient(top, #68a852, #498c36);
-  background-image: -o-linear-gradient(top, #68a852, #498c36);
-  background-image: -ms-linear-gradient(top, #68a852, #498c36);
-  background-image: linear-gradient(top, #68a852, #498c36);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66cc00), color-stop(100%, #6db008));
+  background-image: -webkit-linear-gradient(top, #66cc00, #6db008);
+  background-image: -moz-linear-gradient(top, #66cc00, #6db008);
+  background-image: -o-linear-gradient(top, #66cc00, #6db008);
+  background-image: -ms-linear-gradient(top, #66cc00, #6db008);
+  background-image: linear-gradient(top, #66cc00, #6db008);
 }
 /* line 119, ../../../app/stylesheets/sites/catarse.sass */
 body#site #project_back_info #back_project form input[type=submit]:hover {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #498c36), color-stop(100%, #68a852));
-  background-image: -webkit-linear-gradient(top, #498c36, #68a852);
-  background-image: -moz-linear-gradient(top, #498c36, #68a852);
-  background-image: -o-linear-gradient(top, #498c36, #68a852);
-  background-image: -ms-linear-gradient(top, #498c36, #68a852);
-  background-image: linear-gradient(top, #498c36, #68a852);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6db008), color-stop(100%, #66cc00));
+  background-image: -webkit-linear-gradient(top, #6db008, #66cc00);
+  background-image: -moz-linear-gradient(top, #6db008, #66cc00);
+  background-image: -o-linear-gradient(top, #6db008, #66cc00);
+  background-image: -ms-linear-gradient(top, #6db008, #66cc00);
+  background-image: linear-gradient(top, #6db008, #66cc00);
 }
 /* line 121, ../../../app/stylesheets/sites/catarse.sass */
 body#site #project_back_info #back_project form input[type=submit]:hover {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #498c36), color-stop(100%, #68a852));
-  background-image: -webkit-linear-gradient(top, #498c36, #68a852);
-  background-image: -moz-linear-gradient(top, #498c36, #68a852);
-  background-image: -o-linear-gradient(top, #498c36, #68a852);
-  background-image: -ms-linear-gradient(top, #498c36, #68a852);
-  background-image: linear-gradient(top, #498c36, #68a852);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6db008), color-stop(100%, #66cc00));
+  background-image: -webkit-linear-gradient(top, #6db008, #66cc00);
+  background-image: -moz-linear-gradient(top, #6db008, #66cc00);
+  background-image: -o-linear-gradient(top, #6db008, #66cc00);
+  background-image: -ms-linear-gradient(top, #6db008, #66cc00);
+  background-image: linear-gradient(top, #6db008, #66cc00);
 }
 /* line 123, ../../../app/stylesheets/sites/catarse.sass */
 body#site #project_back_info #back_project form input[type=submit]:disabled {
