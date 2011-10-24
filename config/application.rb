@@ -66,7 +66,8 @@ module Catarse
     
     # Forcing your application to not access the DB
     # or load models when precompiling your assets.
-    config.assets.initialize_on_precompile = false
+    # Note:  This is required to be false on Heroku.
+    # config.assets.initialize_on_precompile = false
     
     # You can add additional (fully qualified) paths to the pipeline.
     # config.assets.paths << File.join(Rails.root, 'app', 'assets', 'fonts')
