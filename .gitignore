@@ -20,3 +20,4 @@ config/initializers/setup_mail.rb
 .sass-cache/
 public/assets/
 config/paypal.yml
+.idea/
