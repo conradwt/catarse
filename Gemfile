@@ -39,9 +39,9 @@ gem "paypal-express",             "~> 0.4.0",     :require => 'paypal'
 gem "pg",                         "~> 0.11.0"
 
 gem "rails_autolink",             "~> 1.0.2"
+gem "rake",                       "0.8.7"
 gem "RedCloth",                   "~> 4.2.8"
 gem "routing-filter",             "~> 0.2.4"
-
 
 gem "slim",                       "~> 1.0.2"
 gem "spectator-validates_email",  "~> 0.0.8",     :require => 'validates_email'
