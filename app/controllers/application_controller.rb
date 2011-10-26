@@ -1,6 +1,9 @@
 # coding: utf-8
 class ApplicationController < ActionController::Base
   
+  include Errship::Rescuers
+  include Errship::ActiveRecord::Rescuers
+  
   extend ActiveSupport::Memoizable
 
   protect_from_forgery
