@@ -50,6 +50,9 @@ class SessionsController < ApplicationController
     end
     flash[:success] = t('sessions.post_auth.success', :name => user.display_name)
     redirect_back_or_default :root
+    
+  rescue ActionController::RoutingError
+    redirect_to :root
   end
   
   def destroy
