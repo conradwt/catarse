@@ -83,7 +83,7 @@ group :test, :development do
   gem "launchy"
   gem 'mocha'
   gem "rails-footnotes",          "~> 3.7.5.rc4"
-  # gem 'rcov'
+  gem 'rcov'
   gem 'rspec-rails',              "~> 2.6.1"
   gem "ruby-growl",               "~> 3.0"
   gem "steak",                    "~> 2.0.0"

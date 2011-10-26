@@ -1,26 +1,156 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>We're sorry, but something went wrong (500)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
-</head>
-
-<body>
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <h1>We're sorry, but something went wrong.</h1>
-    <p>We've been notified about this issue and we'll take a look at it shortly.</p>
-  </div>
-</body>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='index, follow' name='robots'>
+    <meta content='Softa' name='author'>
+    
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="+CVAl3C0CJ6mVwP1pn30OQWC3qhv1h/En9PsJgiZF3E=" name="csrf-token" />
+    <title>smartn.me</title>
+    <link href="/assets/application.css?body=1" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/assets/sites/smartn/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery-ui.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery-ui/jquery.ui.datepicker-en-GB.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery/jquery.numeric.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery/jquery.maxlength.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery/jquery.timers-1.2.js?body=1" type="text/javascript"></script>
+    <script src="/assets/timedKeyup.js?body=1" type="text/javascript"></script>
+    <script src="/assets/underscore/underscore-min.js?body=1" type="text/javascript"></script>
+    <script src="/assets/backbone/backbone-min.js?body=1" type="text/javascript"></script>
+    <script src="/assets/mustache/mustache.js?body=1" type="text/javascript"></script>
+    <script src="/assets/waypoints/waypoints.min.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery/jquery.jeditable.mini.js?body=1" type="text/javascript"></script>
+    <script src="/assets/on_the_spot.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+    <script src="/assets/application.js?body=1" type="text/javascript"></script>
+    <script>
+      //<![CDATA[
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-25709696-1']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      //]]>
+    </script>
+    <!-- = render "/sites/#{current_site.path}/uservoice" -->
+  </head>
+  <body id='site'>
+    <div class='flash' style='display:none'>
+      <div class='error wrapper'>
+        <div class='error'>An unknown error has occurred, or you have reached this page by mistake.</div>
+      </div>
+    </div>
+    <script src="/assets/flash.js?body=1" type="text/javascript"></script>
+    <div id="locales"><ul><li><a href="/en/error"><img alt="En" src="/assets/locales/en.png" /></a></li><li><a href="/pt/error"><img alt="Pt" src="/assets/locales/pt.png" /></a></li></ul></div>
+    <div id="pre_header">Want to know how to back a project? <a href="/en/guidelines" target="_blank">Click here</a> for a step-by-step guide we published on our blog.</div>
+    <div id='main'>
+      <div id='header_wrapper'>
+        <div id='header'>
+          <h1>
+            <a href="/en"><img alt="Logo" src="/assets/sites/smartn/logo.png" title="smartn.me" />
+            </a>
+          </h1>
+          
+          <div id='menu'>
+            <ul>
+              <li><a href="/en/explore">Explore the projects</a></li>
+              <li><a href="/en/guidelines" id="new_project_link">Submit your project</a></li>
+              <li><a href="#" id="signup_link">Signup</a></li>
+              <li><a href="#" id="login_link">Login</a></li>
+            </ul>
+          </div>
+          <div class='clear'></div>
+        </div>
+      </div>
+      <div id='content_wrapper'>
+        <div id='content_header_wrapper'>
+          <div id='content_header'>
+                <h1>Server Error<h1>
+          </div>
+        </div>
+        <div id='content'>
+          
+          
+          <div class='errship'>
+            <h1 class='error_code'>500</h1>
+            <h2>An error has occurred.</h2>
+            <p>This has been reported to our development team. Thank you!</p>
+          </div>
+        </div>
+      </div>
+      <div id='footer'>
+        <div id='footer_menu'>
+          <ul>
+            <li><a href="/en/guidelines">How does it work?</a></li>
+            <li><a href="/en/faq">FAQ/Help</a></li>
+            <li><a href="/en/terms">Terms of use</a></li>
+            <li><a href="/en/privacy">Privacy policy</a></li>
+            <li><a href="/en/about">About Us</a></li>
+            <li><a href="mailto:contact@smartn.me">Contact</a></li>
+          </ul>
+        </div>
+        <div id='social_menu'>
+          <ul>
+            <li>
+              <a href="http://twitter.com/smartnme" target="_blank"><img alt="Twitter_32" src="/assets/social/twitter_32.png" title="Twitter" />
+              Twitter feed
+              </a>
+            </li>
+            <li>
+              <a href="http://www.facebook.com/pages/SmartNme/161820603885728" target="_blank"><img alt="Facebook_32" src="/assets/social/facebook_32.png" title="Facebook" />
+              Facebook page
+              </a>
+            </li>
+            <li>
+              <a href="http://blog.smartn.me" target="_blank"><img alt="Rss_32" src="/assets/social/rss_32.png" title="Blog" />
+              Read the blog
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div id='colophon'>
+          <a href="http://softa.com.br" id="softa_logo" target="_blank"></a>
+          <p id='copyright'>
+            Copyleft
+            2011
+          </p>
+          <div id='grupo_comum'>
+            <a href="http://comum.cc" target="_blank"><img alt="Logo_comum" src="/assets/sites/catarse/logo_comum.png" title="Comum Group" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='overlay hide' id='login_overlay'>
+      <div class='hide' id='login'>
+        <a class='close' href='#'>X</a>
+        <h1>Enter with your favorite social network</h1>
+        <form accept-charset="UTF-8" action="/en/pre_auth" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="+CVAl3C0CJ6mVwP1pn30OQWC3qhv1h/En9PsJgiZF3E=" /></div>
+            <input id="provider" name="provider" type="hidden" />
+            <input id="return_to" name="return_to" type="hidden" />
+            <a href="google" class="provider"><img alt="Google_128" src="/assets/auth/google_128.png" title="Google" /></a>
+            <a href="yahoo" class="provider"><img alt="Yahoo_128" src="/assets/auth/yahoo_128.png" title="Yahoo" /></a>
+            <a href="facebook" class="provider"><img alt="Facebook_128" src="/assets/auth/facebook_128.png" title="Facebook" /></a>
+            <a href="twitter" class="provider"><img alt="Twitter_128" src="/assets/auth/twitter_128.png" title="Twitter" /></a>
+            <fieldset>
+              <input checked="checked" id="remember_me" name="remember_me" type="checkbox" value="1" />
+              <label class="inline" for="remember_me">Remember me and keep me connected.</label>
+            </fieldset>
+        </form>
+        <p>We will <strong>never</strong> know your password or any other secret data from the chosen social network. We will only have access to your basic information, like name, photo and email.</p>
+        <p><strong>Remember with which social network you signed up</strong>. You will always access your account with it.</p>
+      </div>
+    </div>
+    <script src="/assets/login.js?body=1" type="text/javascript"></script>
+    <!-- = debug params if (current_user && current_user.email == 'conradwt@gmail.com') || Rails.env.development? -->
+  </body>
 </html>
