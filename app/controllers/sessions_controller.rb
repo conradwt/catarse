@@ -49,9 +49,6 @@ class SessionsController < ApplicationController
       cookies[:remember_me_hash] = { :value => user.remember_me_hash, :expires => 30.days.from_now }
     end
     flash[:success] = t('sessions.post_auth.success', :name => user.display_name)
-    redirect_back_or_default :root
-    
-  rescue ActionController::RoutingError
     redirect_to :root
   end
   
