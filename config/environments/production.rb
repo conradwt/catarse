@@ -90,8 +90,9 @@ Catarse::Application.configure do
                                   views/project/about.js
                                   views/project/backer.js
                                   views/project/comment.js
+                                  views/project/content.js
                                   views/project/model.js
-                                  views/project/paginated_comment.js
+                                  views/project/paginated_content.js
                                   views/project/project_backers.js
                                   views/project/project_comment.js
                                   views/project/project_updates.js
