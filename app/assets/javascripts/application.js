@@ -5,16 +5,17 @@
 // the compiled file.
 //
 //= require jquery
+//= require jquery_ujs
 //= require jquery-ui
 //= require jquery-ui/jquery.ui.datepicker-en-GB
+//= require jquery/jquery.jeditable.mini
 //= require jquery/jquery.numeric
 //= require jquery/jquery.maxlength
 //= require jquery/jquery.timers-1.2
 //= require timedKeyup
-//= require underscore/underscore-min
-//= require backbone/backbone-min
 //= require mustache/mustache
 //= require waypoints/waypoints.min
-//= require jquery/jquery.jeditable.mini
 //= require on_the_spot
-//= require jquery_ujs
+//= require underscore
+//= require backbone_rails_sync
+//= require backbone_datalink

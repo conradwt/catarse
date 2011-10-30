@@ -60,20 +60,30 @@ Catarse::Application.configure do
                                   back_notices.js
                                   back_project.js
                                   banda.js
-                                  controllers/project.js
+                                  backbone/controllers/project.js
+                                  backbone/models/backer.js
+                                  backbone/models/comment.js
+                                  backbone/models/paginated_collection.js
+                                  backbone/models/project.js
+                                  backbone/models/project_collection.js
+                                  backbone/models/update.js
+                                  backbone/models/user.js
+                                  backbone/views/project/about.js
+                                  backbone/views/project/backer.js
+                                  backbone/views/project/comment.js
+                                  backbone/views/project/content.js
+                                  backbone/views/project/model.js
+                                  backbone/views/project/paginated_content.js
+                                  backbone/views/project/project_backers.js
+                                  backbone/views/project/project_comment.js
+                                  backbone/views/project/project_updates.js
+                                  backbone/views/project/update.js
                                   credit.js
                                   embed.js
                                   explore_projects.js
                                   flash.js
                                   guidelines.js
                                   login.js
-                                  models/backer.js
-                                  models/comment.js
-                                  models/paginated_collection.js
-                                  models/project.js
-                                  models/project_collection.js
-                                  models/update.js
-                                  models/user.js
                                   notification.js
                                   pending_backers.js
                                   pending_projects.js
@@ -87,16 +97,6 @@ Catarse::Application.configure do
                                   slider.js
                                   start_project.js
                                   user.js
-                                  views/project/about.js
-                                  views/project/backer.js
-                                  views/project/comment.js
-                                  views/project/content.js
-                                  views/project/model.js
-                                  views/project/paginated_content.js
-                                  views/project/project_backers.js
-                                  views/project/project_comment.js
-                                  views/project/project_updates.js
-                                  views/project/update.js
                                  )
 
   # Disable delivery errors, bad email addresses will be ignored

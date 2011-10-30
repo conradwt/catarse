@@ -39,6 +39,7 @@ gem "paypal-express",             "~> 0.4.0",     :require => 'paypal'
 gem "pg",                         "~> 0.11.0"
 
 gem "rails_autolink",             "~> 1.0.2"
+gem "rails-backbone",             "~> 0.5.4"
 gem "rake",                       "0.8.7"
 gem "RedCloth",                   "~> 4.2.8"
 gem "routing-filter",             "~> 0.2.4"
