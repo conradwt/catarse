@@ -74,7 +74,7 @@ Catarse::Application.configure do
                                   backbone/views/project/model.js
                                   backbone/views/project/paginated_content.js
                                   backbone/views/project/project_backers.js
-                                  backbone/views/project/project_comment.js
+                                  backbone/views/project/project_comments.js
                                   backbone/views/project/project_updates.js
                                   backbone/views/project/update.js
                                   banda.js
