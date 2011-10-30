@@ -23,8 +23,8 @@ Catarse::Application.configure do
   # config.assets.js_compressor = :yui
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  # config.assets.compile = false # default
-  config.assets.compile = true
+  config.assets.compile = false # default
+  # config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -56,7 +56,47 @@ Catarse::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( slider.js login.js )
+  config.assets.precompile += %w( 
+                                  back_notices.js
+                                  back_project.js
+                                  banda.js
+                                  controllers/project.js
+                                  credit.js
+                                  embed.js
+                                  explore_projects.js
+                                  flash.js
+                                  guidelines.js
+                                  login.js
+                                  models/backer.js
+                                  models/comment.js
+                                  models/paginated_collection.js
+                                  models/project.js
+                                  models/project_collection.js
+                                  models/update.js
+                                  models/user.js
+                                  notification.js
+                                  pending_backers.js
+                                  pending_projects.js
+                                  press.js
+                                  profile.js
+                                  project_embed.js
+                                  project_form.js
+                                  promo_top.js
+                                  review.js
+                                  show_project.js
+                                  slider.js
+                                  start_project.js
+                                  user.js
+                                  views/project/about.js
+                                  views/project/backer.js
+                                  views/project/comment.js
+                                  views/project/model.js
+                                  views/project/paginated_comment.js
+                                  views/project/project_backers.js
+                                  views/project/project_comment.js
+                                  views/project/project_updates.js
+                                  views/project/update.js
+                                 )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
