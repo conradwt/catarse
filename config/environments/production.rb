@@ -59,7 +59,6 @@ Catarse::Application.configure do
   config.assets.precompile += %w( 
                                   back_notices.js
                                   back_project.js
-                                  banda.js
                                   backbone/controllers/project.js
                                   backbone/models/backer.js
                                   backbone/models/comment.js
@@ -78,6 +77,7 @@ Catarse::Application.configure do
                                   backbone/views/project/project_comment.js
                                   backbone/views/project/project_updates.js
                                   backbone/views/project/update.js
+                                  banda.js
                                   credit.js
                                   embed.js
                                   explore_projects.js
