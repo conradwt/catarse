@@ -62,7 +62,6 @@ class ApplicationController < ActionController::Base
   end
   
   def current_site
-    # Let's set the default theme to smartn.
     Site.find_by_path( "smartn" )
   end
   
