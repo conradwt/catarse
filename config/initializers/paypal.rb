@@ -8,7 +8,7 @@ PAYPAL_CONFIG = if ENV['paypal_username']
     sandbox:   ENV['paypal_sandbox']
   }
 else
-  YAML.load_file("#{Rails.root}/config/paypal.yml")[Rails.env].symbolize_keys
+  YAML.load_file("#{Rails.root}/config/paypal.yml")['development'].symbolize_keys
 end
 
 Paypal.sandbox! if PAYPAL_CONFIG[:sandbox]
