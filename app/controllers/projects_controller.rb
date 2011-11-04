@@ -327,6 +327,7 @@ class ProjectsController < ApplicationController
   end
   
   def bitly
+    Bitly.use_api_version_3
     bitly = Bitly.new( BITLY_CONFIG[:login], BITLY_CONFIG[:api_key] )
     response = bitly.shorten( CGI.escape( project_url( @project ) ) )
     response.short_url || ''
