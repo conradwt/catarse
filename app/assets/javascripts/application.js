@@ -17,5 +17,6 @@
 //= require waypoints/waypoints.min
 //= require on_the_spot
 //= require underscore
+//= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
