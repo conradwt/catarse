@@ -7,11 +7,12 @@ gem "acts_as_commentable",        "~> 3.0.1"
 gem "addressable",                "~> 2.2.4"
 gem "auto_html",                  "~> 1.4.2"
 
+gem "bitly",                      "~> 0.6.1"
+gem "brcep",                      "~> 3.0.4"
+
 gem "capistrano",                 "~> 2.9.0"
 gem "capistrano_colors",          "~> 0.5.5"
 gem "compass",                    "~> 0.11.5"
-
-gem "brcep",                      "~> 3.0.4"
 
 # gem "errship",                    "~> 2.1.1"
 gem "execjs",                     "~> 1.2.6"

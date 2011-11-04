@@ -21,3 +21,4 @@ config/initializers/setup_mail.rb
 public/assets/
 config/paypal.yml
 .idea/
+config/initializers/bitly.rb
