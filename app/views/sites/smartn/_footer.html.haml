@@ -23,8 +23,8 @@
 #colophon
   = link_to "", "http://softa.com.br", :target => :_blank, :id => "softa_logo"
   %p#copyright
-    Copyleft
+    Copyright
     = Date.today.year
   #grupo_comum
-    = link_to "http://comum.cc", :target => :_blank do
-      = image_tag('sites/catarse/logo_comum.png', :title => t('.comum'))
+    = link_to current_site.blog, :target => :_blank do
+      = image_tag('sites/smartn/logo_blog.png', :title => t('.comum'))
