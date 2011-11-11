@@ -990,6 +990,8 @@ body#site #header h1 {
   font-size: 48px;
   padding: 8px 0 12px 0;
   float: left;
+  position: absolute; 
+  bottom: 0;
 }
 /* line 7, ../../app/stylesheets/_header.sass */
 body#site #header h1 a {

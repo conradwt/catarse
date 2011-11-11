@@ -1,42 +1,42 @@
 en:
   sites:
     smartn:
-      title: The first crowdfunding platform from the United States
+      title: smartn.me | crowdfund your education
       back_header:
         title: Oohh yeah!
-        subtitle: You're few steps away from making a difference and becoming part of this project.
+        subtitle: You're few steps away from making a difference and becoming part of this campaign.
       logo:
         title: smartn.me
       pre_header:
-        content_html: Want to know how to back a project? %{link} for a step-by-step guide we published on our blog.
+        content_html: Want to learn more? %{link} for answers to our frequently asked questions.
         help_link: Click here
       explore_header: 
-        title: Discover amazing projects
-        subtitle: Explore the projects, find the ones that get into your heart, and make them happen!
+        title: Explore Active Campaigns
+        subtitle: Get acquainted with these students from all walks of life.<br/>They are actively pursuing alternative ways to fund their eductation. 
       index_header:
-        title: Make the projects you believe in happen
-        subtitle_html: Fund projects collaboratively and become part of something bigger.<br/>Promote a collective catharsis! You're the missing part in this story.
+        title: Crowdfund Your Education!
+        subtitle_html: The first crowdfunding platform in the U.S. to focus on eductation.<br/>Let's work together to transform the funding process!
       index_meta_tags:
-        description: Make the projects you believe in happen! Fund projects in a collaborative manner and become part of something bigger. Join everyone who wants to see a project happening and make it come true. You're the missing part in this story.
+        description: The first crowdfunding platform in the U.S. to focus on eductation. Let's work together to transform the funding process!
       footer:
-        guidelines: How does it work?
-        faq: FAQ/Help
-        terms: Terms of use
-        privacy: Privacy policy
+        guidelines: How it Works
+        faq: FAQ
+        terms: Terms of Use
+        privacy: Privacy Policy
         about: About Us
-        email: Contact
-        twitter: Twitter feed
-        facebook: Facebook page
-        blog: Read the blog
-        comum: Comum Group
+        email: Contact US
+        twitter: Twitter Feed
+        facebook: Facebook Page
+        blog: Blog
+        comum: Official Blog
       notification_email_footer:
         salutation: With love,
         signature: smartn.me Team
       notification_email_header:
         alt: You must enable images to correctly see this message.
       project_warning:
-        content_html: Want to make sure your project is selected? Don't forget to read %{link}.
-        help_link: our guide
+        content_html: Do you have questions about submiting a campaign? Check out our %{link}.
+        help_link: FAQ
       promo_video:
         text_html: <p>A Banda Mais Bonita da Cidade has always been a collective band. Thus, its album is going to be produced with everybody's collaboration.</p><p>With your support, you're going to receive rewards, follow the process of the album's production and help choosing the songs.</p>
         submit: Click here and see how you can be part of this album
@@ -46,15 +46,15 @@ en:
         title: Check out what they are saying about smartn.me in the press
       projects:
         home_page_projects:
-          title: Our cathartic selection!
-          subtitle: Meet the projects that caused us a catharsis :) every day a new selection.
+          title: Our top students!
+          subtitle: Meet the people behind these impressive campaigns.
         expiring:
           title: Final countdown
-          subtitle: Uh! Time's almost up for these ones...back'em while you can!
+          subtitle: Time's running out for these campaigns. Support them while you can!
         recent:
-          title: Fresh and new
-          subtitle: Projects that just arrived on smartn.me. Smell as if they just came out of the oven...
+          title: New campaigns
+          subtitle: These students just signed-up. Show them a warm welcome!
         successful:
-          title: Successful projects
-          subtitle: Meet our newest prides :) tomorrow your project might be here!
+          title: Successful campaigns
+          subtitle: With your support, these students have successfully funded their education!
 
