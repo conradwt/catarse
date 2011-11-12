@@ -3,7 +3,7 @@
   = render :partial => 'layouts/head'
   %body#site
     = render :partial => 'layouts/flash', :locals => { :flash => flash } unless flash.empty?
-    = render :partial => 'layouts/locales'
+    / = render :partial => 'layouts/locales'
     = render :partial => 'layouts/pre_header'
     #main
       #header_wrapper
