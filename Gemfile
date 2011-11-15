@@ -85,7 +85,7 @@ group :test, :development do
   gem "launchy"
   gem 'mocha'
   gem "rails-footnotes",          "~> 3.7.5.rc4"
-  gem "reek"
+  gem "reek",                     "~> 1.2.8"
   gem 'rspec-rails',              "~> 2.6.1"
   gem "ruby-growl",               "~> 3.0"
   gem "simplecov",                "~> 0.5.4", :require => false

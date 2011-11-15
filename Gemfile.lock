@@ -404,7 +404,7 @@ DEPENDENCIES
   rails-footnotes (~> 3.7.5.rc4)
   rails_autolink (~> 1.0.2)
   rake (= 0.8.7)
-  reek
+  reek (~> 1.2.8)
   routing-filter (~> 0.2.4)
   rspec-rails (~> 2.6.1)
   ruby-growl (~> 3.0)
