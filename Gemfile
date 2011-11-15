@@ -48,7 +48,7 @@ gem "routing-filter",             "~> 0.2.4"
 gem "slim",                       "~> 1.0.2"
 gem "spectator-validates_email",  "~> 0.0.8",     :require => 'validates_email'
 
-gem "therubyracer",               "~> 0.9.4"
+gem "therubyracer",               "= 0.9.4",      :require => 'v8'
 
 gem "unicode",                    "~> 0.4.0"
 
@@ -85,6 +85,7 @@ group :test, :development do
   gem "launchy"
   gem 'mocha'
   gem "rails-footnotes",          "~> 3.7.5.rc4"
+  gem "reek"
   gem 'rspec-rails',              "~> 2.6.1"
   gem "ruby-growl",               "~> 3.0"
   gem "simplecov",                "~> 0.5.4", :require => false
