@@ -85,9 +85,9 @@ group :test, :development do
   gem "launchy"
   gem 'mocha'
   gem "rails-footnotes",          "~> 3.7.5.rc4"
-  gem "rcov",                     "~> 0.9.11"
   gem 'rspec-rails',              "~> 2.6.1"
   gem "ruby-growl",               "~> 3.0"
+  gem "simplecov",                "~> 0.5.4", :require => false
   gem "steak",                    "~> 2.0.0"
   gem "wirble",                   "~> 0.1.3"
 end
