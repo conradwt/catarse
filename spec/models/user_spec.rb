@@ -5,22 +5,26 @@ describe User do
     u = Factory(:user)
     u.should be_valid
   end
+
   it "User.primary should return all primary users" do
     u = Factory(:user)
     secondary = Factory(:user, :primary_user_id => u.id)
     User.primary.all.should == [u]
   end
+
   it "primary should return the primary user for this instance" do
     u = Factory(:user)
     secondary = Factory(:user, :primary_user_id => u.id)
     secondary.primary.should == u
   end
+
   it "secondary_users should return the secondary users for this instance" do
     u = Factory(:user)
     secondary = Factory(:user, :primary_user_id => u.id)
     another_user = Factory(:user, :primary_user_id => u.id)
     Set.new(u.secondary_users).should == Set.new([secondary, another_user])
   end
+
   it "even if we already have a user with the same email it should not be automatically associated with the first user" do
     u = Factory(:user)
     secondary = Factory(:user, :email => u.email)
@@ -28,14 +32,17 @@ describe User do
     another_user = Factory(:user, :email => u.email)
     another_user.primary_user_id.should == nil
   end
+
   it "should have a provider" do
     u = Factory.build(:user, :provider => nil)
     u.should_not be_valid
   end
+
   it "should have an uid" do
     u = Factory.build(:user, :uid => nil)
     u.should_not be_valid
   end
+
   it "should not have duplicate provider and uid" do
     u = Factory.build(:user, :provider => "twitter", :uid => "123456")
     u.should be_valid
@@ -43,6 +50,7 @@ describe User do
     u = Factory.build(:user, :provider => "twitter", :uid => "123456")
     u.should_not be_valid
   end
+
   it "should allow empty email" do
     u = Factory.build(:user)
     u.email = ""
@@ -50,6 +58,7 @@ describe User do
     u.email = nil
     u.should be_valid
   end
+
   it "should check email format" do
     u = Factory.build(:user)
     u.email = "foo"
@@ -59,6 +68,7 @@ describe User do
     u.email = "foo@bar.com"
     u.should be_valid
   end
+
   it "should not be valid with a bio longer than 140 characters" do
     u = Factory.build(:user)
     u.bio = "a".center(139)
@@ -68,6 +78,7 @@ describe User do
     u.bio = "a".center(141)
     u.should_not be_valid
   end
+
   it "should create and associate user passed as parameter if passed" do
     primary = Factory(:user)
     auth = {
@@ -85,6 +96,7 @@ describe User do
     u.should == primary
     User.count.should == 2
   end
+
   it "should have a find_with_omniauth who finds always the primary" do
     primary = Factory(:user)
     secondary = Factory(:user, :primary_user_id => primary.id)
@@ -93,6 +105,7 @@ describe User do
     # If user does not exist just returns nil
     User.find_with_omni_auth(secondary.provider, 'user that does not exist').should == nil
   end
+
   it "should create a new user receiving a omniauth hash" do
     auth = {
       'provider' => "twitter",
@@ -113,6 +126,7 @@ describe User do
     u.bio.should == auth['user_info']['description'][0..139]
     u.image_url.should == auth['user_info']['image']
   end
+
   it "should have a display_name that shows the name, nickname or 'Sem nome'" do
     u = Factory(:user, :name => "Name")
     u.display_name.should == "Name"
@@ -121,20 +135,24 @@ describe User do
     u = Factory(:user, :name => nil, :nickname => nil)
     u.display_name.should == "Sem nome"
   end
+
   it "should have a display_image that shows the user's image or user.png when email is null" do
     u = Factory(:user, :image_url => "image.png", :email => nil)
     u.display_image.should == "image.png"
     u = Factory(:user, :image_url => nil, :email => nil)
     u.display_image.should == "/images/user.png"
   end
+
   it "should insert a gravatar in user's image if there is one available" do
     u = Factory(:user, :image_url => nil, :email => 'diogob@gmail.com')
     u.display_image.should == "http://gravatar.com/avatar/5e2a237dafbc45f79428fdda9c5024b1.jpg?default=http://catarse.me/images/user.png"
   end
+
   it "should have a remember_me_hash with the MD5 of the provider + ## + uid" do
     u = Factory(:user, :provider => "foo", :uid => "bar")
     u.remember_me_hash.should == "27fc6690fafccbb0fc0b8f84c6749644"
   end
+
   it "should merge into another account, taking the credits, backs, projects, comments and notifications with it" do
     
     old_user = Factory(:user, :credits => 50)
@@ -177,5 +195,6 @@ describe User do
     new_user.notifications.order(:created_at).should == [old_user_notification, new_user_notification]
     
   end
+
 end
 
