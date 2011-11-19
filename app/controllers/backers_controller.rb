@@ -13,7 +13,6 @@ class BackersController < ApplicationController
     
     new! do
       
-      # Locate the current project.
       @project = Project.find( params[:project_id] )
        
       unless @project.can_back?(current_site)
@@ -21,7 +20,6 @@ class BackersController < ApplicationController
         return redirect_to :root
       end
 
-      # Instantiate a backer for this project.
       @backer = @project.backers.new( :user => current_user, :site => current_site )
       
       @title = t('projects.back.title', :name => @project.name)
