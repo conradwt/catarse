@@ -7,8 +7,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :current_site, :replace_locale
   before_filter :set_locale
-  # before_filter :detect_locale
-    
+
   private
 
   def set_locale
