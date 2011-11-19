@@ -7,8 +7,6 @@ class BackersController < ApplicationController
   
   actions :new, :create
   
-  # GET /projects/:id/new
-  # GET /projects/:id/new.json
   def new
     
     return unless require_login
@@ -45,10 +43,8 @@ class BackersController < ApplicationController
 
   def create
     
-    # Locate the current project.
     project = Project.find( params[:project_id] )
     
-    # Instantiate a backer for this project.
     backer = project.backers.build( params[:backer] )
     backer.user = current_user
     backer.site = current_site
@@ -67,7 +63,6 @@ class BackersController < ApplicationController
 
   def success
     
-    # Locate the current project.
     project = Project.find( params[:project_id] )
     
     handle_callback do | backer |
@@ -80,7 +75,6 @@ class BackersController < ApplicationController
   
   def cancel
     
-    # Locate the current project.
     project = Project.find( params[:project_id] )
   
     handle_callback do | backer |
@@ -95,10 +89,8 @@ class BackersController < ApplicationController
   
   def handle_callback
     
-    # Locate the current project.
     project = Project.find( params[:project_id] )
     
-    # Find the backer by toeken.
     backer = project.backers.find_by_token! params[:token]
     
     @redirect_uri = yield backer
