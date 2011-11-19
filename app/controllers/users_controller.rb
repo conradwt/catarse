@@ -10,27 +10,38 @@ class UsersController < ApplicationController
   before_filter :can_update_on_the_spot?, :only => :update_attribute_on_the_spot
   
   def show
+
     show!{
       return redirect_to(user_path(@user.primary)) if @user.primary
+
       @title = "#{@user.display_name}"
+
       @backs = @user.backs.project_visible(current_site).confirmed.order(:confirmed_at)
       @backs = @backs.not_anonymous unless @user == current_user or (current_user and current_user.admin)
       @backs = @backs.all
+
       @projects = current_site.present_projects.where(:user_id => @user.id).order("updated_at DESC")
       @projects = @projects.visible unless @user == current_user
       @projects = @projects.all
     }
+
   end
   
   private
   
   def can_update_on_the_spot?
+
     user_fields = ["email", "name", "bio", "newsletter", "project_updates"]
     notification_fields = ["dismissed"]
+
     def render_error; render :text => t('require_permission'), :status => 422; end
+
     return render_error unless current_user
+
     klass, field, id = params[:id].split('__')
+
     return render_error unless klass == 'user' or klass == 'notification'
+
     if klass == 'user'
       return render_error unless user_fields.include? field
       user = User.find id
@@ -40,6 +51,7 @@ class UsersController < ApplicationController
       notification = Notification.find id
       return render_error unless current_user.id == notification.user.id
     end
+
   end
   
 end
