@@ -1,9 +1,6 @@
 # coding: utf-8
 class ApplicationController < ActionController::Base
   
-  # include Errship::Rescuers
-  # include Errship::ActiveRecord::Rescuers
-  
   extend ActiveSupport::Memoizable
 
   protect_from_forgery
@@ -15,11 +12,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-
-    # return unless params[:locale]
-    # I18n.locale = params[:locale]
-    # return unless current_user
-    # current_user.update_attribute :locale, params[:locale] if params[:locale] != current_user.locale
 
     I18n.locale = params[:locale] || I18n.default_locale
     
