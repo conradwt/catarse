@@ -41,14 +41,14 @@ gem "pg",                         "~> 0.11.0"
 
 gem "rails_autolink",             "~> 1.0.2"
 # gem "rails-backbone",             "~> 0.5.4"
-gem "rake",                       "0.8.7"
+gem "rake",                       "~> 0.9.2.2"
 gem "RedCloth",                   "~> 4.2.8"
 gem "routing-filter",             "~> 0.2.4"
 
 gem "slim",                       "~> 1.0.2"
 gem "spectator-validates_email",  "~> 0.0.8",     :require => 'validates_email'
 
-gem "therubyracer",               "= 0.9.4",      :require => 'v8'
+gem "therubyracer",               "~> 0.9.9",      :require => 'v8'
 
 gem "unicode",                    "~> 0.4.0"
 
