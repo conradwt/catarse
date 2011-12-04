@@ -8,7 +8,7 @@ describe ProjectsMailer do
     contact = "foo@bar.com"
     user = Factory(:user)
     site = Factory(:site)
-    email = ProjectsMailer.new_project_email(about, rewards, links, contact, user, site).deliver
+    email = ProjectsMailer.new_project(about, rewards, links, contact, user, site).deliver
     ActionMailer::Base.deliveries.should_not be_empty
     email.encoded.should =~ /About the project\<br\>&lt;javascript&gt;/
     email.encoded.should =~ /Rewards of the project\<br\>&lt;javascript&gt;/

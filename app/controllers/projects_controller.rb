@@ -55,7 +55,7 @@ class ProjectsController < ApplicationController
   
   def send_new_project_email
     current_user.update_attribute :email, params[:contact] if current_user.email.nil?
-    ProjectsMailer.new_project_email(params[:about], params[:rewards], params[:links], params[:contact], current_user, current_site).deliver
+    ProjectsMailer.new_project(params[:about], params[:rewards], params[:links], params[:contact], current_user, current_site).deliver
     flash[:success] = t('projects.send_mail.success')
     redirect_to :root
   end
@@ -81,12 +81,12 @@ class ProjectsController < ApplicationController
       @project.projects_sites.create :site => current_site
     end
 
-    ProjectsMailer.new_project_email( params[:about],
-                                      params[:rewards],
-                                      params[:links],
-                                      params[:contact],
-                                      current_user,
-                                      current_site ).deliver
+    ProjectsMailer.new_project( params[:about],
+                                params[:rewards],
+                                params[:links],
+                                params[:contact],
+                                current_user,
+                                current_site ).deliver
 
   end
 
