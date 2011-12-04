@@ -4,7 +4,7 @@ class ProjectsMailer < ActionMailer::Base
   
   default :from => "smartn.me <contact@smartn.me>"
 
-  def start_project_email(about, rewards, links, contact, user, site)
+  def new_project_email(about, rewards, links, contact, user, site)
     @about = h(about).gsub("\n", "<br>").html_safe
     @rewards = h(rewards).gsub("\n", "<br>").html_safe
     @links = h(links).gsub("\n", "<br>").html_safe
