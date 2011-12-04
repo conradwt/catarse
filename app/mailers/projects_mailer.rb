@@ -11,7 +11,8 @@ class ProjectsMailer < ActionMailer::Base
     @contact = contact
     @user = user
     @site = site
-    mail(:to => "contact@smartn.me", :subject => t('projects_mailer.start_project_email.subject', :name => @user.name))
+    #mail(:to => "contact@smartn.me", :subject => t('projects_mailer.start_project_email.subject', :name => @user.name))
+    mail(:to => "conradwt@gmail.com", :subject => t('projects_mailer.start_project_email.subject', :name => @user.name))
   end
   
 end

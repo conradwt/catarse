@@ -13,12 +13,10 @@ class ProjectsController < ApplicationController
   can_edit_on_the_spot
   
   skip_before_filter :verify_authenticity_token, :only => [:moip]
-  # skip_before_filter :detect_locale, :only => [:backers, :comments, :updates, :moip]
   before_filter :can_update_on_the_spot?, :only => :update_attribute_on_the_spot
   before_filter :date_format_convert, :only => [:create]
   
   def date_format_convert
-    # TODO localize here and on the datepicker on project_form.js
     params["project"]["expires_at"] = Date.strptime(params["project"]["expires_at"], '%d/%m/%Y')
   end
 
@@ -77,13 +75,12 @@ class ProjectsController < ApplicationController
     
     create!(:notice => t('projects.create.success'))
     
-    # When don't create the project the @project don't exists so causes a record not found
-    # because @project.reload *words only with created records*
     unless @project.new_record?
       @project.reload
       @project.update_attribute :short_url, bitly
       @project.projects_sites.create :site => current_site
     end
+
   end
 
   def show
@@ -315,8 +312,6 @@ class ProjectsController < ApplicationController
   
   private
   
-  # Just to fix a minor bug,
-  # when user submit the project without some rewards.
   def validate_rewards_attributes
     rewards = params[:project][:rewards_attributes]
     rewards.each do |r|
@@ -340,10 +335,13 @@ class ProjectsController < ApplicationController
     backer_admin_fields = ["confirmed", "requested_refund", "refunded", "anonymous", "user_id"]
     reward_fields = []
     reward_admin_fields = ["description"]
-    def render_error; render :text => t('require_permission'), :status => 422; end
+
     return render_error unless current_user
+
     klass, field, id = params[:id].split('__')
+
     return render_error unless klass == 'project' or klass == 'projects_site' or klass == 'backer' or klass == 'reward'
+
     if klass == 'project'
       return render_error unless project_fields.include?(field) or (current_user.admin and project_admin_fields.include?(field))
       project = Project.find id
@@ -361,6 +359,10 @@ class ProjectsController < ApplicationController
       reward = Reward.find id
       return render_error unless current_user.admin
     end
+  end
+
+  def render_error
+    render :text => t('require_permission'), :status => 422
   end
   
 end

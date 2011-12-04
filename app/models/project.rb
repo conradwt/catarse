@@ -201,6 +201,10 @@ class Project < ActiveRecord::Base
   def can_back?(site)
     visible?(site) and not expired? and not rejected?(site)
   end
+
+  def can_edit?
+    self.backers.empty?
+  end
   
   def finish!
     return unless expired? and can_finish and not finished
