@@ -15,7 +15,6 @@ class ProjectsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:moip]
   before_filter :can_update_on_the_spot?, :only => :update_attribute_on_the_spot
   before_filter :date_format_convert, :only => [:create]
-  after_filter  :send_new_project_email, :only => [:create]
   
   def date_format_convert
     params["project"]["expires_at"] = Date.strptime(params["project"]["expires_at"], '%d/%m/%Y')
@@ -81,6 +80,13 @@ class ProjectsController < ApplicationController
       @project.update_attribute :short_url, bitly
       @project.projects_sites.create :site => current_site
     end
+
+    ProjectsMailer.new_project_email( params[:about],
+                                      params[:rewards],
+                                      params[:links],
+                                      params[:contact],
+                                      current_user,
+                                      current_site ).deliver
 
   end
 
