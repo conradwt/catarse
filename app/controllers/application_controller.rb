@@ -1,6 +1,6 @@
 # coding: utf-8
 class ApplicationController < ActionController::Base
-  
+
   extend ActiveSupport::Memoizable
 
   protect_from_forgery
@@ -11,13 +11,11 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-
     I18n.locale = params[:locale] || I18n.default_locale
     
     if current_user && current_user.locale.to_sym != I18n.locale
       current_user.update_attribute :locale, I18n.locale
     end
-    
   end
   
   def default_url_options

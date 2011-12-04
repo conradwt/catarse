@@ -8,7 +8,6 @@ class BackersController < ApplicationController
   actions :new, :create
   
   def new
-    
     return unless require_login
     
     new! do
@@ -34,13 +33,10 @@ class BackersController < ApplicationController
         @backer.reward = @reward
         @backer.value = "%0.0f" % @reward.minimum_value
       end
-      
     end
-        
   end
 
   def create
-    
     project = Project.find( params[:project_id] )
     
     backer = project.backers.build( params[:backer] )
@@ -56,11 +52,9 @@ class BackersController < ApplicationController
     else
       redirect_to backer.redirect_uri
     end
-
   end
 
   def success
-    
     project = Project.find( params[:project_id] )
     
     handle_callback do | backer |
@@ -68,11 +62,9 @@ class BackersController < ApplicationController
       flash[:notice] = t('projects.pay.success')
       project_path( project )
     end
-
   end
   
   def cancel
-    
     project = Project.find( params[:project_id] )
   
     handle_callback do | backer |
@@ -80,13 +72,11 @@ class BackersController < ApplicationController
       flash[:warn] = t('projects.pay.paypal_cancel')
       project_path( project )
     end
-
   end
 
   protected
   
   def handle_callback
-    
     project = Project.find( params[:project_id] )
     
     backer = project.backers.find_by_token! params[:token]

@@ -173,4 +173,5 @@ class User < ActiveRecord::Base
     return unless email
     "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?default=#{image_url or "http://catarse.me/images/user.png"}"
   end
+
 end

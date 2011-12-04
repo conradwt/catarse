@@ -12,8 +12,6 @@ class PaypalController < ApplicationController
         :no_shipping => true
       )
       redirect_to paypal_response.redirect_uri
-    #rescue Paypal::Exception::APIError => e
-    #  raise "Message: #{e.message}<br/>Response: #{e.response.inspect}<br/>Details: #{e.response.details.inspect}"
     rescue
       flash[:failure] = t('projects.pay.paypal_error')
       return redirect_to back_project_path(backer.project)
@@ -58,9 +56,9 @@ class PaypalController < ApplicationController
     # TODO remove the sandbox! when ready
     
     @paypal = Paypal::Express::Request.new(
-      :username   => 'seller_1316500625_biz_api1.yahoo.com', # Configuration.find_by_name('paypal_username').value,
-      :password   => '1316500662', #Configuration.find_by_name('paypal_password').value,
-      :signature  => 'Ay0WGeDNE3scjpjgVSFjMHA6ARRFACyjEgEFZfKzqqRzGIEnfyLN0RDx' # Configuration.find_by_name('paypal_signature').value
+      :username   => 'seller_1316500625_biz_api1.yahoo.com',
+      :password   => '1316500662',
+      :signature  => 'Ay0WGeDNE3scjpjgVSFjMHA6ARRFACyjEgEFZfKzqqRzGIEnfyLN0RDx'
     )
   end
   

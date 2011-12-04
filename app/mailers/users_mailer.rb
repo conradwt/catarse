@@ -1,7 +1,6 @@
 class UsersMailer < ActionMailer::Base
   
   def notification_email(notification)
-
     @notification = notification
 
     old_locale = I18n.locale
@@ -13,7 +12,6 @@ class UsersMailer < ActionMailer::Base
           :subject => @notification.email_subject)
 
     I18n.locale = old_locale
-
   end
   
 end

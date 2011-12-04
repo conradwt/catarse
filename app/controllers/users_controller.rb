@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   before_filter :can_update_on_the_spot?, :only => :update_attribute_on_the_spot
   
   def show
-
     show!{
       return redirect_to(user_path(@user.primary)) if @user.primary
 
@@ -24,13 +23,11 @@ class UsersController < ApplicationController
       @projects = @projects.visible unless @user == current_user
       @projects = @projects.all
     }
-
   end
   
   private
   
   def can_update_on_the_spot?
-
     user_fields = ["email", "name", "bio", "newsletter", "project_updates"]
     notification_fields = ["dismissed"]
 
@@ -51,7 +48,6 @@ class UsersController < ApplicationController
       notification = Notification.find id
       return render_error unless current_user.id == notification.user.id
     end
-
   end
-  
+
 end
