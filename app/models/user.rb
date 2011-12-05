@@ -158,6 +158,8 @@ class User < ActiveRecord::Base
 
     unless current_project.nil?
       current_project.backers.empty?
+    else
+      false
     end
   end
 
