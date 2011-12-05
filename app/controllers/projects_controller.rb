@@ -82,8 +82,8 @@ class ProjectsController < ApplicationController
     end
 
     ProjectsMailer.new_project( current_user,
-                                current_site,
-                                @project ).deliver
+                                @project,
+                                project_url( @project ) ).deliver
 
     UsersMailer.project_confirmation( current_user )
 

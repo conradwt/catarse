@@ -4,10 +4,10 @@ class ProjectsMailer < ActionMailer::Base
   
   default :from => "smartn.me <contact@smartn.me>"
 
-  def new_project(user, site, project)
+  def new_project( user, project, url )
     @user = user
-    @site = site
     @project = project
+    @url = url
     attachments["rails.png"] = File.read("#{Rails.root}/public/assets/sites/smartn/logo.png")
 
     #mail(:to => "contact@smartn.me", :subject => t('projects_mailer.start_project_email.subject', :name => @user.name))
