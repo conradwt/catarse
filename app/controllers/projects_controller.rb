@@ -83,10 +83,9 @@ class ProjectsController < ApplicationController
 
     ProjectsMailer.project_confirmation( current_user,
                                          @project,
-                                          project_url( @project ) ).deliver
+                                         project_url( @project ) ).deliver
 
     UsersMailer.project_confirmation( current_user, @project ).deliver
-
   end
 
   def show
