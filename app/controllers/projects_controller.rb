@@ -28,13 +28,9 @@ class ProjectsController < ApplicationController
   def index
     index! do
       @title = t("sites.#{current_site.path}.title")
-      
       @home_page = current_site.present_projects.includes(:user, :category).visible.home_page.limit(6).order('projects_sites.order').all
-      
       @expiring = current_site.present_projects.includes(:user, :category).visible.expiring.not_home_page.not_successful.not_unsuccessful.order('expires_at, created_at DESC').limit(3).all
-      
       @recent = current_site.present_projects.includes(:user, :category).visible.not_home_page.not_expiring.not_successful.not_unsuccessful.where("projects.user_id <> 7329").order('created_at DESC').limit(3).all
-      
       @successful = current_site.present_projects.includes(:user, :category).visible.not_home_page.successful.order('expires_at DESC').limit(3).all
     end
   end
@@ -89,11 +85,12 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    show!{
-      unless @project.present_on_site?(current_site)
+    show! do
+       unless @project.present_on_site?(current_site)
         flash[:failure] = t('projects.show.not_present')
         return redirect_to :root
       end
+
       @title = @project.name
       @rewards = @project.rewards.order(:minimum_value).all
       @backers = @project.backers.confirmed.limit(12).order("confirmed_at DESC").all
@@ -101,7 +98,7 @@ class ProjectsController < ApplicationController
       @update = @project.comments.new :project_update => true
       @comments = @project.comments.all
       @comment = @project.comments.new
-    }
+    end
   end
   
   def guidelines
@@ -126,6 +123,7 @@ class ProjectsController < ApplicationController
   
   def vimeo
     project = Project.new(:video_url => params[:url])
+
     if project.vimeo
       render :json => project.vimeo.to_json
     else
@@ -135,6 +133,7 @@ class ProjectsController < ApplicationController
   
   def cep
     address = BuscaEndereco.por_cep(params[:cep])
+
     render :json => {
       :ok => true,
       :street => "#{address[0]} #{address[1]}",
@@ -153,12 +152,14 @@ class ProjectsController < ApplicationController
         flash[:failure] = t('projects.back.cannot_back')
         return redirect_to :root
       end
+
       @title = t('projects.back.title', :name => @project.name)
       @backer = @project.backers.new(:user => current_user, :site => current_site)
       empty_reward = Reward.new(:id => 0, :minimum_value => 0, :description => t('projects.back.no_reward'))
       @rewards = [empty_reward] + @project.rewards.order(:minimum_value)
       @reward = @project.rewards.find params[:reward_id] if params[:reward_id]
       @reward = nil if @reward and @reward.sold_out?
+
       if @reward
         @backer.reward = @reward
         @backer.value = "%0.0f" % @reward.minimum_value
@@ -173,30 +174,36 @@ class ProjectsController < ApplicationController
     params[:backer][:site_id] = current_site.id
     @project = Project.find params[:id]
     @backer = @project.backers.new(params[:backer])
+
     unless @backer.save
       flash[:failure] = t('projects.review.error')
       return redirect_to back_project_path(@project)
     end
+
     session[:thank_you_id] = @project.id
   end
   
   def pay
     backer = Backer.find params[:backer_id]
+
     if backer.credits
       if current_user.credits < backer.value
         flash[:failure] = t('projects.pay.no_credits')
         return redirect_to back_project_path(backer.project)
       end
+
       unless backer.confirmed
         current_user.update_attribute :credits, current_user.credits - backer.value
         backer.confirm!
       end
+
       flash[:success] = t('projects.pay.success')
       redirect_to thank_you_path
     else
       begin
         current_user.update_attributes params[:user]
         current_user.reload
+
         payer = {
           :nome => current_user.full_name,
           :email => current_user.email,
@@ -210,6 +217,7 @@ class ProjectsController < ApplicationController
           :cep => current_user.address_zip_code,
           :tel_fixo => current_user.phone_number
         }
+
         payment = {
           :valor => "%0.0f" % (backer.value),
           :id_proprio => backer.key,
@@ -219,6 +227,7 @@ class ProjectsController < ApplicationController
           :pagador => payer,
           :url_retorno => thank_you_url
         }
+
         response = MoIP::Client.checkout(payment)
         redirect_to MoIP::Client.moip_page(response["Token"])
       rescue
@@ -233,6 +242,7 @@ class ProjectsController < ApplicationController
       flash[:failure] = t('projects.thank_you.error')
       return redirect_to :root
     end
+
     @project = Project.find session[:thank_you_id]
     @title = t('projects.thank_you.title')
     session[:thank_you_id] = nil
