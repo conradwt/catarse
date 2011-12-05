@@ -4,7 +4,7 @@ class ProjectsMailer < ActionMailer::Base
   
   default :from => "smartn.me <contact@smartn.me>"
 
-  def new_project( user, project, url )
+  def project_confirmation( user, project, url )
     @user = user
     @project = project
     @url = url
