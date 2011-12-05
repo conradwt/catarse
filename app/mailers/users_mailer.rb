@@ -2,8 +2,9 @@ class UsersMailer < ActionMailer::Base
 
   default :from => "smartn.me <contact@smartn.me>"
 
-  def project_confirmation(user)
+  def project_confirmation(user, project)
     @user = user
+    @project = project
     attachments["rails.png"] = File.read("#{Rails.root}/public/assets/sites/smartn/logo.png")
 
     mail( :to => "#{user.name} <#{user.email}>", :subject => "smartn.me - Thank you for creating a project")
