@@ -151,6 +151,16 @@ class User < ActiveRecord::Base
     new_user.save
   end
 
+  def can_edit?( project )
+    return true if self.admin?
+
+    current_project = self.projects.find_by_id( project.id )
+
+    unless current_project.nil?
+      current_project.backers.empty? true : false
+    end
+  end
+
   def as_json(options={})
     {
       :id => id,
