@@ -58,6 +58,7 @@ class ProjectsController < ApplicationController
   
   def new
     return unless require_login
+
     new! do
       @title = t('projects.new.title')
       @project.rewards.build
@@ -147,6 +148,7 @@ class ProjectsController < ApplicationController
   
   def back
     return unless require_login
+
     show! do
       unless @project.can_back?(current_site)
         flash[:failure] = t('projects.back.cannot_back')
