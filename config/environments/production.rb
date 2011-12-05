@@ -84,7 +84,7 @@ Catarse::Application.configure do
                                   flash.js
                                   guidelines.js
                                   login.js
-                                  notification.js
+                                  notifications.js
                                   pending_backers.js
                                   pending_projects.js
                                   press.js
