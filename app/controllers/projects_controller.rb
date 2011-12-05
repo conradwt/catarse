@@ -87,7 +87,6 @@ class ProjectsController < ApplicationController
                                 params[:contact],
                                 current_user,
                                 current_site ).deliver
-
   end
 
   def show
