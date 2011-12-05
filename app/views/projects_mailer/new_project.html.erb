@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Project | smartn.me</title>
+  </head>
+  <body>
+    <p>
+     <%= @user.name %>, has submitted the, <%= @project.name %>, and you can view it <%= link_to( 'here', @site.full_url(user_path(@user)))) %>.
+
+     Thanks again,
+
+     smartn.me
+    </p>
+  </body>
+</html>

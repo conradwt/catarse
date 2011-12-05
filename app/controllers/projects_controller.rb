@@ -81,12 +81,12 @@ class ProjectsController < ApplicationController
       @project.projects_sites.create :site => current_site
     end
 
-    ProjectsMailer.new_project( params[:about],
-                                params[:rewards],
-                                params[:links],
-                                params[:contact],
-                                current_user,
-                                current_site ).deliver
+    ProjectsMailer.new_project( current_user,
+                                current_site,
+                                @project ).deliver
+
+    UsersMailer.project_confirmation( current_user )
+
   end
 
   def show
