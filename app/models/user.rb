@@ -157,7 +157,7 @@ class User < ActiveRecord::Base
     current_project = self.projects.find_by_id( project.id )
 
     unless current_project.nil?
-      current_project.backers.empty? true : false
+      current_project.backers.empty?
     end
   end
 
