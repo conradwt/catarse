@@ -1,0 +1,24 @@
+Installation and Setup instructions
+
+A)  Software setup
+
+    1)  Rails 3.1.3 or higher
+    2)  Ruby 1.9.2 or higher
+    3)  PostgreSQL 9.0.x or higher
+    
+B) OmniAuth setup
+
+    1)  cp /path-to-project/config/initializers/omniauth.example.rb omniauth.rb
+    2)  edit the omniauth.rb
+
+C)  PayPal setup
+
+     1)  cp /path-to-project/config/paypal.example.yml paypal.yml
+     2)  edit the paypal.yml
+
+D)  Mail setup 
+
+     1)  cp /path-to-project/config/initializers/setup_mail.rb setup_mail.example.rb
+     2)  edit the setup_mail.rb
+     
+(c) Copyright 2011 Conrad Taylor. All Rights Reserved.  

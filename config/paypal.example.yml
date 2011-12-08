@@ -1,7 +1,7 @@
-development: &sandbox # change to your own
-  username: seller_1316500625_biz_api1.yahoo.com
-  password: 1316500662
-  signature: Ay0WGeDNE3scjpjgVSFjMHA6ARRFACyjEgEFZfKzqqRzGIEnfyLN0RDx
+development: &sandbox
+  username: SANDBOX_USERNAME
+  password: SANDBOX_PASSWORD
+  signature: SANDBOX_SIGNATURE
   sandbox: true
 
 test:
