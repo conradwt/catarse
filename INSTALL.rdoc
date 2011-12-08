@@ -1,24 +1,55 @@
-Installation and Setup instructions
+== Crowdfunding -- Installation and setup instructions
 
-A)  Software setup
+== Getting Started
 
-    1)  Rails 3.1.3 or higher
-    2)  Ruby 1.9.2 or higher
-    3)  PostgreSQL 9.0.x or higher
+== Software setup
+
+1.  install Rails 3.1.3 or higher
+
+2.  install Ruby 1.9.2 or higher
+
+3.  install PostgreSQL 9.0.x or higher
     
-B) OmniAuth setup
+== OmniAuth setup
 
-    1)  cp /path-to-project/config/initializers/omniauth.example.rb omniauth.rb
-    2)  edit the omniauth.rb
+1.  cp /path-to-project/config/initializers/omniauth.example.rb omniauth.rb
 
-C)  PayPal setup
+2.  edit the omniauth.rb
 
-     1)  cp /path-to-project/config/paypal.example.yml paypal.yml
-     2)  edit the paypal.yml
+==  PayPal setup
 
-D)  Mail setup 
+1.  cp /path-to-project/config/paypal.example.yml paypal.yml
 
-     1)  cp /path-to-project/config/initializers/setup_mail.rb setup_mail.example.rb
-     2)  edit the setup_mail.rb
+2.  edit the paypal.yml
+
+==  Mail setup 
+
+1.  cp /path-to-project/config/initializers/setup_mail.rb setup_mail.example.rb
+
+2.  edit the setup_mail.rb
+
+== Migrating the database
+
+   rake db:migrate
+   
+== Starting the local server
+
+   rails server
+   
+== Viewing in browser
+
+   http://localhost:3000
      
-(c) Copyright 2011 Conrad Taylor. All Rights Reserved.  
+== Support
+
+Bug reports and feature requests can be filed with the rest for the Ruby on Rails project here:
+
+* https://github.com/conradwt/catarse/issues
+
+== License
+
+Crowdfunding is released under the MIT license.
+
+== Copyright
+     
+(c) Copyright 2011 Conrad Taylor. All Rights Reserved.
