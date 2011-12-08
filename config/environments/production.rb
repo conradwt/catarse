@@ -78,7 +78,7 @@ Catarse::Application.configure do
                                   backbone/views/project/project_updates.js
                                   backbone/views/project/update.js
                                   banda.js
-                                  credit.js
+                                  credits.js
                                   embed.js
                                   explore_projects.js
                                   flash.js
