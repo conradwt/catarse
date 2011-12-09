@@ -28,6 +28,12 @@
 
 2.  edit the setup_mail.rb
 
+==  Bitly setup 
+
+1.  cp /path-to-project/config/initializers/bitly.example.rb bitly.rb
+
+2.  edit the bitly.rb
+
 == Migrating the database
 
    rake db:migrate

@@ -1,0 +1,1 @@
+BITLY_CONFIG = { login: 'USERNAME', api_key: 'API_KEY' }
