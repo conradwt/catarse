@@ -87,6 +87,7 @@ group :test, :development do
   gem "rails-footnotes",          "~> 3.7.5.rc4"
   gem "reek",                     "~> 1.2.8"
   gem 'rspec-rails',              "~> 2.6.1"
+  gem 'ruby2ruby',                "= 1.3.0"
   gem "ruby-growl",               "~> 3.0"
   gem "simplecov",                "~> 0.5.4", :require => false
   gem "steak",                    "~> 2.0.0"
