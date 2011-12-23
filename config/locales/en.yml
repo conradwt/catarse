@@ -182,8 +182,8 @@ en:
       successful: Successful campaigns
     home_page_projects:
       title: Featured campaigns
-      explore_recommended: Explore more recommended campaigns
     project_list:
+      explore_recommended: Explore more recommended campaigns
       explore_expiring: Explore more campaigns in the final countdown
       explore_recent: Explore more recent campaigns
       explore_successful: Explore more successful campaigns
