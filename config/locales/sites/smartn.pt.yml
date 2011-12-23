@@ -44,7 +44,7 @@ pt:
       press: 
         title: Confira o que estão falando do Catarse na imprensa
       projects:
-        home_page_projects:
+        recommended:
           title: Nossa seleção catártica!
           subtitle: Conheça os projetos que nos causaram uma Catarse :) cada dia uma nova seleção.
         expiring:
