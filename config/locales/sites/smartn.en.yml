@@ -45,7 +45,7 @@ en:
       press: 
         title: Check out what they are saying about smartn.me in the press
       projects:
-        home_page_projects:
+        recommended:
           title: Our top students!
           subtitle: Meet the people behind these impressive campaigns.
         expiring:
