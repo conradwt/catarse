@@ -1,0 +1,1 @@
+ENV['SITE_PATH'] = 'catarse'

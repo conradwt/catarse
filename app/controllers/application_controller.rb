@@ -51,7 +51,8 @@ class ApplicationController < ActionController::Base
   end
   
   def current_site
-    Site.find_by_path( "smartn" )
+    site_path = ENV['SITE_PATH'] ? ENV['SITE_PATH'] : 'catarse'
+    Site.find_by_path( site_path )
   end
   
   def current_user
