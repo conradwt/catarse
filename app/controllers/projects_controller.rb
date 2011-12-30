@@ -78,11 +78,6 @@ class ProjectsController < ApplicationController
       @project.projects_sites.create :site => current_site
     end
 
-    ProjectsMailer.project_confirmation( current_user,
-                                         @project,
-                                         project_url( @project ) ).deliver
-
-    UsersMailer.project_confirmation( current_user, @project ).deliver
   end
 
   def show
