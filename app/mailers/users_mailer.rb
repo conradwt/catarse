@@ -7,7 +7,7 @@ class UsersMailer < ActionMailer::Base
     @project = project
     attachments["rails.png"] = File.read("#{Rails.root}/public/assets/sites/smartn/logo.png")
 
-    mail( :to => "#{user.name} <#{user.email}>", :subject => "smartn.me - Thank you for creating a project")
+    mail( :to => "#{user.name} <#{user.email}>", :subject => "#{ActionMailer::Base.default_url_options[:host]} - Thank you for creating a project")
   end
 
   def notification_email(notification)
