@@ -2,7 +2,7 @@ class ProjectsMailer < ActionMailer::Base
   
   include ERB::Util
   
-  default :from => "smartn.me <contact@smartn.me>"
+  default :from => ENV['DEFAULT_EMAIL']
 
   def project_confirmation( user, project, url )
     @user = user

@@ -13,3 +13,15 @@ ActionMailer::Base.smtp_settings = {
 ActionMailer::Base.default_url_options[:host] = 'HOST_DOMAIN'
 ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
 
+ENV['DEFAULT_EMAIL'] = 
+case Rails.env
+when 'development'
+  'development@example.com'
+when 'production'
+  'production@example.com'
+when 'test'
+  'test@example.com'
+else
+  'unknown@example.com'
+end
+

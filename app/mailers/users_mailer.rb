@@ -1,6 +1,6 @@
 class UsersMailer < ActionMailer::Base
 
-  default :from => "smartn.me <contact@smartn.me>"
+  default :from => ENV['DEFAULT_EMAIL']
 
   def project_confirmation(user, project)
     @user = user
