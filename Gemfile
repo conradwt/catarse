@@ -26,18 +26,23 @@ gem 'inherited_resources',        '>= 1.1.2'
 
 gem 'jquery-rails'
 
+
+gem "madmimi",                    "~> 1.0.15"
+gem 'mad_mimi_mailer',            :git => 'git://github.com/madmimi/mad_mimi_mailer.git'
 gem 'mailee',                     '0.5.4',        :git => 'git://github.com/danielweinmann/mailee-api.git'
 gem "meta_search"
 gem "meta-tags",                  "~> 1.2.4"
 gem 'moip',                       :git => 'git://github.com/danielweinmann/moip-ruby.git'
 gem 'mustache'
 
+gem "nokogiri",                   "~> 1.4.3"
+
 gem 'omniauth',                   "~> 0.2.6"
 gem "on_the_spot",                "~> 0.0.14"
 
 gem 'passenger',                  "~> 3.0.9"
 gem "paypal-express",             "~> 0.4.0",     :require => 'paypal'
-gem "pg",                         "~> 0.11.0"
+gem "pg",                         "~> 0.12.2"
 
 gem "rails_autolink",             "~> 1.0.2"
 # gem "rails-backbone",             "~> 0.5.4"

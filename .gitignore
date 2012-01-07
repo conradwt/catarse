@@ -23,3 +23,5 @@ config/paypal.yml
 .idea/
 config/initializers/bitly.rb
 config/initializers/theme.rb
+config/initializers/madmimi.rb
+
