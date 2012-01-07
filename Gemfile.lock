@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/danielweinmann/mailee-api.git
-  revision: cd530ef488cb82f5ef01f2646c2b6222fab61c57
-  specs:
-    mailee (0.5.4)
-
-GIT
   remote: git://github.com/danielweinmann/moip-ruby.git
   revision: db1b879358c623b597dc1c221b53336f9f06db0e
   specs:
@@ -399,7 +393,6 @@ DEPENDENCIES
   launchy
   mad_mimi_mailer!
   madmimi (~> 1.0.15)
-  mailee (= 0.5.4)!
   meta-tags (~> 1.2.4)
   meta_search
   mocha

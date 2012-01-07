@@ -29,7 +29,6 @@ gem 'jquery-rails'
 
 gem "madmimi",                    "~> 1.0.15"
 gem 'mad_mimi_mailer',            :git => 'git://github.com/madmimi/mad_mimi_mailer.git'
-gem 'mailee',                     '0.5.4',        :git => 'git://github.com/danielweinmann/mailee-api.git'
 gem "meta_search"
 gem "meta-tags",                  "~> 1.2.4"
 gem 'moip',                       :git => 'git://github.com/danielweinmann/moip-ruby.git'

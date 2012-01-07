@@ -38,8 +38,6 @@ class User < ActiveRecord::Base
   include ActionView::Helpers::TextHelper
   include Rails.application.routes.url_helpers
   
-  sync_with_mailee :news => :newsletter, :list => "Newsletter"
-  
   validates_presence_of :provider, :uid, :site
   validates_uniqueness_of :uid, :scope => :provider
   validates_length_of :bio, :maximum => 140
