@@ -256,6 +256,9 @@ en:
       subtitle: In just a few moments, you'll be on your way to funding your education!
     create:
       success: Your campaign was successfully created! We'll contact you soon. Thanks a lot!
+    edit:
+      title: Edit your campaign
+      subtitle: In just a few moments, you'll be on your way to funding your education!
     update:
       success: Your campaign was successfully updated! We'll contact you soon. Thanks a lot!
     show:
