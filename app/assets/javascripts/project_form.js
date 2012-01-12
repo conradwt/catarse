@@ -49,12 +49,24 @@ everything_ok = function() {
   if (!accepted_terms()) {
     all_ok = false;
   }
-  if (all_ok) {
-    return $( "input.create" ).attr("disabled", false);
-  } else {
-    return $( "input.create" ).attr("disabled", true);
+  
+  if ($( "li.commit > input" ).is( ".create" )) {
+    if (all_ok) {
+      return $( "input.create" ).attr("disabled", false);
+    } else {
+      return $( "input.create" ).attr("disabled", true);
+    }
+  }
+  
+  if ($( "li.commit > input" ).is( ".update" )) {
+    if (all_ok) {
+      return $( "input.update" ).attr("disabled", false);
+    } else {
+      return $( "input.update" ).attr("disabled", true);
+    }
   }
 };
+
 ok = function(id) {
   var value;
   value = $(id).val();
