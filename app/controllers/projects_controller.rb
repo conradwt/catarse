@@ -85,6 +85,11 @@ class ProjectsController < ApplicationController
   end
   
   def update
+    
+    params[:project][:expires_at] += (23.hours + 59.minutes + 59.seconds) if params[:project][:expires_at]
+    
+    validate_rewards_attributes if params[:project][:rewards_attributes].present?
+        
     @project = current_user.projects.find( params[:id] )
 
     respond_to do |format|
