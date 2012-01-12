@@ -132,8 +132,8 @@ expires_at_ok = function() {
   value = /^(\d{2})\/(\d{2})\/(\d{4})?$/.exec($("#project_expires_at").val());
   if (value && value.length === 4) {
     year = parseFloat(value[3]);
-    month = parseFloat(value[2]) - 1;
-    day = parseFloat(value[1]);
+    day = parseFloat(value[2]) - 1;
+    month = parseFloat(value[1]);
     date = new Date(year, month, day);
     current_date = new Date();
     if ((day === date.getDate()) && (month === date.getMonth()) && (year === date.getFullYear()) && date > current_date) {
@@ -201,7 +201,7 @@ $(".reward input,.reward textarea").live("keyup", everything_ok);
 $("#project_goal").numeric(false);
 $(".reward input").numeric(false);
 $("#project_expires_at").datepicker({
-  altFormat: "dd/mm/yy",
+  altFormat: "mm/dd/yy",
   onSelect: everything_ok
 });
 $("input,textarea,select").live("focus", function() {
