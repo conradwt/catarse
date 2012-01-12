@@ -256,6 +256,8 @@ en:
       subtitle: In just a few moments, you'll be on your way to funding your education!
     create:
       success: Your campaign was successfully created! We'll contact you soon. Thanks a lot!
+    update:
+      success: Your campaign was successfully updated! We'll contact you soon. Thanks a lot!
     show:
       not_present: This campaign is no longer available. Check out the other amazing campaigns we have!
       share:

@@ -79,7 +79,25 @@ class ProjectsController < ApplicationController
     end
 
   end
+  
+  def edit
+    @project = current_user.projects.find( params[:id] )
+  end
+  
+  def update
+    @project = current_user.projects.find( params[:id] )
 
+    respond_to do |format|
+      if @project.update_attributes( params[:project] )
+        format.html { redirect_to @project, notice: t('projects.update.success') }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
   def show
     show! do
        unless @project.present_on_site?(current_site)
