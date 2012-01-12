@@ -66,7 +66,7 @@ class ProjectsController < ApplicationController
   end
   
   def create
-    params[:project][:expires_at] += (23.hours + 59.minutes + 59.seconds) if params[:project][:expires_at]
+    # params[:project][:expires_at] += (23.hours + 59.minutes + 59.seconds) if params[:project][:expires_at]
     
     validate_rewards_attributes if params[:project][:rewards_attributes].present?
     
@@ -85,8 +85,6 @@ class ProjectsController < ApplicationController
   end
   
   def update
-    
-    params[:project][:expires_at] += (23.hours + 59.minutes + 59.seconds) if params[:project][:expires_at]
     
     validate_rewards_attributes if params[:project][:rewards_attributes].present?
         
