@@ -194,6 +194,10 @@ class Project < ActiveRecord::Base
     projects_sites.where("visible AND site_id = #{site.id}").count > 0
   end
   
+  def approved?( site )
+    visible?( site )
+  end
+  
   def rejected?(site)
     projects_sites.where("rejected AND site_id = #{site.id}").count > 0
   end
