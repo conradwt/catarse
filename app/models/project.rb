@@ -75,6 +75,12 @@ class Project < ActiveRecord::Base
   validate :verify_if_video_exists_on_vimeo
   
   before_create :store_image_url
+  before_save   :set_project_expiration_date
+  before_update :set_project_expiration_date
+  
+  def set_project_expiration_date
+    self.expires_at += 23.hours + 59.minutes + 59.seconds
+  end
   
   def store_image_url
     self.image_url = vimeo["thumbnail_large"] unless self.image_url
