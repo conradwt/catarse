@@ -25,8 +25,8 @@
           = t('.menu.about')
           = image_tag "sites/#{current_site.path}/project_menu_selected.png"
       %li
-        = link_to '#edit', edit_project_path( @project ), :id => 'edit_link' do
-          = t('.menu.edit')
+        = link_to t('.menu.edit'), '' do
+          / = t('.menu.edit')
           = image_tag "sites/#{current_site.path}/project_menu_selected.png"
       %li
         = link_to '#updates', :id => 'updates_link' do
