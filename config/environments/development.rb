@@ -23,8 +23,6 @@ Catarse::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
   config.active_record.schema_format = :sql  # TK:  Rails 3.0
   
-  config.action_mailer.delivery_method = Mailee::Mailer  # TK: Rails 3.0
-
   # Do not compress assets
   config.assets.compress = false
 
