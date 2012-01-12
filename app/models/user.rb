@@ -155,7 +155,7 @@ class User < ActiveRecord::Base
     current_project = self.projects.find_by_id( project.id )
 
     unless current_project.nil?
-      !current_project.approved?
+      !current_project.approved?( current_project.site )
     else
       false
     end
