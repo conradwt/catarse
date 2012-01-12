@@ -7,7 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require jquery-ui/jquery.ui.datepicker-en-GB
+//= require jquery-ui/jquery.ui.datepicker-en-US
 //= require jquery/jquery.jeditable.mini
 //= require jquery/jquery.numeric
 //= require jquery/jquery.maxlength
