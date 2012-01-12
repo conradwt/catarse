@@ -81,9 +81,6 @@ class ProjectsController < ApplicationController
   end
   
   def edit
-    
-    raise params
-    
     @project = current_user.projects.find( params[:id] )
   end
   
