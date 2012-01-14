@@ -77,6 +77,10 @@ class Project < ActiveRecord::Base
   before_create :store_image_url
   before_save   :set_project_expiration_date
   before_update :set_project_expiration_date
+  after_create  :send_new_project_submission_email
+  after_update  :send_update_project_submission_email
+  after_create  :send_new_project_confirmation_email
+  after_update  :send_update_project_confirmation_email
   
   def set_project_expiration_date
     self.expires_at += 23.hours + 59.minutes + 59.seconds
@@ -248,6 +252,24 @@ class Project < ActiveRecord::Base
       :name => name,
       :user => user
     }
+  end
+  
+  private
+  
+  def send_new_project_submission_email
+    ProjectsMailer.deliver_new_project_submission( project.user, self )
+  end
+  
+  def send_update_project_submission_email
+    ProjectsMailer.deliver_update_project_submission( project.user, self )
+  end
+  
+  def send_new_project_confirmation_email
+    ProjectsMailer.deliver_new_project_confirmation( project.user, self )
+  end
+  
+  def send_update_project_confirmation_email
+    ProjectsMailer.deliver_update_project_confirmation( project.user, self )
   end
   
 end
