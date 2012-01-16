@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
   before_filter :date_format_convert, :only => [:create]
   
   def date_format_convert
-    params["project"]["expires_at"] = Date.strptime(params["project"]["expires_at"], '%d/%m/%Y')
+    params["project"]["expires_at"] = Date.strptime(params["project"]["expires_at"], '%m/%d/%Y')
   end
 
   def banda
