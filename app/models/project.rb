@@ -77,10 +77,10 @@ class Project < ActiveRecord::Base
   before_create :store_image_url
   before_save   :set_project_expiration_date
   before_update :set_project_expiration_date
-  after_create  :send_new_project_submission_email
-  after_update  :send_update_project_submission_email
-  after_create  :send_new_project_confirmation_email
-  after_update  :send_update_project_confirmation_email
+  after_create  :send_new_project_submission_email,       :if => Proc.new { |p| p.user.email? }
+  after_update  :send_update_project_submission_email,    :if => Proc.new { |p| p.user.email? }
+  after_create  :send_new_project_confirmation_email,     :if => Proc.new { |p| p.user.email? }
+  after_update  :send_update_project_confirmation_email,  :if => Proc.new { |p| p.user.email? }
   
   def set_project_expiration_date
     self.expires_at += 23.hours + 59.minutes + 59.seconds
