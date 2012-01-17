@@ -15,7 +15,7 @@ class ProjectsMailer < MadMimiMailer
   
   def new_project_submission( user, project )
     subject         "#{ActionMailer::Base.default_url_options[:host]} - New Project Submission"
-    from            user.email
+    from            "newcampaigns@smartn.me"
     recipients      "newcampaigns@smartn.me" 
 
     body :full_name => user.name, :project_name => project.name, :project_url => project_url( project )
@@ -23,7 +23,7 @@ class ProjectsMailer < MadMimiMailer
   
   def update_project_submission( user, project )
     subject         "#{ActionMailer::Base.default_url_options[:host]} - Update Project Submission"
-    from            user.email
+    from            "newcampaigns@smartn.me"
     recipients      "newcampaigns@smartn.me"
 
     body :full_name => user.name, :project_name => project.name, :project_url => project_url( project )
