@@ -54,6 +54,9 @@ class User < ActiveRecord::Base
   scope :primary, :conditions => ["primary_user_id IS NULL"]
   scope :backers, :conditions => ["id IN (SELECT DISTINCT user_id FROM backers WHERE confirmed)"]
   #before_save :store_primary_user
+  
+  before_create  :update_subscription, :if => Proc.new { |u| u.newsletter_changed? }
+  before_update  :update_subscription, :if => Proc.new { |u| u.newsletter_changed? }
 
   def store_primary_user
     return if email.nil? or self.primary_user_id
@@ -182,6 +185,16 @@ class User < ActiveRecord::Base
   def gravatar_url
     return unless email
     "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?default=#{image_url or "http://catarse.me/images/user.png"}"
+  end
+  
+  private
+  
+  def update_newsletter_subscription
+    mimi = MadMimi.new( ENV['MADMIMI_USERNAME'] , ENV['MADMIMI_API_KEY'] )
+    
+    if self.email? && self.newsletter_changed?
+      newsletter? ? mimi.add_to_list( self.email, 'newsletter' ) : mimi.remove_from_list( self.email, 'newsletter' )
+    end  
   end
 
 end
