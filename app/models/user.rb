@@ -190,9 +190,8 @@ class User < ActiveRecord::Base
   private
   
   def update_newsletter_subscription
-    mimi = MadMimi.new( ENV['MADMIMI_USERNAME'] , ENV['MADMIMI_API_KEY'] )
-    
-    if self.email? && self.newsletter_changed?
+    if self.email?
+      mimi = MadMimi.new( ENV['MADMIMI_USERNAME'] , ENV['MADMIMI_API_KEY'] )
       newsletter? ? mimi.add_to_list( self.email, 'newsletter' ) : mimi.remove_from_list( self.email, 'newsletter' )
     end  
   end
