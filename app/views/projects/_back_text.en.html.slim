@@ -1,10 +1,10 @@
-h3 How do I back this project?
-p First, choose the value and reward you wish. Then we will redirect you to #{link_to "PayPal", "http://www.paypal.com/", :target => :_blank} so you can proceed with the payment.
+h3 How do I back this campaign?
+p First, enter the amount you wish to donate and choose a reward. Then we will redirect you to #{link_to "PayPal", "http://www.paypal.com/", :target => :_blank} for payment processing.
 h3 When is the payment made and confirmed?
-p Shortly after, PayPal will confirm the transaction. From there, if the project doesn't reach #{@project.display_goal} by #{@project.display_expires_at}, you will receive your money back as credits #{current_site.in_the_name}.
-h3 Oh, so I receive my money back if the project doesn't succeed?
+p Shortly after, PayPal will confirm the transaction. From there, if the campaign doesn't reach #{@project.display_goal} by #{@project.display_expires_at}, you will receive your money back as credits #{current_site.in_the_name}.
+h3 Oh, so I receive my money back if the campaign doesn't reach its goal amount?
 p Yes! You receive 100% back as credits to support other campaigns on #{current_site.name}.
 h3 What if I don't want to use the credits on #{current_site.name}?
 p No problem. Just go to #{link_to t('credits.title'), credits_path, :target => :_blank}, up to 180 days after your payment was processed, and request a refund. For more info on supporting a campaign visit our <a href="http://smartn.me/faq#section2">FAQ</a>.
-h3 If the project is successful, how do I receive my reward?
+h3 If the campaign is successful, how do I receive my reward?
 p When your reward is ready, #{link_to @project.user.display_name, user_path(@project.user)} will get in touch with you to arrange the delivery.
