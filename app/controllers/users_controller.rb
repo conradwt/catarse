@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   can_edit_on_the_spot
   
   before_filter :can_update_on_the_spot?, :only => :update_attribute_on_the_spot
-  after_filter  :update_subscription,     :only => :update_attribute_on_the_spot
   
   def show
     show!{
@@ -49,10 +48,6 @@ class UsersController < ApplicationController
       notification = Notification.find id
       return render_error unless current_user.id == notification.user.id
     end
-  end
-  
-  def update_subscription
-    current_user.update_newsletter_subscription if current_user
   end
   
 end
