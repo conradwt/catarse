@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   can_edit_on_the_spot
   
   before_filter :can_update_on_the_spot?, :only => :update_attribute_on_the_spot
+  after_filter  :update_subscription,     :only => :update_attribute_on_the_spot
   
   def show
     show!{
@@ -42,13 +43,16 @@ class UsersController < ApplicationController
     if klass == 'user'
       return render_error unless user_fields.include? field
       user = User.find id
-      user.update_newsletter_subscription
       return render_error unless current_user.id == user.id or current_user.admin
     elsif klass == 'notification'
       return render_error unless notification_fields.include? field
       notification = Notification.find id
       return render_error unless current_user.id == notification.user.id
     end
+  end
+  
+  def update_subscription
+    current_user.update_newsletter_subscription if current_user
   end
   
 end
