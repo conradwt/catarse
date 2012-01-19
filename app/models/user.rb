@@ -178,6 +178,13 @@ class User < ActiveRecord::Base
       :admin => admin
     }
   end
+  
+  def update_newsletter_subscription
+    if self.email?
+      mimi = MadMimi.new( ENV['MADMIMI_USERNAME'] , ENV['MADMIMI_API_KEY'] )
+      newsletter? ? mimi.add_to_list( self.email, 'newsletter' ) : mimi.remove_from_list( self.email, 'newsletter' )
+    end  
+  end
 
   protected
 
@@ -187,13 +194,4 @@ class User < ActiveRecord::Base
     "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?default=#{image_url or "http://catarse.me/images/user.png"}"
   end
   
-  private
-  
-  def update_newsletter_subscription
-    if self.email?
-      mimi = MadMimi.new( ENV['MADMIMI_USERNAME'] , ENV['MADMIMI_API_KEY'] )
-      newsletter? ? mimi.add_to_list( self.email, 'newsletter' ) : mimi.remove_from_list( self.email, 'newsletter' )
-    end  
-  end
-
 end

@@ -42,6 +42,7 @@ class UsersController < ApplicationController
     if klass == 'user'
       return render_error unless user_fields.include? field
       user = User.find id
+      user.update_newsletter_subscription
       return render_error unless current_user.id == user.id or current_user.admin
     elsif klass == 'notification'
       return render_error unless notification_fields.include? field
@@ -49,5 +50,5 @@ class UsersController < ApplicationController
       return render_error unless current_user.id == notification.user.id
     end
   end
-
+  
 end
