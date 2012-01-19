@@ -182,9 +182,9 @@ class User < ActiveRecord::Base
   def update_newsletter_subscription
     
     if self.newsletter?
-      Rails.logger.info( "newsletter = true" )
+      Rails.logger.info( "newsletter = #{self.letter.class.to_s}" )
     else
-      Rails.logger.info( "newsletter = false" )
+      Rails.logger.info( "newsletter = #{self.letter.class.to_s}" )
     end
     
     if self.email?
