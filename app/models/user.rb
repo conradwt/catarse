@@ -55,8 +55,8 @@ class User < ActiveRecord::Base
   scope :backers, :conditions => ["id IN (SELECT DISTINCT user_id FROM backers WHERE confirmed)"]
   #before_save :store_primary_user
   
-  before_create  :update_newsletter_subscription
-  before_update  :update_newsletter_subscription
+  before_create  :update_newsletter_subscription, :if => Proc.new { |u| u.newsletter_chenged? }
+  before_update  :update_newsletter_subscription, :if => Proc.new { |u| u.newsletter_chenged? }
 
   def store_primary_user
     return if email.nil? or self.primary_user_id
@@ -181,10 +181,10 @@ class User < ActiveRecord::Base
   
   def update_newsletter_subscription
     
-    if self.newsletter
-      Rails.logger.debug( "newsletter = true" )
+    if self.newsletter?
+      puts( "newsletter = true" )
     else
-      Rails.logger.debug( "newsletter = false" )
+      puts( "newsletter = false" )
     end
     
     if self.email?
