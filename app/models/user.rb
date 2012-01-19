@@ -182,9 +182,9 @@ class User < ActiveRecord::Base
   def update_newsletter_subscription
     
     if self.newsletter?
-      puts( "newsletter = true" )
+      Rails.logger.info( "newsletter = true" )
     else
-      puts( "newsletter = false" )
+      Rails.logger.info( "newsletter = false" )
     end
     
     if self.email?
