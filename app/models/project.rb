@@ -280,19 +280,19 @@ class Project < ActiveRecord::Base
   private
   
   def send_new_project_submission_email
-    ProjectsMailer.deliver_new_project_submission( project.user, self )
+    ProjectsMailer.deliver_new_project_submission( self.user, self )
   end
   
   def send_update_project_submission_email
-    ProjectsMailer.deliver_update_project_submission( project.user, self )
+    ProjectsMailer.deliver_update_project_submission( self.user, self )
   end
   
   def send_new_project_confirmation_email
-    ProjectsMailer.deliver_new_project_confirmation( project.user, self )
+    ProjectsMailer.deliver_new_project_confirmation( self.user, self )
   end
   
   def send_update_project_confirmation_email
-    ProjectsMailer.deliver_update_project_confirmation( project.user, self )
+    ProjectsMailer.deliver_update_project_confirmation( self.user, self )
   end
   
 end
