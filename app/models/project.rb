@@ -298,7 +298,7 @@ class Project < ActiveRecord::Base
   end
   
   def generate_short_url
-    self.short_url = URLShortener.shorten(  "http://www.smartn.me/#{I18n.locale.to_s}/#{self.to_param}" ) )
+    self.short_url = URLShortener.shorten(  "http://www.smartn.me/#{I18n.locale.to_s}/#{self.to_param}" )
   end
   
 end
