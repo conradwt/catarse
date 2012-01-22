@@ -180,13 +180,6 @@ class User < ActiveRecord::Base
   end
   
   def update_newsletter_subscription
-    
-    if self.newsletter?
-      Rails.logger.info( "true:  newsletter = #{self.newsletter.class.to_s}" )
-    else
-      Rails.logger.info( "false: newsletter = #{self.newsletter.class.to_s}" )
-    end
-    
     if self.email?
       mimi = MadMimi.new( ENV['MADMIMI_USERNAME'] , ENV['MADMIMI_API_KEY'] )
       self.newsletter? ? mimi.add_to_list( self.email, 'newsletter' ) : mimi.remove_from_list( self.email, 'newsletter' )
