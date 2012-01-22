@@ -28,6 +28,8 @@ class Reward < ActiveRecord::Base
   scope :sold_out, where("maximum_backers IS NOT NULL AND (SELECT COUNT(*) FROM backers WHERE confirmed AND reward_id = rewards.id) >= maximum_backers")
   scope :remaining, where("maximum_backers IS NULL OR (maximum_backers IS NOT NULL AND (SELECT COUNT(*) FROM backers WHERE confirmed AND reward_id = rewards.id) < maximum_backers)")
   
+  attr_accessor :mminimum_amount
+  
   def sold_out?
     maximum_backers and backers.confirmed.count >= maximum_backers
   end

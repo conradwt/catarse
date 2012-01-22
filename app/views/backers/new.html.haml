@@ -10,7 +10,7 @@
       %script
         var rewards = new Array()
         - @rewards.each do |reward|
-          rewards[#{reward.id || 0}] = #{reward.minimum_value}
+          rewards[#{reward.id || 0}] = #{reward.minimum_amount}
       = form.input :reward, :as => :radio, :collection => @rewards
       = form.input :anonymous
       #anonymous_warning.important.hide= render 'projects/anonymous_warning'
