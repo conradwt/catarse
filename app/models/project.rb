@@ -265,10 +265,14 @@ class Project < ActiveRecord::Base
     self.expires_at.to_s( :month_day_year )
   end
   
-  def goal
-    self.goal.to_i
+  def goal_amount=( amount )
+    self.goal = amount.to_f
   end
   
+  def goal_amount
+    self.goal.to_i
+  end
+
   def reward
     self
   end

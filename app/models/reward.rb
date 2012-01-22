@@ -67,7 +67,11 @@ class Reward < ActiveRecord::Base
     }
   end
   
-  def minimum_value
+  def reward_amount( amount )
+    self.minimum_value = amount.to_f
+  end
+  
+  def reward_amount
     self.minimum_value.to_i
   end
   
