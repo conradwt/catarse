@@ -16,10 +16,6 @@ class ProjectsController < ApplicationController
   before_filter :can_update_on_the_spot?, :only => :update_attribute_on_the_spot
   before_filter :date_format_convert, :only => [:create]
   
-  def date_format_convert
-    params["project"]["expires_at"] = Date.strptime(params["project"]["expires_at"], '%m/%d/%Y')
-  end
-
   def banda
     @title = "A Banda Mais Bonita da Cidade"
     @projects = current_site.present_projects.visible.where(:user_id => 7329).order( :order ).all
@@ -48,14 +44,7 @@ class ProjectsController < ApplicationController
   def start
     @title = t('projects.start.title')
   end
-  
-  def send_new_project_email
-    current_user.update_attribute :email, params[:contact] if current_user.email.nil?
-    ProjectsMailer.project_confirmation(params[:about], params[:rewards], params[:links], params[:contact], current_user, current_site).deliver
-    flash[:success] = t('projects.send_mail.success')
-    redirect_to :root
-  end
-  
+    
   def new
     return unless require_login
 
@@ -66,15 +55,12 @@ class ProjectsController < ApplicationController
   end
   
   def create
-    # params[:project][:expires_at] += (23.hours + 59.minutes + 59.seconds) if params[:project][:expires_at]
-    
     validate_rewards_attributes if params[:project][:rewards_attributes].present?
     
     create!(:notice => t('projects.create.success'))
     
     unless @project.new_record?
       @project.reload
-      @project.update_attribute :short_url, bitly
       @project.projects_sites.create :site => current_site
     end
 
@@ -85,7 +71,6 @@ class ProjectsController < ApplicationController
   end
   
   def update
-    
     validate_rewards_attributes if params[:project][:rewards_attributes].present?
         
     @project = current_user.projects.find( params[:id] )

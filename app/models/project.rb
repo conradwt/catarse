@@ -81,6 +81,8 @@ class Project < ActiveRecord::Base
   after_update  :send_update_project_submission_email,    :if => Proc.new { |p| p.user.email? }
   after_create  :send_new_project_confirmation_email,     :if => Proc.new { |p| p.user.email? }
   after_update  :send_update_project_confirmation_email,  :if => Proc.new { |p| p.user.email? }
+  after_create  :generate_short_url
+  before_update :generate_short_url,                      :if => short_url_changed?
   
   def set_project_expiration_date
     self.expires_at += 23.hours + 59.minutes + 59.seconds
@@ -294,5 +296,12 @@ class Project < ActiveRecord::Base
   def send_update_project_confirmation_email
     UsersMailer.deliver_update_project_confirmation( self.user, self )
   end
+  
+  def generate_short_url
+    Bitly.use_api_version_3
+    bitly = Bitly.new( BITLY_CONFIG[:login], BITLY_CONFIG[:api_key] )
+    response = bitly.shorten( project_url( self ) )
+    self.short_url = response.short_url || ''
+  end  
   
 end
