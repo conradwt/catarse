@@ -288,11 +288,11 @@ class Project < ActiveRecord::Base
   end
   
   def send_new_project_confirmation_email
-    ProjectsMailer.deliver_new_project_confirmation( self.user, self )
+    UsersMailer.deliver_new_project_confirmation( self.user, self )
   end
   
   def send_update_project_confirmation_email
-    ProjectsMailer.deliver_update_project_confirmation( self.user, self )
+    UsersMailer.deliver_update_project_confirmation( self.user, self )
   end
   
 end
