@@ -129,7 +129,7 @@ goal_ok = function() {
 };
 expires_at_ok = function() {
   var current_date, date, day, month, value, year;
-  value = /^(\d{2})\/(\d{2})\/(\d{4})?$/.exec($("#project_expires_at").val());
+  value = /^(\d{2})\/(\d{2})\/(\d{4})?$/.exec($("#project_expires_on").val());
   if (value && value.length === 4) {
     year = parseFloat(value[3]);
     day = parseFloat(value[2]);

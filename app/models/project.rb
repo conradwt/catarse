@@ -254,6 +254,25 @@ class Project < ActiveRecord::Base
     }
   end
   
+  def expires_on=( expires_on_string )
+     month, day, year = expires_on_string.split( "/" )
+    self.expires_at = Time.local( year, month, day )
+  rescue ArgumentError
+    @due_at_invalid = true
+  end
+  
+  def expires_on
+    self.expires_at.to_s( :month_day_year )
+  end
+  
+  def goal
+    self.goal.to_i
+  end
+  
+  def reward
+    self
+  end
+  
   private
   
   def send_new_project_submission_email
