@@ -279,10 +279,6 @@ class Project < ActiveRecord::Base
     self
   end
   
-  def generate_short_url
-    self.short_url = URLShortener.shorten( app.project_url( self ) )
-  end
-  
   private
   
   def send_new_project_submission_email
@@ -299,6 +295,10 @@ class Project < ActiveRecord::Base
   
   def send_update_project_confirmation_email
     UsersMailer.deliver_update_project_confirmation( self.user, self )
+  end
+  
+  def generate_short_url
+    self.short_url = URLShortener.shorten( Rails.application.routes.url_helpers.project_url( self ) )
   end
   
 end
