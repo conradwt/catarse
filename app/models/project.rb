@@ -279,6 +279,10 @@ class Project < ActiveRecord::Base
     self
   end
   
+  def generate_short_url
+    self.short_url = URLShortener.shorten( app.project_url( self ) )
+  end
+  
   private
   
   def send_new_project_submission_email
@@ -296,12 +300,5 @@ class Project < ActiveRecord::Base
   def send_update_project_confirmation_email
     UsersMailer.deliver_update_project_confirmation( self.user, self )
   end
-  
-  def generate_short_url
-    Bitly.use_api_version_3
-    bitly = Bitly.new( BITLY_CONFIG[:login], BITLY_CONFIG[:api_key] )
-    response = bitly.shorten( project_url( self ) )
-    self.short_url = response.short_url || ''
-  end  
   
 end
