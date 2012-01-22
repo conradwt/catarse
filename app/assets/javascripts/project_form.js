@@ -144,7 +144,7 @@ expires_at_ok = function() {
       return false;
     }
   } else {
-    $("#project_expires_at").addClass("error").removeClass("ok");
+    $("#project_expires_on").addClass("error").removeClass("ok");
     return false;
   }
 };
@@ -194,13 +194,13 @@ $("#project_video_url").timedKeyup(verify_video);
 $("#project_about").keyup(everything_ok);
 $("#project_category_id").change(everything_ok);
 $("#project_goal").keyup(everything_ok);
-$("#project_expires_at").keyup(everything_ok);
+$("#project_expires_on").keyup(everything_ok);
 $("#project_headline").keyup(everything_ok);
 $("#accept").click(everything_ok);
 $(".reward input,.reward textarea").live("keyup", everything_ok);
 $("#project_goal").numeric(false);
 $(".reward input").numeric(false);
-$("#project_expires_at").datepicker({
+$("#project_expires_on").datepicker({
   altFormat: "mm/dd/yy",
   onSelect: everything_ok
 });
