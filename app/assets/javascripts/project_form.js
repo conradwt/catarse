@@ -118,7 +118,7 @@ headline_ok = function() {
 };
 goal_ok = function() {
   var value;
-  value = $("#project_goal").val();
+  value = $("#project_goal_amount").val();
   if (/^(\d+)$/.test(value) && parseInt(value) > 0) {
     $("#project_goal_amount").addClass("ok").removeClass("error");
     return true;
@@ -137,10 +137,10 @@ expires_at_ok = function() {
     date = new Date(year, month, day);
     current_date = new Date();
     if ((day === date.getDate()) && (month === date.getMonth()) && (year === date.getFullYear()) && date > current_date) {
-      $("#project_expires_at").addClass("ok").removeClass("error");
+      $("#project_expires_on").addClass("ok").removeClass("error");
       return true;
     } else {
-      $("#project_expires_at").addClass("error").removeClass("ok");
+      $("#project_expires_on").addClass("error").removeClass("ok");
       return false;
     }
   } else {
