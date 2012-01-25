@@ -81,7 +81,6 @@ class Project < ActiveRecord::Base
   after_update  :send_update_project_submission_email,    :if => Proc.new { |p| p.user.email? }
   after_create  :send_new_project_confirmation_email,     :if => Proc.new { |p| p.user.email? }
   after_update  :send_update_project_confirmation_email,  :if => Proc.new { |p| p.user.email? }
-  before_create  :generate_short_url
   before_update :generate_short_url
   
   def set_project_expiration_date

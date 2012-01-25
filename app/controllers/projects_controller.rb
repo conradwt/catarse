@@ -60,6 +60,7 @@ class ProjectsController < ApplicationController
     
     unless @project.new_record?
       @project.reload
+      @project.update_attribute( :short_url, URLShortener.shorten( project_url( @project ) ) )
       @project.projects_sites.create :site => current_site
     end
 
