@@ -117,8 +117,7 @@ headline_ok = function() {
   }
 };
 goal_ok = function() {
-  var value;
-  value = $("#project_goal").val();
+  var value = $("#project_goal").val();
   if (/^(\d+)$/.test(value) && parseInt(value) > 0) {
     $("#project_goal").addClass("ok").removeClass("error");
     return true;
