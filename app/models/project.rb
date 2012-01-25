@@ -264,7 +264,11 @@ class Project < ActiveRecord::Base
   end
   
   def expires_on
-    self.expires_at.to_s( :month_day_year )
+    unless self.new_record?
+      self.expires_at.to_s( :month_day_year )
+    else
+      self.expires_at
+    end
   end
   
   def goal_amount=( amount )
@@ -272,7 +276,11 @@ class Project < ActiveRecord::Base
   end
   
   def goal_amount
-    self.goal.to_i
+    unless self.new_record?
+      self.goal.to_i
+    else
+      self.goal
+    end
   end
 
   def reward
