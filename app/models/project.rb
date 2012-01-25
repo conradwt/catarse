@@ -266,14 +266,6 @@ class Project < ActiveRecord::Base
     self.new_record? ? nil : self.expires_at.to_s( :month_day_year )
   end
   
-  def goal_amount=( amount )
-    self.goal = amount.to_f
-  end
-  
-  def goal_amount
-    self.new_record? ? nil : self.goal.to_i
-  end
-
   def reward
     self
   end

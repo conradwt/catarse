@@ -118,9 +118,9 @@ headline_ok = function() {
 };
 goal_ok = function() {
   var value;
-  value = $("#project_goal_amount").val();
+  value = $("#project_goal").val();
   if (/^(\d+)$/.test(value) && parseInt(value) > 0) {
-    $("#project_goal_amount").addClass("ok").removeClass("error");
+    $("#project_goal").addClass("ok").removeClass("error");
     return true;
   } else {
     $("#project_goal").addClass("error").removeClass("ok");
@@ -153,7 +153,7 @@ rewards_ok = function() {
   okey = true;
   $(".reward input").each(function() {
     if (/^(\d+)$/.test($(this).val())) {
-      if (/minimum_amount/.test($(this).attr("id"))) {
+      if (/minimum_value/.test($(this).attr("id"))) {
         if (parseInt($(this).val()) > 0) {
           return $(this).addClass("ok").removeClass("error");
         } else {

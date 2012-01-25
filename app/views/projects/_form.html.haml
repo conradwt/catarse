@@ -8,7 +8,7 @@
     = form.input :about
     = form.input :headline, :input_html => { :maxlength => 140 }
     = form.input :category, :collection => Category.all
-    = form.input :goal_amount
+    = form.input :goal
     = form.input :expires_on, :as => :string
     #project_rewards
       :javascript
@@ -23,7 +23,7 @@
               %a.remove_reward{:href=>'#'}= t('remove')
             = reward.input :description
             .left
-              = reward.input :minimum_amount
+              = reward.input :minimum_value
             .right
               = reward.input :maximum_backers
             .clear
