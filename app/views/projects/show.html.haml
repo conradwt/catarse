@@ -24,7 +24,7 @@
       /     = link_to '#about', :id => 'about_link' do
       /       = t('.menu.about')
       /       = image_tag "sites/#{current_site.path}/project_menu_selected.png"
-      - if current_user && current_user.can_edit?( @project ) && (current_user.email == "conradwt@gmail.com")
+      - if current_user && current_user.can_edit?( @project )
         %li
           = link_to edit_project_path( @project ), :id => 'edit_link' do
             = t('.menu.edit')
