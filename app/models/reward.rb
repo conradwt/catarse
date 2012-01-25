@@ -74,11 +74,7 @@ class Reward < ActiveRecord::Base
   end
   
   def minimum_amount
-    if self.new_record?
-      self.minimum_value.to_i
-    else
-      self.minimum_value
-    end
+    self.new_record? ? nil : self.minimum_value.to_i
   end
   
 end

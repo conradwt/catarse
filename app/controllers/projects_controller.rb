@@ -14,7 +14,6 @@ class ProjectsController < ApplicationController
   
   skip_before_filter :verify_authenticity_token, :only => [:moip]
   before_filter :can_update_on_the_spot?, :only => :update_attribute_on_the_spot
-  before_filter :date_format_convert, :only => [:create]
   
   def banda
     @title = "A Banda Mais Bonita da Cidade"
