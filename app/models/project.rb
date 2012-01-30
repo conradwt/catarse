@@ -279,7 +279,7 @@ class Project < ActiveRecord::Base
   end
   
   def send_update_project_submission_email
-    ProjectsMailer.deliver_update_project_submission( self.user, self )
+    ProjectsMailer.deliver_update_project_submission( self.user, self ) unless new_record?
   end
   
   def send_new_project_confirmation_email
@@ -287,7 +287,7 @@ class Project < ActiveRecord::Base
   end
   
   def send_update_project_confirmation_email
-    UsersMailer.deliver_update_project_confirmation( self.user, self )
+    UsersMailer.deliver_update_project_confirmation( self.user, self ) unless new_record?
   end
   
   def generate_short_url
