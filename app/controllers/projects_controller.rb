@@ -56,7 +56,7 @@ class ProjectsController < ApplicationController
   def create
     validate_rewards_attributes if params[:project][:rewards_attributes].present?
         
-    @project = Project.new( params[:project] )
+    # @project = Project.new( params[:project] )
     
     # if @project.save
     #   redirect_to @project, :notice => t('projects.create.success')
@@ -68,7 +68,7 @@ class ProjectsController < ApplicationController
     
     unless @project.new_record?
       @project.reload
-    #   @project.update_attribute( :short_url, URLShortener.shorten( project_url( @project ) ) )
+      # @project.update_attribute( :short_url, URLShortener.shorten( project_url( @project ) ) )
       @project.projects_sites.create :site => current_site
     end
 
