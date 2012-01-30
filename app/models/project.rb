@@ -103,9 +103,9 @@ class Project < ActiveRecord::Base
     end
   end
   
-  # def to_param
-  #   "#{self.id}-#{self.name.parameterize}"
-  # end
+  def to_param
+    "#{self.id}-#{self.name.parameterize}"
+  end
   
   def vimeo
     return @vimeo if @vimeo

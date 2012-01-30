@@ -97,9 +97,9 @@ class ProjectsController < ApplicationController
   def show
     show! do
       
-      if request.path != project_path( @project )
-        redirect_to @project, status: :moved_permanently
-      end
+      # if request.path != project_path( @project )
+      #   redirect_to @project, status: :moved_permanently
+      # end
       
       unless @project.present_on_site?(current_site)
         flash[:failure] = t('projects.show.not_present')
