@@ -31,6 +31,9 @@ class Project < ActiveRecord::Base
   include ERB::Util
   include Rails.application.routes.url_helpers
   
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :history]
+  
   acts_as_commentable
   
   belongs_to :user
@@ -83,7 +86,8 @@ class Project < ActiveRecord::Base
   before_create  :send_new_project_confirmation_email,     :if => Proc.new { |p| p.user.email? }
   before_update  :send_update_project_confirmation_email,  :if => Proc.new { |p| p.user.email? }
   
-  before_update :generate_short_url
+  before_create  :generate_short_url
+  before_update  :generate_short_url
   
   def set_project_expiration_date
     self.expires_at += 23.hours + 59.minutes + 59.seconds
@@ -99,9 +103,9 @@ class Project < ActiveRecord::Base
     end
   end
   
-  def to_param
-    "#{self.id}-#{self.name.parameterize}"
-  end
+  # def to_param
+  #   "#{self.id}-#{self.name.parameterize}"
+  # end
   
   def vimeo
     return @vimeo if @vimeo

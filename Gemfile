@@ -14,6 +14,8 @@ gem "capistrano",                 "~> 2.9.0"
 gem "capistrano_colors",          "~> 0.5.5"
 gem "compass",                    "~> 0.11.5"
 
+gem "friendly_id",                "~> 4.0.0"
+
 # gem "errship",                    "~> 2.1.1"
 gem "execjs",                     "~> 1.2.6"
 
@@ -25,7 +27,6 @@ gem "http_accept_language",       "~> 1.0.2"
 gem 'inherited_resources',        '>= 1.1.2'
 
 gem 'jquery-rails'
-
 
 gem "madmimi",                    "~> 1.0.15"
 gem 'mad_mimi_mailer',            :git => 'git://github.com/madmimi/mad_mimi_mailer.git'

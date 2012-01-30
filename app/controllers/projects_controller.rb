@@ -55,12 +55,20 @@ class ProjectsController < ApplicationController
   
   def create
     validate_rewards_attributes if params[:project][:rewards_attributes].present?
+        
+    @project = Project.new( params[:project] )
     
-    create!(:notice => t('projects.create.success'))
+    if @project.save
+      redirect_to @project, :notice => t('projects.create.success')
+    else
+      render :action => 'new'
+    end
+    
+    # create!(:notice => t('projects.create.success'))
     
     unless @project.new_record?
-      @project.reload
-      @project.update_attribute( :short_url, URLShortener.shorten( project_url( @project ) ) )
+    #   @project.reload
+    #   @project.update_attribute( :short_url, URLShortener.shorten( project_url( @project ) ) )
       @project.projects_sites.create :site => current_site
     end
 
@@ -88,7 +96,12 @@ class ProjectsController < ApplicationController
   
   def show
     show! do
-       unless @project.present_on_site?(current_site)
+      
+      if request.path != project_path( @project )
+        redirect_to @project, status: :moved_permanently
+      end
+      
+      unless @project.present_on_site?(current_site)
         flash[:failure] = t('projects.show.not_present')
         return redirect_to :root
       end
