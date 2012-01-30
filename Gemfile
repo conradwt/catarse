@@ -14,8 +14,6 @@ gem "capistrano",                 "~> 2.9.0"
 gem "capistrano_colors",          "~> 0.5.5"
 gem "compass",                    "~> 0.11.5"
 
-gem "friendly_id",                "~> 4.0.0"
-
 # gem "errship",                    "~> 2.1.1"
 gem "execjs",                     "~> 1.2.6"
 

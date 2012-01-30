@@ -31,9 +31,6 @@ class Project < ActiveRecord::Base
   include ERB::Util
   include Rails.application.routes.url_helpers
   
-  extend FriendlyId
-  friendly_id :name, use: [:slugged, :history]
-  
   acts_as_commentable
   
   belongs_to :user
