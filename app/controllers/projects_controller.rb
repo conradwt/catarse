@@ -58,16 +58,16 @@ class ProjectsController < ApplicationController
         
     @project = Project.new( params[:project] )
     
-    if @project.save
-      redirect_to @project, :notice => t('projects.create.success')
-    else
-      render :action => 'new'
-    end
+    # if @project.save
+    #   redirect_to @project, :notice => t('projects.create.success')
+    # else
+    #   render :action => 'new'
+    # end
     
-    # create!(:notice => t('projects.create.success'))
+    create!(:notice => t('projects.create.success'))
     
     unless @project.new_record?
-    #   @project.reload
+      @project.reload
     #   @project.update_attribute( :short_url, URLShortener.shorten( project_url( @project ) ) )
       @project.projects_sites.create :site => current_site
     end
