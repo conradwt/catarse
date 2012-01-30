@@ -86,7 +86,6 @@ class Project < ActiveRecord::Base
   before_create  :send_new_project_confirmation_email,     :if => Proc.new { |p| p.user.email? }
   before_update  :send_update_project_confirmation_email,  :if => Proc.new { |p| p.user.email? }
   
-  after_create   :generate_short_url
   before_update  :generate_short_url
   
   def set_project_expiration_date
@@ -296,7 +295,6 @@ class Project < ActiveRecord::Base
   
   def generate_short_url
     self.short_url = URLShortener.shorten(  "http://www.smartn.me/#{I18n.locale.to_s}/#{self.to_param}" )
-    self.save
   end
   
 end
