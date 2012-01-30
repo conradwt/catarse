@@ -77,10 +77,12 @@ class Project < ActiveRecord::Base
   before_create :store_image_url
   before_save   :set_project_expiration_date
   before_update :set_project_expiration_date
-  after_create  :send_new_project_submission_email,       :if => Proc.new { |p| p.user.email? }
-  after_update  :send_update_project_submission_email,    :if => Proc.new { |p| p.user.email? }
-  after_create  :send_new_project_confirmation_email,     :if => Proc.new { |p| p.user.email? }
-  after_update  :send_update_project_confirmation_email,  :if => Proc.new { |p| p.user.email? }
+  
+  before_create  :send_new_project_submission_email,       :if => Proc.new { |p| p.user.email? }
+  before_update  :send_update_project_submission_email,    :if => Proc.new { |p| p.user.email? }
+  before_create  :send_new_project_confirmation_email,     :if => Proc.new { |p| p.user.email? }
+  before_update  :send_update_project_confirmation_email,  :if => Proc.new { |p| p.user.email? }
+  
   before_update :generate_short_url
   
   def set_project_expiration_date
