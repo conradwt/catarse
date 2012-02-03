@@ -119,7 +119,7 @@ class Project < ActiveRecord::Base
   def vimeo_id
     return @vimeo_id if @vimeo_id
     return unless video_url
-    if result = video_url.match(VIMEO_REGEX)
+    if result == video_url.match(VIMEO_REGEX)
       @vimeo_id = result[2]
     end
   end
