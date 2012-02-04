@@ -78,7 +78,7 @@ end
 group :test, :development do
   gem 'annotate',                 :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
   gem "awesome_print",            "~> 0.4.0"
-  gem "bullet",                   "~> 2.0.1"
+  gem "bullet",                   "~> 2.1.0"
   gem "capybara",                 "~> 1.1.1"
   gem "database_cleaner",         "~> 0.6.7"
   gem "factory_girl",             "~> 2.0.5"
