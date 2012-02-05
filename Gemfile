@@ -33,6 +33,7 @@ gem "meta-tags",                  "~> 1.2.4"
 gem 'moip',                       :git => 'git://github.com/danielweinmann/moip-ruby.git'
 gem 'mustache'
 
+gem "newrelic_rpm",               "~> 3.3.1"
 gem "nokogiri",                   "~> 1.4.3"
 
 gem 'omniauth',                   "~> 0.2.6"
