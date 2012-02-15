@@ -78,7 +78,7 @@ end
 
 group :test, :development do
   gem 'annotate',                 :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
-  gem "awesome_print",            "~> 0.4.0"
+  gem "awesome_print",            "~> 1.0.2"
   gem "bullet",                   "~> 2.1.0"
   gem "capybara",                 "~> 1.1.1"
   gem "database_cleaner",         "~> 0.6.7"
@@ -88,7 +88,8 @@ group :test, :development do
   gem "hirb",                     "~> 0.5.0"
   gem "launchy"
   gem 'mocha'
-  gem "rails-footnotes",          "~> 3.7.5.rc4"
+  gem 'pry-rails'
+  gem "rails-footnotes",          "~> 3.7.5"
   gem "reek",                     "~> 1.2.8"
   gem 'rspec-rails',              "~> 2.6.1"
   gem 'ruby2ruby',                "= 1.3.0"
