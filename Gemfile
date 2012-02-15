@@ -87,8 +87,8 @@ group :test, :development do
   gem "guard-rspec",              "~> 0.4.5"
   gem "hirb",                     "~> 0.5.0"
   gem "launchy"
-  gem 'mocha'
-  gem 'pry-rails'
+  gem 'mocha',                    "~> 0.10.4"
+  gem 'pry-rails',                "~> 0.1.6"
   gem "rails-footnotes",          "~> 3.7.5"
   gem "reek",                     "~> 1.2.8"
   gem 'rspec-rails',              "~> 2.6.1"
