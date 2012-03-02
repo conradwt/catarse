@@ -1,6 +1,6 @@
 == Catarse
    
-   Note:  This fork is being developed by Conrad Taylor for the site, http://smartn.me.
+   Note:  This fork is being developed by Conrad Taylor for the site, smartn.me.
 
 === The first open source crowdfunding platform in the world
 
