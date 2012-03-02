@@ -32,7 +32,7 @@ Our goal is to spread crowdfunding across the world, in a collaborative and crea
 
 == Getting started
 
-We currently have a great blog post in Portuguese, written by Relsi Hur Maron, with a step-by-step guide on how to run and start developing Catarse on your environment. Check it on http://www.tuxtilt.com/catarse-plataforma-de-crowdfunding-open-source and have fun!  Also, {smartn.me}[http://smartn.me] has a great blog.
+We currently have a great blog post in Portuguese, written by Relsi Hur Maron, with a step-by-step guide on how to run and start developing Catarse on your environment. Check it on http://www.tuxtilt.com/catarse-plataforma-de-crowdfunding-open-source and have fun!  Also, {smartn.me}[http://blog.smartn.me] has a great blog.
 
 Thanks a lot to Relsi for the post and for adventuring into undocumented lands :)
 
