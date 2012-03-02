@@ -1,4 +1,7 @@
 == Catarse
+   
+   Note:  This fork is being developed by Conrad Taylor for the site, {smartn.me}[http://smartn.me].
+
 === The first open source crowdfunding platform in the world
 
 Welcome to Catarse's source code repository. Our goal with opening the source code is to stimulate the creation of a community of developers around a high-quality crowdfunding platform.
@@ -17,7 +20,7 @@ Thanks a lot to Daniel Walmsley, from http://purpose.com, for starting the inter
 
 === Payment gateways
 
-Currently, we only support MoIP, which is a brazilian payment gateway. We need to create different options of payment gateways so each site can chose which gateways to use.
+Currently, we only support Paypal, which is a world wide payment gateway. We need to create different options of payment gateways so each site can chose which gateways to use.
 
 I'm thinking of a Rails Engine for each gateway, since we're gonna need to change some views to match each gateway's requirements. If you want your site to use a different gateway, please join us and help us creating this infrastructure.
 
@@ -29,7 +32,7 @@ Our goal is to spread crowdfunding across the world, in a collaborative and crea
 
 == Getting started
 
-We currently have a great blog post in Portuguese, written by Relsi Hur Maron, with a step-by-step guide on how to run and start developing Catarse on your environment. Check it on http://www.tuxtilt.com/catarse-plataforma-de-crowdfunding-open-source and have fun!
+We currently have a great blog post in Portuguese, written by Relsi Hur Maron, with a step-by-step guide on how to run and start developing Catarse on your environment. Check it on http://www.tuxtilt.com/catarse-plataforma-de-crowdfunding-open-source and have fun!  Also, {smartn.me}[http://smartn.me] has a great blog.
 
 Thanks a lot to Relsi for the post and for adventuring into undocumented lands :)
 
