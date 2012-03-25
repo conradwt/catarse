@@ -47,7 +47,7 @@ gem "rails_autolink",             "~> 1.0.2"
 # gem "rails-backbone",             "~> 0.5.4"
 gem "rake",                       "~> 0.9.2.2"
 gem "RedCloth",                   "~> 4.2.8"
-gem "routing-filter",             "~> 0.2.4"
+gem "routing-filter",             "~> 0.3.0"
 
 gem "slim",                       "~> 1.0.2"
 gem "spectator-validates_email",  "~> 0.0.8",     :require => 'validates_email'
