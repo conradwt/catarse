@@ -17,7 +17,7 @@ gem "compass",                    "~> 0.11.5"
 # gem "errship",                    "~> 2.1.1"
 gem "execjs",                     "~> 1.2.6"
 
-gem 'formtastic',                 '~> 1.1.0'
+gem 'formtastic',                 '~> 2.1.1'
 
 gem "haml",                       "~> 3.1.3"
 gem "http_accept_language",       "~> 1.0.2"
