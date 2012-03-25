@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-gem "rails",                      "~> 3.1.3"
+gem 'rails',                      "3.2.2"
 
 gem "acts_as_commentable",        "~> 3.0.1"
 gem "addressable",                "~> 2.2.4"
@@ -52,8 +52,6 @@ gem "routing-filter",             "~> 0.2.4"
 gem "slim",                       "~> 1.0.2"
 gem "spectator-validates_email",  "~> 0.0.8",     :require => 'validates_email'
 
-gem "therubyracer",               "~> 0.9.9",      :require => 'v8'
-
 gem "unicode",                    "~> 0.4.0"
 
 gem "validation_reflection",      "~> 1.0.0"
@@ -65,10 +63,10 @@ gem 'will_paginate',              "~> 3.0.0"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'coffee-rails',             "~> 3.1.1"
-  gem 'sass-rails',               "~> 3.1.5"
-  gem "uglifier",                 "~> 1.0.3"
-  # gem 'closure-compiler'
+  gem 'coffee-rails',             "~> 3.2.1"
+  gem 'sass-rails',               "~> 3.2.3"
+  gem "therubyracer",             "~> 0.9.10",      :require => 'v8'
+  gem "uglifier",                 ">= 1.0.3"
 end
 
 group :test do

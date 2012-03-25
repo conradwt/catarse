@@ -13,18 +13,9 @@ Catarse::Application.configure do
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
-  
-  # Choose the compressors for CSS files.
-  # config.assets.css_compressor = :yui
-  
-  # Choose the compressors for Javascript files.
-  # config.assets.js_compressor = :closure
-  # config.assets.js_compressor  = :uglifier
-  # config.assets.js_compressor = :yui
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false # default
-  # config.assets.compile = true
+  config.assets.compile = false
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -33,7 +24,7 @@ Catarse::Application.configure do
   # config.assets.manifest = YOUR_PATH
 
   # Specifies the header that your server uses for sending files
-  config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
+  # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
@@ -47,10 +38,6 @@ Catarse::Application.configure do
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
-  
-  # Disable Rails's static asset server
-  # In production, Apache or nginx will already do this
-  config.serve_static_assets = false  # TK: Rails 3.0
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
@@ -96,8 +83,7 @@ Catarse::Application.configure do
                                   show_project.js
                                   slider.js
                                   start_project.js
-                                  user.js
-                                 )
+                                )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -111,5 +97,4 @@ Catarse::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  config.active_record.schema_format = :sql # TK: Rails 3.0
 end

@@ -19,8 +19,7 @@ Catarse::Application.configure do
   config.action_controller.perform_caching = false
 
   # Raise exceptions instead of rendering exception templates
-  # config.action_dispatch.show_exceptions = false
-  config.action_dispatch.show_exceptions = true # TK: Rails 3.0
+  config.action_dispatch.show_exceptions = false
 
   # Disable request forgery protection in test environment
   config.action_controller.allow_forgery_protection    = false
@@ -33,11 +32,11 @@ Catarse::Application.configure do
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,
   # like if you have constraints or database-specific column types
-  config.active_record.schema_format = :sql
+  # config.active_record.schema_format = :sql
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
-
-  # Allow pass debug_assets=true as a query parameter to load pages with unpackaged assets
-  config.assets.allow_debugging = true
+  
+  # Raise exception on mass assignment protection for Active Record models
+  config.active_record.mass_assignment_sanitizer = :strict
 end

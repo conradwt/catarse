@@ -21,14 +21,53 @@ Catarse::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
-  config.active_record.schema_format = :sql  # TK:  Rails 3.0
-  
+
   # Do not compress assets
   config.assets.compress = false
 
   # Expands the lines which load the assets
   config.assets.debug = true
   
+  # Raise exception on mass assignment protection for Active Record models
+  config.active_record.mass_assignment_sanitizer = :strict
+
+  # Log the query plan for queries taking more than this (works
+  # with SQLite, MySQL, and PostgreSQL)
+  config.active_record.auto_explain_threshold_in_seconds = 0.5
+  
+  # ===============================================================================
+  # 
+  # Some setup you must do manually if you haven't yet:
+  #  
+  #   1. Ensure you have defined default url options in your environments files. Here 
+  #      is an example of default_url_options appropriate for a development environment 
+  #      in config/environments/development.rb:
+  # 
+  #        config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  # 
+  #      In production, :host should be set to the actual host of your application.
+  # 
+  #   2. Ensure you have defined root_url to *something* in your config/routes.rb.
+  #      For example:
+  # 
+  #        root :to => "home#index"
+  # 
+  #   3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+  #      For example:
+  # 
+  #        <p class="notice"><%= notice %></p>
+  #        <p class="alert"><%= alert %></p>
+  # 
+  #   4. If you are deploying Rails 3.1 on Heroku, you may want to set:
+  # 
+  #        config.assets.initialize_on_precompile = false
+  # 
+  #      On config/application.rb forcing your application to not access the DB
+  #      or load models when precompiling your assets.
+  # 
+  # ===============================================================================
+  
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   # Configuration of the bullet gem.
   config.after_initialize do
     Bullet.enable = true
