@@ -54,7 +54,7 @@ gem "spectator-validates_email",  "~> 0.0.8",     :require => 'validates_email'
 
 gem "unicode",                    "~> 0.4.0"
 
-gem "validation_reflection",      "~> 1.0.0"
+gem "validation_reflection",      :git => 'git://github.com/ncri/validation_reflection.git'
 gem "vimeo",                      "~> 1.4.2"
 
 gem "weekdays",                   "~> 1.0.2"
