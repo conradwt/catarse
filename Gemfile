@@ -53,6 +53,7 @@ gem "slim",                       "~> 1.0.2"
 gem "spectator-validates_email",  "~> 0.0.8",     :require => 'validates_email'
 
 gem "unicode",                    "~> 0.4.0"
+gem "unicorn",                    "~> 4.3.1"
 
 gem "validation_reflection",      :git => 'git://github.com/ncri/validation_reflection.git'
 gem "vimeo",                      "~> 1.4.2"

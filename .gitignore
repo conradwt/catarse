@@ -12,7 +12,6 @@ db/development_structure.sql
 coverage
 *.tmproj
 .DS_Store
-Capfile
 config/deploy.rb
 docs/txt/hostingrails.txt
 config/initializers/omniauth.rb
