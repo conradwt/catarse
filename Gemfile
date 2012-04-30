@@ -35,9 +35,9 @@ gem 'mustache'
 gem "newrelic_rpm",               "~> 3.3.1"
 gem "nokogiri",                   "~> 1.4.3"
 
-# gem "omniauth",                   "~> 1.1.0"
+gem "omniauth",                   "~> 1.1.0"
 gem "omniauth-facebook",          "~> 1.2.0"
-gem "omniauth-openid",            :git => 'git://github.com/intridea/omniauth-openid.git'
+# gem "omniauth-openid",            :git => 'git://github.com/intridea/omniauth-openid.git'
 gem "omniauth-twitter",           "~> 0.0.11"
 gem "on_the_spot",                "~> 0.0.14"
 
