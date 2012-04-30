@@ -11,7 +11,6 @@ db/development_structure.sql
 *.swp
 coverage
 *.tmproj
-.DS_Store
 config/deploy.rb
 docs/txt/hostingrails.txt
 config/initializers/omniauth.rb
@@ -19,9 +18,9 @@ config/initializers/setup_mail.rb
 .sass-cache/
 public/assets/
 config/paypal.yml
-.idea/
 config/initializers/bitly.rb
 config/initializers/theme.rb
 config/initializers/madmimi.rb
 config/newrelic.yml
+config/recipes/*
 
