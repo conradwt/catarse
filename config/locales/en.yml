@@ -1,415 +1,421 @@
-en:
-  activerecord:
-      models:
-        backer: Supporter
+en: 
+  accept_terms_html: "I have read and accepted the %{link}."
+  activerecord: 
+    attributes: 
+      backer: 
+        value: Value
+      project: 
         category: Category
-        project: Campaign
-        reward: Reward
-      attributes:
-        backer:
-          value: Value
-        project:
-          name: Name
-          headline: Headline
-          expires_at: Deadline
-          user_id: User Id
-          category: Category
-          image_url: Image URL
-          video_url: Video URL
-        reward:
-          description: Description
-          minimum_value: Minimum value
-          maximum_backers: Maximum backers
-        user:
-          full_name: Full name
-          email: Email
-          address_zip_code: Zip code
-          address_street: Street
-          address_number: Number
-          address_complement: Complement
-          address_neighbourhood: Neighbourhood
-          address_city: City
-          address_state: State
-          phone_number: Phone number
-  formtastic:
-    optional: " (optional)"
-    labels:
-      project:
-        name: Name of your campaign
-        video_url: Video
-        about: About your campaign
-        goal: How much do you need?
-        expires_at: What's the deadline to reach your goal?
-      reward:
-        maximum_backers: Maximum supporters (optional)
-      comment:
-        comment: Leave your comment about this campaign
-      backer:
-        value: How much do you want to contribute?
-        credits: I want to use my credits on this campaign.
-        reward: Select your reward
-        anonymous: I want my contribution to be anonymous.
-    hints:
-      project:
-        name: What's the name of your campaign? Be specific, because this will influence the chances of your campaign reaching its goal.
-        video_url: This video introduces you to potential supporters who want to know all about you and your education goals. While an Oscar worthy video is not necessary, we do require a video in order for your campaign to be accepted. <strong>Paste the URL from your <a href="http://vimeo.com" target="_blank">Vimeo</a> video.</strong> We use Vimeo because they support high-quality videos with no ads.
-        about: Give us the details of your master plan! What's your background? Where are you going? What are you studying? How much money do you need? How will the money be used? Try to be as specific as possible so that potential supporters will be inspired to get involved.
-        headline: Summarize your campaign in 140 characters or less. Your headline will be the first thing people see when viewing your campaign. Be creative and concise!
-        category: Choose a category that best suits your campaign. Don't worry if you think it fits in more than one. Choose the one where you want people to find your campaign.
-        goal: Think hard about the amount you need and be sure to account for <a href="http://smartn.me/en/faq#section4" target="_blank">standard transaction fees</a>. The amount should be the <strong>minimum necessary to achieve the campaign's goal</strong>. Nothing more, nothing less. If you ask for too much, your chances of reaching the minimum will be lower; if you don't ask for enough, you won't be able to carry out your plans.
-        expires_at: "Finally, choose how long you want your campaign to last. Give yourself enough time to rally enough support to reach your goal amount, but beware that an extended period could bore potential supporters."
-      reward:
-        description: Include all relevant details about the reward you are offering in exchange for support.
-        minimum_value: This is the minimum amount required to choose this reward.
-        maximum_backers: If your reward is limited, how many supporters can recieve this reward.
-      backer:
-        value: Choose the amount you wish to donate. Minimum $10.
-        credits: You have <strong>%{credits}</strong> in credits that you can use to donate without making a new payment.
-  "yes": Yes
-  "no": No
-  accept_terms_html: I have read and accepted the %{link}.
-  terms: terms of use
-  require_login: You must be logged in to perform this action.
-  require_admin: You must be admin to perform this action.
-  require_permission: You don't have permission to perform this action.
-  notify_locale: We identified your language by your browser. If you prefer another one, click on one of the flags on the right.
-  error: Ooops! There was an error. Please try again.
-  here: here
-  clicking_here: clicking here
-  click_here: Click here
-  not_informed: not informed
-  remove: remove
-  remaining_singular: left
-  remaining_plural: left
-  backer_singular: supporter
-  backer_plural: supporters
-  found_singular: Found
-  found_plural: Found
-  i_backed: I supported this campaign
-  i_just_backed: I just donated to this campaign
-  backer:
-    reward_must_be_from_project: must be from the same campaign
-    value_must_be_at_least_rewards_value: must be at least %{minimum_value} for the selected reward
-    should_not_back_if_maximum_backers_been_reached: has reached its maximum supporters
-    display_confirmed_at: %{time_ago} ago
-  comment:
-    display_time: %{time_ago} ago
-  project:
-    vimeo_regex_validation: only Vimeo URLs are allowed
-    verify_if_video_exists_on_vimeo: must exist on Vimeo
-    finish:
-      successful:
-        notification_text: Hooray! The campaign %{link} that you supported was successful! Spread the word!
-        twitter_text: "Hooray! The campaign '%{name}', that I supported, was successful %{in_the_twitter}! %{short_url}"
-        facebook_text: "Hooray! The campaign '%{name}', that I supported, was successful %{in_the_name}!"
-        email_subject: Hooray! The campaign you supported was successful %{in_the_name}!
-        email_text: "The smartn.me campaign %{project_link}, that you supported, was successfuly funded %{in_the_name}!<br><br>Thank you so much for giving your support! You just helped a student fund their eductation and without you this wouldn't have been possible. Soon, %{user_link} will contact you to deliver your reward. In the mean time, feel free to spread the news of this success in hopes that more people will contribute to our student's educational endeavors!"
-        reward_notification_text: "Soon, %{link} will contact you to deliver your reward. Enjoy!"
-      unsuccessful:
-        unsuccessful_text: "Unfortunately the campaign %{link} that you supported did not reach its goal amount."
-        notification_text: You received %{value} in credits to donate to other projects. If you prefer, you can request a refund %{link}.
-        email_subject: "The campaign you supported wasn't funded %{in_the_name}."
-        email_text: "The smartn.me campaign %{project_link}, that you supported, was not funded. <br><br>Because of this, you received <strong>%{value}</strong> in credits to support other campaigns. If you prefer, you can ask for a refund %{credits_link}.Thanks so much for your participation!"
-  reward:
-    dont_want: I don't want a reward
-    sold_out: Sold out
-    limited: Limited
-    display_remaining: %{remaining} of %{maximum} available
-  site:
-    male:
-      the: ""
-      in_the: "on"
-      to_the: "to"
-    female:
-      the: ""
-      in_the: "on"
-      to_the: "to"
-  user:
-    no_name: Unnamed
-    backs_text:
-      one: Supported only this campaign until now
-      two: Supported this and 1 other campaign
-      many: Supported this and other %{total} campaigns
-  credits:
-    title: My credits
-    refund:
-      cannot_refund: This payment cannot be refunded.
-      no_credits: You don't have enough credits to request this refund.
-      requested_refund: You already requested a refund for this payment.
-      refunded: This payment has already been refunded.
-      error: Oops. There was an error while requesting your refund.
-    index:
-      title: My credits
-      subtitle: When a campaign you support is not funded, you will receive credits to back other campaigns. But if you prefer, you can request a refund of the payment here.
-      current_credits_html: Your current balance is <span id="current_credits">%{credits}</span> in credits.
-      buy_credits_html: "<strong>You don't need to have credits to support a campaign</strong>. Whenever you decide to donate, just pay online. But if you would like to support several campaigns, it's a good idea to buy credits in advance: this way you won't need to make a payment each time you support a campaign."
-      buy_credits: Buy credits
-      no_refunds: You don't have a payment that can be refunded
-      refunds_title: Payments available for refund
+        expires_at: Deadline
+        headline: Headline
+        image_url: "Image URL"
+        name: Name
+        user_id: "User Id"
+        video_url: "Video URL"
+      reward: 
+        description: Description
+        maximum_backers: "Maximum backers"
+        minimum_value: "Minimum value"
+      user: 
+        address_city: City
+        address_complement: Complement
+        address_neighbourhood: Neighbourhood
+        address_number: Number
+        address_state: State
+        address_street: Street
+        address_zip_code: "Zip code"
+        email: Email
+        full_name: "Full name"
+        phone_number: "Phone number"
+    models: 
+      backer: Supporter
+      category: Category
       project: Campaign
-      created_at: Payment date
-      value: Value
-      refund_deadline: Refund deadline
-      status: Status
+      reward: Reward
+  backer: 
+    display_confirmed_at: "%{time_ago} ago"
+    reward_must_be_from_project: "must be from the same campaign"
+    should_not_back_if_maximum_backers_been_reached: "has reached its maximum supporters"
+    value_must_be_at_least_rewards_value: "must be at least %{minimum_value} for the selected reward"
+  backer_plural: supporters
+  backer_singular: supporter
+  backers: 
+    new: 
+      submit: Checkout
+  click_here: "Click here"
+  clicking_here: "clicking here"
+  comment: 
+    display_time: "%{time_ago} ago"
+  credits: 
+    index: 
+      buy_credits: "Buy credits"
+      buy_credits_html: "<strong>You don't need to have credits to support a campaign</strong>. Whenever you decide to donate, just pay online. But if you would like to support several campaigns, it's a good idea to buy credits in advance: this way you won't need to make a payment each time you support a campaign."
+      confirm: "Are you sure you want to request a refund for this payment?"
+      created_at: "Payment date"
+      current_credits_html: "Your current balance is <span id=\"current_credits\">%{credits}</span> in credits."
+      important_html: "You have <strong>up to 180 days after the payment date</strong> to ask for a refund. If you ask for a refund, the value of your payment will be deducted from your credits."
+      no_refunds: "You don't have a payment that can be refunded"
+      project: Campaign
+      refund_deadline: "Refund deadline"
       refunded: Refunded
-      requested_refund: Requested refund
-      request_refund: Request refund
-      important_html: You have <strong>up to 180 days after the payment date</strong> to ask for a refund. If you ask for a refund, the value of your payment will be deducted from your credits.
-      confirm: Are you sure you want to request a refund for this payment?
+      refunds_title: "Payments available for refund"
+      request_refund: "Request refund"
+      requested_refund: "Requested refund"
+      status: Status
+      subtitle: "When a campaign you support is not funded, you will receive credits to back other campaigns. But if you prefer, you can request a refund of the payment here."
+      title: "My credits"
+      value: Value
+    refund: 
+      cannot_refund: "This payment cannot be refunded."
+      error: "Oops. There was an error while requesting your refund."
+      no_credits: "You don't have enough credits to request this refund."
+      refunded: "This payment has already been refunded."
+      requested_refund: "You already requested a refund for this payment."
+    title: "My credits"
+  error: "Ooops! There was an error. Please try again."
+  for: for
+  formtastic: 
+    hints: 
+      backer: 
+        credits: "You have <strong>%{credits}</strong> in credits that you can use to donate without making a new payment."
+        value: "Choose the amount you wish to donate. Minimum $10."
+      project: 
+        about: "Give us the details of your master plan! What's your background? Where are you going? What are you studying? How much money do you need? How will the money be used? Try to be as specific as possible so that potential supporters will be inspired to get involved."
+        category: "Choose a category that best suits your campaign. Don't worry if you think it fits in more than one. Choose the one where you want people to find your campaign."
+        expires_at: "Finally, choose how long you want your campaign to last. Give yourself enough time to rally enough support to reach your goal amount, but beware that an extended period could bore potential supporters."
+        goal: "Think hard about the amount you need and be sure to account for <a href=\"http://smartn.me/en/faq#section4\" target=\"_blank\">standard transaction fees</a>. The amount should be the <strong>minimum necessary to achieve the campaign's goal</strong>. Nothing more, nothing less. If you ask for too much, your chances of reaching the minimum will be lower; if you don't ask for enough, you won't be able to carry out your plans."
+        headline: "Summarize your campaign in 140 characters or less. Your headline will be the first thing people see when viewing your campaign. Be creative and concise!"
+        name: "What's the name of your campaign? Be specific, because this will influence the chances of your campaign reaching its goal."
+        video_url: "This video introduces you to potential supporters who want to know all about you and your education goals. While an Oscar worthy video is not necessary, we do require a video in order for your campaign to be accepted. <strong>Paste the URL from your <a href=\"http://vimeo.com\" target=\"_blank\">Vimeo</a> video.</strong> We use Vimeo because they support high-quality videos with no ads."
+      reward: 
+        description: "Include all relevant details about the reward you are offering in exchange for support."
+        maximum_backers: "If your reward is limited, how many supporters can recieve this reward."
+        minimum_value: "This is the minimum amount required to choose this reward."
+    labels: 
+      backer: 
+        anonymous: "I want my contribution to be anonymous."
+        credits: "I want to use my credits on this campaign."
+        reward: "Select your reward"
+        value: "How much do you want to contribute?"
+      comment: 
+        comment: "Leave your comment about this campaign"
+      project: 
+        about: "About your campaign"
+        expires_at: "What's the deadline to reach your goal?"
+        goal: "How much do you need?"
+        name: "Name of your campaign"
+        video_url: Video
+      reward: 
+        maximum_backers: "Maximum supporters (optional)"
+    optional: " (optional)"
+  found_plural: Found
+  found_singular: Found
+  here: here
+  i_backed: "I supported this campaign"
+  i_just_backed: "I just donated to this campaign"
   layouts:
-    pre_header:
-      back_notice_html: You supported the campaign %{link}. Spread the word to all of your friends!
-    login:
-      title: Enter with your favorite social network
-      remember_me: Remember me and keep me connected.
-      description_html: We will <strong>never</strong> know your password or any other secret data from the chosen social network. We will only have access to your basic information, like name, photo and email.
-      tips_html: <strong>Remember which social network you used to sign-up</strong>. You will always access your account with it.
-    user:
-      my_profile: My profile
-      my_credits: My credits
-      logout: Logout
     application:
       menu:
-        explore: Explore Campaigns
-        submit: Submit a Campaign
-        signup: Sign-up
+        explore: "Explore Campaigns"
         login: Log-in
-  projects:
-    index:
-      recommended: Recommended campaigns
-      expiring: Final countdown
-      recent: Recent campaigns
-      successful: Successful campaigns
-    home_page_projects:
-      title: Featured campaigns
-    project_list:
-      explore_recommended: Explore more recommended campaigns
-      explore_expiring: Explore more campaigns in the final countdown
-      explore_recent: Explore more recent campaigns
-      explore_successful: Explore more successful campaigns
-    admin_fields:
-      title: Admin fields
-    back_project:
-      person: Person
-      has: ""
-      backed_singular: donated
-      backed_plural: donated
-      reached_of: Raised of
-      project_warning:
-        successful:
-          expired: This campaign was successfully funded on %{date}
-          not_expired: This campaign will be successfully funded on %{date}
-        waiting_confirmation: Waiting confirmation from payments to know if this campaign will be funded.
-        not_successful:
-          expired: This campaign didn't reach the goal of %{goal} by %{date} and wasn't funded
-          not_expired: This campaign will only be funded if at least %{goal} is donated by %{date}
-      submit: Support this campaign
-    backer:
-      anonymous_backer: Anonymous supporter
-      anonymous_description: Opted to remain incognito
-      no_reward: This supporter has not picked a reward
-    form:
-      important_html: Please notice that %{site} will charge 5% if your campaign is successful, and %{link} charges 2.9% + $0.30 USD per transaction. Add this value to your budget in order to execute the project with no surprises.
-      rewards_title: Rewards
-      rewards_description: We believe that the best way to inspire people to support your campaign is by offering exciting and creative rewards. Everyone loves unique items, personalized gifts, and joyful experiences. Spend some time brainstorming creative rewards so people will be interested.
-      add_reward: Add reward
-      submit: Submit campaign
-    project:
-      reached: reached
-      backed: raised
-    guidelines:
-      title: How does %{site} work?
-      subtitle: Before submitting your campaign, learn how %{site} works.
-      accept: I have read and agree with the terms of use.
-      submit: I want to submit my campaign
-    faq:
-      title: Frequently asked questions
-    terms:
-      title: Terms of use
-    privacy:
-      title: Privacy policy
-    about:
-      title: About Us
-    explore:
-      title: Explore the campaigns
-      quick_explore: Quick explore
-      recommended: Recommended
-      expiring: Final countdown
-      recent: Recent
-      successful: Successful
-      categories: Categories
-    start:
-      title: Submit your campaign
-      subtitle: In just a few moments, you'll be on your way to funding your education!
-      about: Describe your campaign and how much you need
-      about_hint: Give us the details of your master plan! What's your background? Where are you going? What are you studying? How much money do you need? How will the money be used? Try to be as specific as possible so that potential supporters will be inspired to get involved.
-      rewards: What rewards do you want to offer?
-      rewards_hint: We believe that the best way to inspire people to support your campaign is by offering exciting and creative rewards. Everyone loves unique items, personalized gifts, and joyful experiences. Spend some time brainstorming creative rewards so people will be interested.
-      links: Where can we find out more?
-      links_hint: Leave us a few links so that we can learn more about your campaign.
-      contact: Leave us your email address so we can contact you
-      submit: Submit the campaign
-    send_mail:
-      success: Your campaign was successfully submitted! We'll contact you soon. Thanks a lot!
-    new:
-      title: Submit your campaign
-      subtitle: In just a few moments, you'll be on your way to funding your education!
-    create:
-      success: Your campaign was successfully created! We'll contact you soon. Thanks a lot!
-    edit:
-      title: Edit your campaign
-      subtitle: In just a few moments, you'll be on your way to funding your education!
-    update:
-      success: Your campaign was successfully updated! We'll contact you soon. Thanks a lot!
-    show:
-      not_present: This campaign is no longer available. Check out the other amazing campaigns we have!
-      share:
-        title: Share this campaign
-        take_a_look: Check out the campaign
-        link: Link
-        link_title: Share the link
-        embed: Embed this campaign
-        embed_title: Embed this campaign on your site
-      menu:
-        about: About
-        edit: Edit
-        updates: Updates
-        backers: Supporters
-        comments: Comments
-    twitter:
-      take_a_look: Check out the campaign
-    project_header:
-      subtitle_html: A campaign by %{link}
-    project_warning:
-      rejected: This campaign was not selected to participate on %{site}. Good luck next time!
-      waiting: This campaign is awaiting approval.
-    project_backers:
-      empty: So far, nobody has donated to this campaign. How about being its first supporter?
-    project_comments:
-      submit: Send comment
-      require_login_html: Want to send a comment? %{link} to log-in.
-    project_updates:
-      empty: This campaign doesn't have any updates.
-      title: Title of the update
-      text: Text of the update
-      submit: Send update
-    rewards:
-      title: Support and receive...
-      reward_title: For %{minimum} or more
-    back:
-      title: Support %{name}
-      no_reward: Thanks. I prefer to support this campaign without receiving a reward.
-      cannot_back: It's not possible to support this campaign right now. Please consider donating to other campaigns.
+        signup: Sign-up
+        submit: "Submit a Campaign"
+    login:
+      description_html: "We will <strong>never</strong> know your password or any other secret data from the chosen social network. We will only have access to your basic information, like name, photo and email."
+      remember_me: "Remember me and keep me connected."
+      tips_html: "<strong>Remember which social network you used to sign-up</strong>. You will always access your account with it."
+      title: "Enter with your favorite social network"
+    pre_header:
+      back_notice_html: "You supported the campaign %{link}. Spread the word to all of your friends!"
+    user:
+      logout: Logout
+      my_credits: "My credits"
+      my_profile: "My profile"
+  my_data: "My data"
+  ? "no"
+  : false
+  not_informed: "not informed"
+  notify_locale: "We identified your language by your browser. If you prefer another one, click on one of the flags on the right."
+  project: 
+    finish: 
+      successful: 
+        email_subject: "Hooray! The campaign you supported was successful %{in_the_name}!"
+        email_text: "The smartn.me campaign %{project_link}, that you supported, was successfuly funded %{in_the_name}!<br><br>Thank you so much for giving your support! You just helped a student fund their eductation and without you this wouldn't have been possible. Soon, %{user_link} will contact you to deliver your reward. In the mean time, feel free to spread the news of this success in hopes that more people will contribute to our student's educational endeavors!"
+        facebook_text: "Hooray! The campaign '%{name}', that I supported, was successful %{in_the_name}!"
+        notification_text: "Hooray! The campaign %{link} that you supported was successful! Spread the word!"
+        reward_notification_text: "Soon, %{link} will contact you to deliver your reward. Enjoy!"
+        twitter_text: "Hooray! The campaign '%{name}', that I supported, was successful %{in_the_twitter}! %{short_url}"
+      unsuccessful: 
+        email_subject: "The campaign you supported wasn't funded %{in_the_name}."
+        email_text: "The smartn.me campaign %{project_link}, that you supported, was not funded. <br><br>Because of this, you received <strong>%{value}</strong> in credits to support other campaigns. If you prefer, you can ask for a refund %{credits_link}.Thanks so much for your participation!"
+        notification_text: "You received %{value} in credits to donate to other projects. If you prefer, you can request a refund %{link}."
+        unsuccessful_text: "Unfortunately the campaign %{link} that you supported did not reach its goal amount."
+    verify_if_video_exists_on_vimeo: "must exist on Vimeo"
+    vimeo_regex_validation: "only Vimeo URLs are allowed"
+  projects: 
+    about: 
+      title: "About Us"
+    admin_fields: 
+      title: "Admin fields"
+    back: 
+      cannot_back: "It's not possible to support this campaign right now. Please consider donating to other campaigns."
+      no_reward: "Thanks. I prefer to support this campaign without receiving a reward."
       submit: Checkout
-    review:
-      title: Fill in and review your data
-      subtitle: This is the last step to make a difference and become part of this campaign.
-      error: Ooops. There was an error while registering your donation. Please try again.
-      you_are_about_html: You're about to become a part of a group doing great things to make %{link} happen.
-      review_with_reward_html: "You will donate <strong>%{value}</strong> and receive the following reward: <span class='reward'>%{reward}</span>"
-      review_without_reward_html: You will donate <strong>%{value}</strong> but you don't want any reward for that.
-      credits_notice_html: This donation will be payed with your credits. After the confirmation, you will have <strong>%{credits}</strong> in credits to support other campaigns.
-      submit: "Proceed to PayPal's checkout"
-      international:
-        title: Want to make an international payment?
-        description: You can use PayPal to make international payments
-        important_html: "<p>The use of PayPal is designated mostly for international payments. That's because you'll have only 60 days to receive an eventual refund without paying any fee.</p><p>In case you can make the regular payment through MoIP, we recommend you to do it.</p><p>But if that's not possible, don't worry: you'll always be able to receive your money back. Only, in case your refund is made more than 60 days after your payment, you'll have to pay PayPal's fee, which is 2.9% + $0.30 per transaction.</p>"
-        submit: "Proceed to PayPal's checkout"
-    pay:
-      no_credits: You don't have enough credits to donate to this campaign.
-      success: Your donation was successfully made. Thanks a lot!
-      moip_error: Ooops! There was an error while sending your payment to PayPal. Please try again.
-      paypal_error: Ooops! There was an error while sending your payment to PayPal. Please try again.
-      paypal_description: Back campaign
-      paypal_cancel: Your PayPal payment was canceled. Please try again.
-    thank_you:
-      title: Thank you!
-      header_title: Thank you!
-      header_subtitle: Your support truly makes a difference. Welcome to the team!
-      text_title_html: You are now part of the group thats doing great things to make %{link} happen.
-      text_subtitle: Spread the word to all of your friends
-      successful: This campaign will be funded on %{expires_at}, thanks to you and %{total_backers} more people. Thanks a lot!
-      not_successful: This campaign will only be funded if at least %{goal} is reached by %{expires_at}. In case it is not successful, you will receive your money back in credits %{site}. But let's hope this campaign reaches its goal, so use this opportunity to help spread the word!
-      error: Ooops! You can only access this page after supporting a campaign.
-    pending:
-      title: Campaign management
-      no_projects: No campaigns found.
+      title: "Support %{name}"
+    back_project: 
+      backed_plural: donated
+      backed_singular: donated
+      has: ""
+      person: Person
+      project_warning: 
+        not_successful: 
+          expired: "This campaign didn't reach the goal of %{goal} by %{date} and wasn't funded"
+          not_expired: "This campaign will only be funded if at least %{goal} is donated by %{date}"
+        successful: 
+          expired: "This campaign was successfully funded on %{date}"
+          not_expired: "This campaign will be successfully funded on %{date}"
+        waiting_confirmation: "Waiting confirmation from payments to know if this campaign will be funded."
+      reached_of: "Raised of"
+      submit: "Support this campaign"
+    backer: 
+      anonymous_backer: "Anonymous supporter"
+      anonymous_description: "Opted to remain incognito"
+      no_reward: "This supporter has not picked a reward"
+    create: 
+      success: "Your campaign was successfully created! We'll contact you soon. Thanks a lot!"
+    edit: 
+      subtitle: "In just a few moments, you'll be on your way to funding your education!"
+      title: "Edit your campaign"
+    explore: 
+      categories: Categories
+      expiring: "Final countdown"
+      quick_explore: "Quick explore"
+      recent: Recent
+      recommended: Recommended
+      successful: Successful
+      title: "Explore the campaigns"
+    faq: 
+      title: "Frequently asked questions"
+    form: 
+      add_reward: "Add reward"
+      important_html: "Please notice that %{site} will charge 5% if your campaign is successful, and %{link} charges 2.9% + $0.30 USD per transaction. Add this value to your budget in order to execute the project with no surprises."
+      rewards_description: "We believe that the best way to inspire people to support your campaign is by offering exciting and creative rewards. Everyone loves unique items, personalized gifts, and joyful experiences. Spend some time brainstorming creative rewards so people will be interested."
+      rewards_title: Rewards
+      submit: "Submit campaign"
+    guidelines: 
+      accept: "I have read and agree with the terms of use."
+      submit: "I want to submit my campaign"
+      subtitle: "Before submitting your campaign, learn how %{site} works."
+      title: "How does %{site} work?"
+    home_page_projects: 
+      title: "Featured campaigns"
+    index: 
+      expiring: "Final countdown"
+      recent: "Recent campaigns"
+      recommended: "Recommended campaigns"
+      successful: "Successful campaigns"
+    new: 
+      subtitle: "In just a few moments, you'll be on your way to funding your education!"
+      title: "Submit your campaign"
+    pay: 
+      moip_error: "Ooops! There was an error while sending your payment to PayPal. Please try again."
+      no_credits: "You don't have enough credits to donate to this campaign."
+      paypal_cancel: "Your PayPal payment was canceled. Please try again."
+      paypal_description: "Back campaign"
+      paypal_error: "Ooops! There was an error while sending your payment to PayPal. Please try again."
+      success: "Your donation was successfully made. Thanks a lot!"
+    pending: 
+      can_finish: "Can finish?"
+      finished: Finished?
+      home_page: "Home page?"
       id: Id
-      project: Campaign
-      site: Site
       name: Name
+      no_projects: "No campaigns found."
+      order: Order
+      project: Campaign
+      recommended: Recommended?
+      rejected: Rejected?
+      site: Site
+      submit: Search
+      title: "Campaign management"
       user: User
       visible: Visible?
-      rejected: Rejected?
-      recommended: Recommended?
-      home_page: Home page?
-      can_finish: Can finish?
-      finished: Finished?
-      order: Order
-      submit: Search
-    pending_backers:
-      title: Supporters management
-      no_backers: No supporters found.
-      total_backers: supporters
-      total_backs: donations
-      total_backed: donated
-      total_users: users
+    pending_backers: 
+      anonymous: Anonymous?
+      confirmed: Confirmed?
+      credits: "Used credits?"
       id: Id
       key: Key
+      no_backers: "No supporters found."
       project: Campaign
-      user: User
-      site: Site
-      value: Value
-      reward: Reward
-      confirmed: Confirmed?
-      anonymous: Anonymous?
-      credits: Used credits?
-      requested_refund: Requested refund?
       refunded: Refunded?
+      requested_refund: "Requested refund?"
+      reward: Reward
+      site: Site
       submit: Search
-    video_embed:
-      a_project_by: A campaign by
-  sessions:
-    post_auth:
-      error: There was an error while logging in. Please try again.
-      success: Successfully logged in. Welcome, %{name}!
-    destroy:
-      success: Successfully logged out. See you soon!
-    failure:
-      error: There was an error while logging in. Please try again.
-  users:
-    admin_fields:
-      title: %{name}' info
-      no_email: haven't filled the email yet
-      credits: available in credits
-    backs:
-      title: Campaigns %{name} has supported
-      title_current_user: Campaigns I've supported
-      no_backs: %{name} hasn't supported any campaigns yet. But we know it's just a matter of time!
-      no_backs_current_user_html: You haven't supported any campaigns yet.
-      anonymous: Anonymous supporter.
-      your_reward: Your reward
-      no_reward: You didn't pick a reward
-    current_user_fields:
-      gravatar_hint_html: Want to change your picture? Use %{link} with your email. It's as simple as uploading an image and works for other sites, too!
-      email_tooltip: Click here to input your email...
-      email_hint: Your email will only be used for correspondence from %{site} and from the campaigns that you support. It won't be visible in your profile; however, your email will be given to the owner of a campaign that you support so that they can make arrangements for your reward.
-      newsletter: I want to receive news from %{site} via email
-    header:
-      name_tooltip: Click here to input your name...
-      bio_tooltip: Click here to tell us about yourself...
-    projects:
-      title: %{name}'s campaigns
-      title_current_user: My campaigns
-      no_projects: %{name} hasn't started any campaigns %{site} yet.
-      no_projects_current_user_html: You haven't submitted any campaigns yet. Let the inspiration flow and %{link} to start!
-  projects_mailer:
-    start_project_email:
-      subject: Campaign sent by %{name}
-      subject_html: Campaign sent by %{link}
+      title: "Supporters management"
+      total_backed: donated
+      total_backers: supporters
+      total_backs: donations
+      total_users: users
+      user: User
+      value: Value
+    privacy: 
+      title: "Privacy policy"
+    project: 
+      backed: raised
+      reached: reached
+    project_backers: 
+      empty: "So far, nobody has donated to this campaign. How about being its first supporter?"
+    project_comments: 
+      require_login_html: "Want to send a comment? %{link} to log-in."
+      submit: "Send comment"
+    project_header: 
+      subtitle_html: "A campaign by %{link}"
+    project_list: 
+      explore_expiring: "Explore more campaigns in the final countdown"
+      explore_recent: "Explore more recent campaigns"
+      explore_recommended: "Explore more recommended campaigns"
+      explore_successful: "Explore more successful campaigns"
+    project_updates: 
+      empty: "This campaign doesn't have any updates."
+      submit: "Send update"
+      text: "Text of the update"
+      title: "Title of the update"
+    project_warning: 
+      rejected: "This campaign was not selected to participate on %{site}. Good luck next time!"
+      waiting: "This campaign is awaiting approval."
+    review: 
+      credits_notice_html: "This donation will be payed with your credits. After the confirmation, you will have <strong>%{credits}</strong> in credits to support other campaigns."
+      error: "Ooops. There was an error while registering your donation. Please try again."
+      international: 
+        description: "You can use PayPal to make international payments"
+        important_html: "<p>The use of PayPal is designated mostly for international payments. That's because you'll have only 60 days to receive an eventual refund without paying any fee.</p><p>In case you can make the regular payment through MoIP, we recommend you to do it.</p><p>But if that's not possible, don't worry: you'll always be able to receive your money back. Only, in case your refund is made more than 60 days after your payment, you'll have to pay PayPal's fee, which is 2.9% + $0.30 per transaction.</p>"
+        submit: "Proceed to PayPal's checkout"
+        title: "Want to make an international payment?"
+      review_with_reward_html: "You will donate <strong>%{value}</strong> and receive the following reward: <span class='reward'>%{reward}</span>"
+      review_without_reward_html: "You will donate <strong>%{value}</strong> but you don't want any reward for that."
+      submit: "Proceed to PayPal's checkout"
+      subtitle: "This is the last step to make a difference and become part of this campaign."
+      title: "Fill in and review your data"
+      you_are_about_html: "You're about to become a part of a group doing great things to make %{link} happen."
+    rewards: 
+      reward_title: "For %{minimum} or more"
+      title: "Support and receive..."
+    send_mail: 
+      success: "Your campaign was successfully submitted! We'll contact you soon. Thanks a lot!"
+    show: 
+      menu: 
+        about: About
+        backers: Supporters
+        comments: Comments
+        edit: Edit
+        updates: Updates
+      not_present: "This campaign is no longer available. Check out the other amazing campaigns we have!"
+      share: 
+        embed: "Embed this campaign"
+        embed_title: "Embed this campaign on your site"
+        link: Link
+        link_title: "Share the link"
+        take_a_look: "Check out the campaign"
+        title: "Share this campaign"
+    start: 
+      about: "Describe your campaign and how much you need"
+      about_hint: "Give us the details of your master plan! What's your background? Where are you going? What are you studying? How much money do you need? How will the money be used? Try to be as specific as possible so that potential supporters will be inspired to get involved."
+      contact: "Leave us your email address so we can contact you"
+      links: "Where can we find out more?"
+      links_hint: "Leave us a few links so that we can learn more about your campaign."
+      rewards: "What rewards do you want to offer?"
+      rewards_hint: "We believe that the best way to inspire people to support your campaign is by offering exciting and creative rewards. Everyone loves unique items, personalized gifts, and joyful experiences. Spend some time brainstorming creative rewards so people will be interested."
+      submit: "Submit the campaign"
+      subtitle: "In just a few moments, you'll be on your way to funding your education!"
+      title: "Submit your campaign"
+    terms: 
+      title: "Terms of use"
+    thank_you: 
+      error: "Ooops! You can only access this page after supporting a campaign."
+      header_subtitle: "Your support truly makes a difference. Welcome to the team!"
+      header_title: "Thank you!"
+      not_successful: "This campaign will only be funded if at least %{goal} is reached by %{expires_at}. In case it is not successful, you will receive your money back in credits %{site}. But let's hope this campaign reaches its goal, so use this opportunity to help spread the word!"
+      successful: "This campaign will be funded on %{expires_at}, thanks to you and %{total_backers} more people. Thanks a lot!"
+      text_subtitle: "Spread the word to all of your friends"
+      text_title_html: "You are now part of the group thats doing great things to make %{link} happen."
+      title: "Thank you!"
+    twitter: 
+      take_a_look: "Check out the campaign"
+    update: 
+      success: "Your campaign was successfully updated! We'll contact you soon. Thanks a lot!"
+    video_embed: 
+      a_project_by: "A campaign by"
+  projects_mailer: 
+    start_project_email: 
+      subject: "Campaign sent by %{name}"
+      subject_html: "Campaign sent by %{link}"
+  remaining_plural: left
+  remaining_singular: left
+  remove: remove
+  require_admin: "You must be admin to perform this action."
+  require_login: "You must be logged in to perform this action."
+  require_permission: "You don't have permission to perform this action."
+  reward: 
+    display_remaining: "%{remaining} of %{maximum} available"
+    dont_want: "I don't want a reward"
+    limited: Limited
+    sold_out: "Sold out"
+  sessions: 
+    destroy: 
+      success: "Successfully logged out. See you soon!"
+    failure: 
+      error: "There was an error while logging in. Please try again."
+    post_auth: 
+      error: "There was an error while logging in. Please try again."
+      success: "Successfully logged in. Welcome, %{name}!"
+  site: 
+    female: 
+      in_the: "on"
+      the: ""
+      to_the: to
+    male: 
+      in_the: "on"
+      the: ""
+      to_the: to
+  start_now: "Start now?"
+  terms: "terms of use"
+  user: 
+    backs_text: 
+      many: "Supported this and other %{total} campaigns"
+      one: "Supported only this campaign until now"
+      two: "Supported this and 1 other campaign"
+    no_name: Unnamed
+  users: 
+    admin_fields: 
+      credits: "available in credits"
+      no_email: "haven't filled the email yet"
+      title: "%{name}' info"
+    backs: 
+      anonymous: "Anonymous supporter."
+      no_backs: "%{name} hasn't supported any campaigns yet. But we know it's just a matter of time!"
+      no_backs_current_user_html: "You haven't supported any campaigns yet."
+      no_reward: "You didn't pick a reward"
+      title: "Campaigns %{name} has supported"
+      title_current_user: "Campaigns I've supported"
+      your_reward: "Your reward"
+    current_user_fields: 
+      email_hint: "Your email will only be used for correspondence from %{site} and from the campaigns that you support. It won't be visible in your profile; however, your email will be given to the owner of a campaign that you support so that they can make arrangements for your reward."
+      email_tooltip: "Click here to input your email..."
+      gravatar_hint_html: "Want to change your picture? Use %{link} with your email. It's as simple as uploading an image and works for other sites, too!"
+      newsletter: "I want to receive news from %{site} via email"
+    header: 
+      bio_tooltip: "Click here to tell us about yourself..."
+      name_tooltip: "Click here to input your name..."
+    projects: 
+      no_projects: "%{name} hasn't started any campaigns %{site} yet."
+      no_projects_current_user_html: "You haven't submitted any campaigns yet. Let the inspiration flow and %{link} to start!"
+      title: "%{name}'s campaigns"
+      title_current_user: "My campaigns"
   users_mailer:
     notification_email:
-      intro: You are receiving this message because you signed up %{site}
+      intro: "You are receiving this message because you signed up %{site}"
       weblink: View on the web
       whitelist: Add contact
       whitelist_long: Add our email to your contacts

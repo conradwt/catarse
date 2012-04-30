@@ -102,19 +102,19 @@ pt:
         notification_text: Uhuu! O projeto %{link} que você apoiou foi bem-sucedido! Espalhe por aí!
         twitter_text: "Uhuu! O projeto '%{name}', que eu apoiei, foi bem-sucedido %{in_the_twitter}! %{short_url}"
         facebook_text: "Uhuu! O projeto '%{name}', que eu apoiei, foi bem-sucedido %{in_the_name}!"
-        email_subject: Uhuu! O projeto que você apoiou foi bem-sucedido %{in_the_name}!
+        email_subject: "Uhuu! O projeto que você apoiou foi bem-sucedido %{in_the_name}!"
         email_text: "O projeto %{project_link}, que você apoiou, foi financiado com sucesso %{in_the_name}! Hora de comemorar :D<br><br>Muito obrigado, de coração, pelo seu apoio! Sem ele, isto jamais seria possível. Em breve, %{user_link} irá entrar em contato com você para entregar sua recompensa. Enquanto isso, compartilhe com todo mundo este sucesso!"
         reward_notification_text: "Em breve, %{link} irá entrar em contato com você para entregar sua recompensa. Desfrute!"
       unsuccessful:
-        unsuccessful_text: O projeto %{link} que você apoiou não foi financiado. Quem sabe numa próxima vez?
-        notification_text: Você recebeu %{value} em créditos para apoiar outros projetos. Caso prefira, você pode pedir seu dinheiro de volta %{link}.
-        email_subject: O projeto que você apoiou não foi financiado %{in_the_name}.
+        unsuccessful_text: "O projeto %{link} que você apoiou não foi financiado. Quem sabe numa próxima vez?"
+        notification_text: "Você recebeu %{value} em créditos para apoiar outros projetos. Caso prefira, você pode pedir seu dinheiro de volta %{link}."
+        email_subject: "O projeto que você apoiou não foi financiado %{in_the_name}."
         email_text: "O projeto %{project_link}, que você apoiou, não foi financiado. Quem sabe numa próxima vez?<br><br>Em função disto, você recebeu <strong>%{value}</strong> em créditos para apoiar outros projetos. Caso prefira, você pode pedir seu dinheiro de volta %{credits_link}."
   reward:
     dont_want: Não quero recompensa
     sold_out: Esgotada
     limited: Limitada
-    display_remaining: %{remaining} de %{maximum} disponíveis
+    display_remaining: "%{remaining} de %{maximum} disponíveis"
   site:
     male:
       the: "o"
@@ -129,7 +129,7 @@ pt:
     backs_text:
       one: Apoiou somente este projeto até agora
       two: Apoiou este e mais 1 outro projeto
-      many: Apoiou este e mais outros %{total} projetos
+      many: "Apoiou este e mais outros %{total} projetos"
   credits:
     title: Meus créditos
     refund:
@@ -158,7 +158,7 @@ pt:
       confirm: Você tem certeza que quer solicitar o estorno deste apoio?
   layouts:
     pre_header:
-      back_notice_html: Você apoiou o projeto %{link}. Conte para todo mundo o que você fez!
+      back_notice_html: "Você apoiou o projeto %{link}. Conte para todo mundo o que você fez!"
     login:
       title: Entre através de sua rede social favorita
       remember_me: Lembre-se de mim e mantenha-me conectado.
@@ -197,30 +197,30 @@ pt:
       reached_of: Atingidos de
       project_warning:
         successful:
-          expired: Este projeto foi bem-sucedido e foi financiado em %{date}
-          not_expired: Este projeto será bem-sucedido e financiado em %{date}
+          expired: "Este projeto foi bem-sucedido e foi financiado em %{date}"
+          not_expired: "Este projeto será bem-sucedido e financiado em %{date}"
         waiting_confirmation: Aguardando a confirmação de boletos para saber se este projeto será financiado.
         not_successful:
-          expired: Este projeto não atingiu o mínimo de %{goal} até %{date} e não foi financiado
-          not_expired: Este projeto só será financiado se pelo menos %{goal} forem atingidos até %{date}
+          expired: "Este projeto não atingiu o mínimo de %{goal} até %{date} e não foi financiado"
+          not_expired: "Este projeto só será financiado se pelo menos %{goal} forem atingidos até %{date}"
       submit: Quero apoiar este projeto
     backer:
       anonymous_backer: Apoiador anônimo
       anonymous_description: Optou por permanecer incógnito
       no_reward: Este apoiador não selecionou nenhuma recompensa
     form:
-      important_html: Lembre-se que %{site} ficará com 5%, e o %{link} cobra uma taxa que varia entre 6% e 7% por transação. Inclua estes valores no seu orçamento, para executar o projeto sem problemas, depois.
+      important_html: "Lembre-se que %{site} ficará com 5%, e o %{link} cobra uma taxa que varia entre 6% e 7% por transação. Inclua estes valores no seu orçamento, para executar o projeto sem problemas, depois."
       rewards_title: Recompensas
-      rewards_description: A gente acredita que a melhor maneira de inspirar as pessoas a apoiar um projeto é oferecendo excelentes – e criativas! – recompensas. Todo mundo adora edições limitadas, coisas únicas e experiências divertidas (festas, guloseimas, viajar de balão!). Gaste um bom tempo bolando recompensas criativas e as pessoas se interessarão.
+      rewards_description: "A gente acredita que a melhor maneira de inspirar as pessoas a apoiar um projeto é oferecendo excelentes – e criativas! – recompensas. Todo mundo adora edições limitadas, coisas únicas e experiências divertidas (festas, guloseimas, viajar de balão!). Gaste um bom tempo bolando recompensas criativas e as pessoas se interessarão."
       add_reward: Adicionar recompensa
       submit: Enviar o projeto
     project:
       reached: atingido
       backed: levantados
     guidelines:
-      title: Como funciona %{site}?
-      subtitle: Antes de enviar seu projeto, saiba um pouco mais sobre como funciona %{site}.
-      accept: Eu li e entendi como funciona %{site}.
+      title: "Como funciona %{site}?"
+      subtitle: "Antes de enviar seu projeto, saiba um pouco mais sobre como funciona %{site}."
+      accept: "Eu li e entendi como funciona %{site}."
       submit: Quero enviar meu projeto
     faq:
       title: Perguntas frequentes
@@ -273,13 +273,13 @@ pt:
     project_header:
       subtitle_html: Um projeto de %{link}
     project_warning:
-      rejected: Este projeto não foi selecionado para participar d%{site}. Quem sabe numa próxima vez? :)
+      rejected: "Este projeto não foi selecionado para participar d%{site}. Quem sabe numa próxima vez? :)"
       waiting: Este projeto está aguardando análise e logo saberemos se ele entrará %{site} ;)
     project_backers:
       empty: Ninguém apoiou este projeto ainda. Que tal ser o primeiro?
     project_comments:
       submit: Enviar comentário
-      require_login_html: Quer enviar um comentário? %{link} para fazer login.
+      require_login_html: "Quer enviar um comentário? %{link} para fazer login."
     project_updates:
       empty: Este projeto ainda não teve atualizações. Aguarde =D
       title: Título da atualização
@@ -287,9 +287,9 @@ pt:
       submit: Enviar atualização
     rewards:
       title: Apoie e ganhe...
-      reward_title: Para %{minimum} ou mais
+      reward_title: "Para %{minimum} ou mais"
     back:
-      title: Apoie o %{name}
+      title: "Apoie o %{name}"
       no_reward: Obrigado. Eu só quero ajudar o projeto.
       cannot_back: Não é possível apoiar este projeto no momento. Por favor, apoie outros projetos.
       submit: Verificação geral
@@ -297,9 +297,9 @@ pt:
       title: Preencha e revise seus dados
       subtitle: Último passo para fazer a diferença e se tornar parte deste projeto.
       error: Ooops. Ocorreu um erro ao registrar seu apoio. Por favor, tente novamente.
-      you_are_about_html: Você está prestes a fazer parte do grupo que faz de tudo para o %{link} acontecer.
+      you_are_about_html: "Você está prestes a fazer parte do grupo que faz de tudo para o %{link} acontecer."
       review_with_reward_html: "Você irá apoiar com <strong>%{value}</strong> e ganhará a seguinte recompensa: <span class='reward'>%{reward}</span>"
-      review_without_reward_html: Você irá apoiar com <strong>%{value}</strong> e não quer nenhuma recompensa por seu apoio.
+      review_without_reward_html: "Você irá apoiar com <strong>%{value}</strong> e não quer nenhuma recompensa por seu apoio."
       credits_notice_html: Este apoio será pago com seus créditos. Após a confirmação, você ficará com um saldo de <strong>%{credits}</strong> em créditos para apoiar outros projetos.
       submit: Efetuar pagamento pelo MoIP
       international:
@@ -318,10 +318,10 @@ pt:
       title: Muito obrigado
       header_title: Muito obrigado! :D
       header_subtitle: Sem você talvez este projeto não tivesse uma chance. Bem-vindo ao time!
-      text_title_html: Você agora é parte do grupo que faz de tudo para o %{link} acontecer.
+      text_title_html: "Você agora é parte do grupo que faz de tudo para o %{link} acontecer."
       text_subtitle: Conte para todo mundo o que você acabou de fazer
-      successful: Este projeto será financiado em %{expires_at}, graças a sua ajuda e de mais %{total_backers} pessoas. Muito obrigado!
-      not_successful: Este projeto só será financiado se pelo menos %{goal} forem atingidos até %{expires_at}. Caso ele não seja bem sucedido, você receberá seu dinheiro de volta na forma de créditos %{site}. Mas você não quer que isto aconteça, certo? Aproveite, então, para divulgar!
+      successful: "Este projeto será financiado em %{expires_at}, graças a sua ajuda e de mais %{total_backers} pessoas. Muito obrigado!"
+      not_successful: "Este projeto só será financiado se pelo menos %{goal} forem atingidos até %{expires_at}. Caso ele não seja bem sucedido, você receberá seu dinheiro de volta na forma de créditos %{site}. Mas você não quer que isto aconteça, certo? Aproveite, então, para divulgar!"
       error: Ooops. Você só pode acessar esta página depois de apoiar um projeto.
     pending:
       title: Gerenciamento dos projetos
@@ -364,44 +364,44 @@ pt:
   sessions:
     post_auth:
       error: Ocorreu um erro ao realizar o login. Por favor, tente novamente.
-      success: Login realizado com sucesso. Bem-vindo, %{name}!
+      success: "Login realizado com sucesso. Bem-vindo, %{name}!"
     destroy:
       success: Logout realizado com sucesso. Até logo!
     failure:
       error: Ocorreu um erro ao realizar o login. Por favor, tente novamente.
   users:
     admin_fields:
-      title: Dados de %{name}
+      title: "Dados de %{name}"
       no_email: ainda não preencheu seu email
       credits: disponíveis em créditos
     backs:
-      title: Projetos que %{name} já apoiou
+      title: "Projetos que %{name} já apoiou"
       title_current_user: Projetos que já apoiei
-      no_backs: %{name} ainda não apoiou nenhum projeto. Mas a gente sabe que é só questão de tempo! :D
+      no_backs: "%{name} ainda não apoiou nenhum projeto. Mas a gente sabe que é só questão de tempo! :D"
       no_backs_current_user_html: Você ainda não apoiou nenhum projeto.
       anonymous: Apoio anônimo.
       your_reward: Sua recompensa
       no_reward: Você não selecionou nenhuma recompensa
     current_user_fields:
-      gravatar_hint_html: Quer mudar sua foto? Use o %{link} com seu email. É tão simples quanto enviar uma imagem e já funciona para outros sites também ;)
+      gravatar_hint_html: "Quer mudar sua foto? Use o %{link} com seu email. É tão simples quanto enviar uma imagem e já funciona para outros sites também ;)"
       email_tooltip: Clique aqui para preencher seu email...
       email_hint: Seu email será utilizado apenas para envio de comunicações d%{site} e dos projetos que você apoiar. Ele não estará visível em seu perfil. Quando você apoiar um projeto, nós daremos seu email para o dono do projeto para que ele possa providenciar as recompensas.
-      newsletter: Quero receber novidades d%{site} por email
+      newsletter: "Quero receber novidades d%{site} por email"
     header:
       name_tooltip: Clique aqui para preencher seu nome...
       bio_tooltip: Clique aqui para escrever sobre você...
     projects:
-      title: Projetos de %{name}
+      title: "Projetos de %{name}"
       title_current_user: Meus projetos
-      no_projects: %{name} ainda não realizou nenhum projeto %{site}. Será que a inspiração vai bater uma hora dessas?
+      no_projects: "%{name} ainda não realizou nenhum projeto %{site}. Será que a inspiração vai bater uma hora dessas?"
       no_projects_current_user_html: Você ainda não realizou nenhum projeto %{site}. Deixe a inspiração bater e %{link} para começar!
   projects_mailer:
     start_project_email:
-      subject: Projeto enviado por %{name}
-      subject_html: Projeto enviado por %{link}
+      subject: "Projeto enviado por %{name}"
+      subject_html: "Projeto enviado por %{link}"
   users_mailer:
     notification_email:
-      intro: Você está recebendo esta mensagem pois se cadastrou %{site}
+      intro: "Você está recebendo esta mensagem pois se cadastrou %{site}"
       weblink: Ver na web
       whitelist: Adicionar contato
       whitelist_long: Adicione nosso email a seus contatos
