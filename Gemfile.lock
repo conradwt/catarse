@@ -8,6 +8,14 @@ GIT
       nokogiri (~> 1.4.2)
 
 GIT
+  remote: git://github.com/intridea/omniauth-openid.git
+  revision: e9965493e2d8a2fc138ccae39c8bcf49311e496f
+  specs:
+    omniauth-openid (1.0.1)
+      omniauth (~> 1.0)
+      rack-openid (~> 1.3.1)
+
+GIT
   remote: git://github.com/jeremyolliver/annotate_models.git
   revision: 4d57e4fe6360125f17886168120a48091a268e45
   branch: rake_compatibility
@@ -201,9 +209,6 @@ GEM
     omniauth-oauth2 (1.0.2)
       oauth2 (~> 0.6.0)
       omniauth (~> 1.0)
-    omniauth-openid (1.0.1)
-      omniauth (~> 1.0)
-      rack-openid (~> 1.3.1)
     omniauth-twitter (0.0.11)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
@@ -394,7 +399,7 @@ DEPENDENCIES
   newrelic_rpm (~> 3.3.1)
   nokogiri (~> 1.4.3)
   omniauth-facebook (~> 1.2.0)
-  omniauth-openid (~> 1.0.1)
+  omniauth-openid!
   omniauth-twitter (~> 0.0.11)
   on_the_spot (~> 0.0.14)
   passenger (~> 3.0.9)
