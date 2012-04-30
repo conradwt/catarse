@@ -64,9 +64,9 @@ gem 'will_paginate',              "~> 3.0.0"
 # in production environments by default.
 group :assets do
   gem 'coffee-rails',             "~> 3.2.1"
-  gem 'compass',                  "0.12.alpha.2"
+  gem 'compass',                  "~> 0.12.1"
   gem 'sass-rails',               "~> 3.2.3"
-  gem "therubyracer",             "~> 0.9.10",      :require => 'v8'
+  # gem "therubyracer",             "~> 0.9.10",      :require => 'v8'
   gem "uglifier",                 ">= 1.0.3"
 end
 
