@@ -35,7 +35,10 @@ gem 'mustache'
 gem "newrelic_rpm",               "~> 3.3.1"
 gem "nokogiri",                   "~> 1.4.3"
 
-gem 'omniauth',                   "~> 0.2.6"
+# gem "omniauth",                   "~> 1.1.0"
+gem "omniauth-facebook",          "~> 1.2.0"
+gem "omniauth-openid",            "~> 1.0.1"
+gem "omniauth-twitter",           "~> 0.0.11"
 gem "on_the_spot",                "~> 0.0.14"
 
 gem 'passenger',                  "~> 3.0.9"
@@ -93,7 +96,7 @@ group :test, :development do
   gem 'rspec-rails',              "~> 2.6.1"
   gem 'ruby2ruby',                "= 1.3.0"
   gem "ruby-growl",               "~> 3.0"
-  gem "simplecov",                "~> 0.5.4", :require => false
+  # gem "simplecov",                "~> 0.5.4", :require => false
   gem "steak",                    "~> 2.0.0"
   gem "wirble",                   "~> 0.1.3"
 end
