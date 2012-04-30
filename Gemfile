@@ -12,7 +12,6 @@ gem "brcep",                      "~> 3.0.4"
 
 gem "capistrano",                 "~> 2.9.0"
 gem "capistrano_colors",          "~> 0.5.5"
-gem "compass",                    "~> 0.11.5"
 
 # gem "errship",                    "~> 2.1.1"
 gem "execjs",                     "~> 1.2.6"
@@ -65,6 +64,7 @@ gem 'will_paginate',              "~> 3.0.0"
 # in production environments by default.
 group :assets do
   gem 'coffee-rails',             "~> 3.2.1"
+  gem 'compass',                  "0.12.alpha.2"
   gem 'sass-rails',               "~> 3.2.3"
   gem "therubyracer",             "~> 0.9.10",      :require => 'v8'
   gem "uglifier",                 ">= 1.0.3"
