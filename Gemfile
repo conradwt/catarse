@@ -44,7 +44,7 @@ gem 'omniauth',                   "~> 0.2.6"
 
 gem "on_the_spot",                "~> 0.0.14"
 
-gem 'passenger',                  "~> 3.0.12"
+gem 'passenger',                  "~> 3.0.9"
 gem "paypal-express",             "~> 0.4.0",     :require => 'paypal'
 gem "pg",                         "~> 0.12.2"
 
