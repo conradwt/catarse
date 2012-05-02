@@ -50,6 +50,7 @@ gem "pg",                         "~> 0.12.2"
 
 gem "rails_autolink",             "~> 1.0.2"
 # gem "rails-backbone",             "~> 0.5.4"
+gem 'rack',                       git: 'https://github.com/rack/rack.git'
 gem "rake",                       "~> 0.9.2.2"
 gem "RedCloth",                   "~> 4.2.8"
 gem "routing-filter",             "~> 0.3.0"
