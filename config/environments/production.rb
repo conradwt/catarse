@@ -83,6 +83,7 @@ Catarse::Application.configure do
                                   show_project.js
                                   slider.js
                                   start_project.js
+                                  user.js
                                 )
 
   # Disable delivery errors, bad email addresses will be ignored
