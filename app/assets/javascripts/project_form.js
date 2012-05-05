@@ -14,7 +14,9 @@ $("#add_reward").click(function(e) {
   rewards_count++;
   return rewards_id++;
 });
+
 video_valid = null;
+
 everything_ok = function() {
   var all_ok;
   all_ok = true;
@@ -65,11 +67,11 @@ everything_ok = function() {
       return $( "input.update" ).attr("disabled", true);
     }
   }
-};
+}
 
 ok = function(id) {
   var value;
-  value = $(id).val();
+  value = $(id).val().trim();
   if (value && value.length > 0) {
     $(id).addClass("ok").removeClass("error");
     return true;
@@ -78,6 +80,7 @@ ok = function(id) {
     return false;
   }
 };
+
 verify_video = function() {
   video_valid = false;
   if (/http:\/\/(www\.)?vimeo.com\/(\d+)/.test($("#project_video_url").val())) {
@@ -93,7 +96,8 @@ verify_video = function() {
     });
   }
   return everything_ok();
-};
+}
+
 video_ok = function() {
   if (video_valid) {
     $("#project_video_url").addClass("ok").removeClass("error");
@@ -104,10 +108,11 @@ video_ok = function() {
       return false;
     }
   }
-};
+}
+
 headline_ok = function() {
   var value;
-  value = $("#project_headline").val();
+  value = $("#project_headline").val().trim();
   if (value && value.length > 0 && value.length <= 140) {
     $("#project_headline").addClass("ok").removeClass("error");
     return true;
@@ -115,7 +120,8 @@ headline_ok = function() {
     $("#project_headline").addClass("error").removeClass("ok");
     return false;
   }
-};
+}
+
 goal_ok = function() {
   var value = $("#project_goal").val();
   if (/^(\d+)$/.test(value) && parseInt(value) > 0) {
@@ -125,7 +131,8 @@ goal_ok = function() {
     $("#project_goal").addClass("error").removeClass("ok");
     return false;
   }
-};
+}
+
 expires_at_ok = function() {
   var current_date, date, day, month, value, year;
   value = /^(\d{2})\/(\d{2})\/(\d{4})?$/.exec($("#project_expires_on").val());
@@ -146,7 +153,8 @@ expires_at_ok = function() {
     $("#project_expires_on").addClass("error").removeClass("ok");
     return false;
   }
-};
+}
+
 rewards_ok = function() {
   var okey;
   okey = true;
@@ -172,7 +180,8 @@ rewards_ok = function() {
     }
   });
   $(".reward textarea").each(function() {
-    if ($(this).val() && $(this).val().length > 0) {
+    var description = $(this).val().trim();
+    if (description && description.length > 0) {
       return $(this).addClass("ok").removeClass("error");
     } else {
       $(this).addClass("error").removeClass("ok");
@@ -180,42 +189,56 @@ rewards_ok = function() {
     }
   });
   return okey;
-};
+}
+
 accepted_terms = function() {
   return $("#accept").is(":checked");
-};
+}
+
 $("#project_name").keyup(everything_ok);
 $("#project_video_url").keyup(function() {
   video_valid = false;
   return everything_ok();
 });
+
 $("#project_video_url").timedKeyup(verify_video);
+
 $("#project_about").keyup(everything_ok);
+
 $("#project_category_id").change(everything_ok);
+
 $("#project_goal").keyup(everything_ok);
+
 $("#project_expires_on").keyup(everything_ok);
+
 $("#project_headline").keyup(everything_ok);
+
 $("#accept").click(everything_ok);
+
 $(".reward input,.reward textarea").live("keyup", everything_ok);
+
 $("#project_goal").numeric(false);
+
 $(".reward input").numeric(false);
-$("#project_expires_on").datepicker({
-  altFormat: "mm/dd/yy",
-  onSelect: everything_ok
-});
+
+$("#project_expires_on").datepicker({ altFormat: "mm/dd/yy", onSelect: everything_ok });
+
 $("input,textarea,select").live("focus", function() {
   $("p.inline-hints").hide();
   return $(this).next("p.inline-hints").show();
 });
+
 $(".reward").live("mouseover", function() {
   $(".remove_reward").hide();
   if (rewards_count > 1) {
     return $(this).find(".remove_reward").show();
   }
 });
+
 $(".reward").live("mouseout", function() {
   return $(this).find(".remove_reward").hide();
 });
+
 $(".remove_reward").live("click", function(e) {
   var reward;
   e.preventDefault();
@@ -225,5 +248,7 @@ $(".remove_reward").live("click", function(e) {
     return rewards_count--;
   }
 });
+
 $("#project_name").focus();
+
 $("textarea").maxlength();
