@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
   
   can_edit_on_the_spot
   
-  skip_before_filter :verify_authenticity_token, :only => [:moip]
+  # skip_before_filter :verify_authenticity_token, :only => [:moip]
   before_filter :can_update_on_the_spot?, :only => :update_attribute_on_the_spot
     
   def banda
@@ -45,7 +45,7 @@ class ProjectsController < ApplicationController
   end
     
   def new
-    return unless require_login
+    # return unless require_login
 
     new! do
       @title = t('projects.new.title')

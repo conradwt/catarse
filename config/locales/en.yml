@@ -201,7 +201,8 @@ en:
       important_html: "Please notice that %{site} will charge 5% if your campaign is successful, and %{link} charges 2.9% + $0.30 USD per transaction. Add this value to your budget in order to execute the project with no surprises."
       rewards_description: "We believe that the best way to inspire people to support your campaign is by offering exciting and creative rewards. Everyone loves unique items, personalized gifts, and joyful experiences. Spend some time brainstorming creative rewards so people will be interested."
       rewards_title: Rewards
-      submit: "Submit campaign"
+      submit: "Save campaign"
+      reviewable: "Submit campaign for review by smartn.me team?"
     guidelines: 
       accept: "I have read and agree with the terms of use."
       submit: "I want to submit my campaign"
