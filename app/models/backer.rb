@@ -19,7 +19,6 @@
 #  refunded         :boolean         default(FALSE)
 #  credits          :boolean         default(FALSE)
 #  notified_finish  :boolean         default(FALSE)
-#  site_id          :integer         default(1), not null
 #  token            :string(255)
 #  identifier       :string(255)
 #  payer_id         :string(255)

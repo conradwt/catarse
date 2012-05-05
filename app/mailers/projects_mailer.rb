@@ -11,8 +11,8 @@ class ProjectsMailer < ActionMailer::Base
               }
          
     options = { :promotion_name => 'new_project_submission', 
-                :recipients     => "smartn.me team <conradwt@gmail.com>",
-                :to             => "smartn.me team <conradwt@gmail.com>",
+                :recipients     => "smartn.me team <newcampaign@smartn.me>",
+                :from           => "smartn.me team <newcampaign@smartn.me>",
                 :subject        => "#{ActionMailer::Base.default_url_options[:host]} - New Project Submission"
               }
 
@@ -27,8 +27,8 @@ class ProjectsMailer < ActionMailer::Base
               }
         
     options = { :promotion_name => 'update_project_submission', 
-                :recipients     => "smartn.me team <conradwt@gmail.com>",
-                :to             => "smartn.me team <conradwt@gmail.com>",
+                :recipients     => "smartn.me team <newcampaign@smartn.me>",
+                :from           => "smartn.me team <newcampaign@smartn.me>",
                 :subject        => "#{ActionMailer::Base.default_url_options[:host]} - Update Project Submission"
               }
     

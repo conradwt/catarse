@@ -3,9 +3,6 @@
 # Table name: users
 #
 #  id                    :integer         not null, primary key
-#  primary_user_id       :integer
-#  provider              :text            not null
-#  uid                   :string(255)     not null
 #  email                 :string(255)
 #  name                  :string(255)
 #  nickname              :text
@@ -15,7 +12,6 @@
 #  project_updates       :boolean         default(FALSE)
 #  created_at            :datetime
 #  updated_at            :datetime
-#  admin                 :boolean         default(FALSE)
 #  full_name             :text
 #  address_street        :text
 #  address_number        :text
@@ -26,9 +22,8 @@
 #  address_zip_code      :text
 #  phone_number          :text
 #  credits               :decimal(, )     default(0.0)
-#  site_id               :integer         default(1), not null
-#  session_id            :text
 #  locale                :string(255)     default("en"), not null
+#  admin                 :boolean         default(FALSE)
 #
 
 # coding: utf-8

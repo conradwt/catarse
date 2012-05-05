@@ -4,7 +4,7 @@
 #
 #  id              :integer         not null, primary key
 #  project_id      :integer         not null
-#  minimum_value   :decimal(, )     not null
+#  minimum_value   :integer         not null
 #  maximum_backers :integer
 #  description     :text            not null
 #  created_at      :datetime

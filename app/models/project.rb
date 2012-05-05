@@ -6,7 +6,7 @@
 #  name        :string(255)     not null
 #  user_id     :integer         not null
 #  category_id :integer         not null
-#  goal        :decimal(, )     not null
+#  goal        :integer         not null
 #  expires_at  :datetime        not null
 #  about       :text            not null
 #  headline    :text            not null
@@ -18,7 +18,13 @@
 #  can_finish  :boolean         default(FALSE)
 #  finished    :boolean         default(FALSE)
 #  about_html  :text
-#  site_id     :integer         default(1), not null
+#  slug        :string(255)
+#  visible     :boolean         default(FALSE), not null
+#  rejected    :boolean         default(FALSE), not null
+#  recommended :boolean         default(FALSE), not null
+#  home_page   :boolean         default(FALSE), not null
+#  order       :integer
+#  reviewable  :boolean         default(FALSE)
 #
 
 # coding: utf-8
@@ -78,10 +84,10 @@ class Project < ActiveRecord::Base
   before_save   :set_project_expiration_date
   before_update :set_project_expiration_date
   
-  # before_create  :send_new_project_submission_email,       :if => Proc.new { |p| p.user.email? && p.reviewable? }
-  # before_update  :send_update_project_submission_email,    :if => Proc.new { |p| p.user.email? && p.reviewable? }
-  # before_create  :send_new_project_confirmation_email,     :if => Proc.new { |p| p.user.email? && p.reviewable? }
-  # before_update  :send_update_project_confirmation_email,  :if => Proc.new { |p| p.user.email? && p.reviewable? }
+  before_create  :send_new_project_submission_email,       :if => Proc.new { |p| p.user.email? && p.reviewable? }
+  before_update  :send_update_project_submission_email,    :if => Proc.new { |p| p.user.email? && p.reviewable? }
+  before_create  :send_new_project_confirmation_email,     :if => Proc.new { |p| p.user.email? && p.reviewable? }
+  before_update  :send_update_project_confirmation_email,  :if => Proc.new { |p| p.user.email? && p.reviewable? }
   
   before_update  :generate_short_url
   
@@ -275,19 +281,19 @@ class Project < ActiveRecord::Base
   private
   
   def send_new_project_submission_email
-    ProjectsMailer.deliver_new_project_submission( self.user, self )
+    ProjectsMailer.new_project_submission( self.user, self )
   end
   
   def send_update_project_submission_email
-    ProjectsMailer.deliver_update_project_submission( self.user, self ) unless new_record?
+    ProjectsMailer.update_project_submission( self.user, self ) unless new_record?
   end
   
   def send_new_project_confirmation_email
-    UsersMailer.deliver_new_project_confirmation( self.user, self )
+    UsersMailer.new_project_confirmation( self.user, self )
   end
   
   def send_update_project_confirmation_email
-    UsersMailer.deliver_update_project_confirmation( self.user, self ) unless new_record?
+    UsersMailer.update_project_confirmation( self.user, self ) unless new_record?
   end
   
   def generate_short_url

@@ -13,7 +13,6 @@
 #  dismissed     :boolean         default(FALSE), not null
 #  created_at    :datetime
 #  updated_at    :datetime
-#  site_id       :integer         default(1), not null
 #
 
 class Notification < ActiveRecord::Base

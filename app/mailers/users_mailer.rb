@@ -11,19 +11,33 @@ class UsersMailer < MadMimiMailer
   end
   
   def new_project_confirmation( user, project )
-    subject         "#{ActionMailer::Base.default_url_options[:host]} - Thank you for submitting your project"
-    from            "newcampaign@smartn.me" 
-    recipients      user.email
+    body    = { :full_name      => user.name, 
+                :project_name   => project.name, 
+              }
+              
+    options = { :promotion_name => 'new_project_confirmation', 
+                :recipients     => user.email,
+                :from           => "smartn.me team <newcampaign@smartn.me>",
+                :subject        => "#{ActionMailer::Base.default_url_options[:host]} - Thank you for submitting your project"
+              }
 
-    body :full_name => user.name, :project_name => project.name
+    mimi = MadMimi.new( ENV['MADMIMI_USERNAME'], ENV['MADMIMI_API_KEY'] )
+    mimi.send_mail( options, body )
   end
   
   def update_project_confirmation( user, project )
-    subject         "#{ActionMailer::Base.default_url_options[:host]} - Thank you for updating your project"
-    from            "newcampaign@smartn.me" 
-    recipients      user.email
+    body    = { :full_name      => user.name, 
+                :project_name   => project.name, 
+              }
+              
+    options = { :promotion_name => 'update_project_confirmation', 
+                :recipients     => user.email,
+                :from           => "smartn.me team <newcampaign@smartn.me>",
+                :subject        => "#{ActionMailer::Base.default_url_options[:host]} - Thank you for updating your project"
+              }
 
-    body :full_name => user.name, :project_name => project.name
+    mimi = MadMimi.new( ENV['MADMIMI_USERNAME'], ENV['MADMIMI_API_KEY'] )
+    mimi.send_mail( options, body )
   end
 
   def notification_email( notification )
