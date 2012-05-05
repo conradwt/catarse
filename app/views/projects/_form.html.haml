@@ -34,6 +34,9 @@
         = check_box_tag 'accept'
         = label_tag 'accept', t('accept_terms_html', :link => link_to(t('terms'), terms_path, :target => :_blank)), :class => 'inline'
       = form.buttons do
+        %fieldset
+          = form.check_box
+          = form.label_tag 'submit for review by the smartn.me team?'
         = form.commit_button t('.submit'), :button_html => {:disabled => true}
 = javascript_include_tag 'project_form'
 

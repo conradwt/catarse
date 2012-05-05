@@ -78,10 +78,10 @@ class Project < ActiveRecord::Base
   before_save   :set_project_expiration_date
   before_update :set_project_expiration_date
   
-  before_create  :send_new_project_submission_email,       :if => Proc.new { |p| p.user.email? }
-  before_update  :send_update_project_submission_email,    :if => Proc.new { |p| p.user.email? }
-  before_create  :send_new_project_confirmation_email,     :if => Proc.new { |p| p.user.email? }
-  before_update  :send_update_project_confirmation_email,  :if => Proc.new { |p| p.user.email? }
+  before_create  :send_new_project_submission_email,       :if => Proc.new { |p| p.user.email? && p.reviewable? }
+  before_update  :send_update_project_submission_email,    :if => Proc.new { |p| p.user.email? && p.reviewable? }
+  before_create  :send_new_project_confirmation_email,     :if => Proc.new { |p| p.user.email? && p.reviewable? }
+  before_update  :send_update_project_confirmation_email,  :if => Proc.new { |p| p.user.email? && p.reviewable? }
   
   before_update  :generate_short_url
   
