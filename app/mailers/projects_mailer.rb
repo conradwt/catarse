@@ -1,4 +1,4 @@
-class ProjectsMailer < MadMimiMailer
+class ProjectsMailer < ActionMailer::Base
   
   include ERB::Util
   
@@ -7,33 +7,33 @@ class ProjectsMailer < MadMimiMailer
   def new_project_submission( user, project )    
     body    = { :full_name      => user.name, 
                 :project_name   => project.name, 
-                :project_url    => "http://www.smartn.me/#{I18n.locale.to_s}/projects/#{self.to_param}" # project_url( project )
+                :project_url    => project_url( project )
               }
          
     options = { :promotion_name => 'new_project_submission', 
-                :from           => "conradwt@gmail.com",
-                :to             => "conradwt@gmail.com",
-                :subject        => "#{ActionMailer::Base.default_url_options[:host]} - New Project Submission",
-                :body           => body.to_yaml
+                :recipients     => "smartn.me team <conradwt@gmail.com>",
+                :to             => "smartn.me team <conradwt@gmail.com>",
+                :subject        => "#{ActionMailer::Base.default_url_options[:host]} - New Project Submission"
               }
-           
-            mail( options )
+
+    mimi = MadMimi.new( ENV['MADMIMI_USERNAME'], ENV['MADMIMI_API_KEY'] )
+    mimi.send_mail( options, body )
   end
   
   def update_project_submission( user, project )
     body    = { :full_name      => user.name, 
                 :project_name   => project.name, 
-                :project_url    => "http://www.smartn.me/#{I18n.locale.to_s}/projects/#{self.to_param}" # project_url( project ) }
+                :project_url    => project_url( project )
               }
         
     options = { :promotion_name => 'update_project_submission', 
-                :from           => "conradwt@gmail.com",
-                :to             => "conradwt@gmail.com",
-                :subject        => "#{ActionMailer::Base.default_url_options[:host]} - Update Project Submission",
-                :body           => body.to_yaml
+                :recipients     => "smartn.me team <conradwt@gmail.com>",
+                :to             => "smartn.me team <conradwt@gmail.com>",
+                :subject        => "#{ActionMailer::Base.default_url_options[:host]} - Update Project Submission"
               }
     
-    mail( options )
+    mimi = MadMimi.new( ENV['MADMIMI_USERNAME'], ENV['MADMIMI_API_KEY'] )
+    mimi.send_mail( options, body )
   end
   
 end
