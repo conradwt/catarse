@@ -8,7 +8,7 @@
     = form.input :about
     = form.input :headline, :input_html => { :maxlength => 140 }
     = form.input :category, :collection => Category.all
-    = form.input :goal
+    = form.input :goal, :as => :string
     = form.input :expires_on, :as => :string
     #project_rewards
       :javascript
@@ -23,9 +23,9 @@
               %a.remove_reward{:href=>'#'}= t('remove')
             = reward.input :description
             .left
-              = reward.input :minimum_value
+              = reward.input :minimum_value, :as => :string
             .right
-              = reward.input :maximum_backers
+              = reward.input :maximum_backers, :as => :string
             .clear
       #add_reward_wrapper
         %a#add_reward{:href=>'#'}= t('.add_reward')
@@ -33,8 +33,8 @@
       %fieldset
         = check_box_tag 'accept'
         = label_tag 'accept', t('accept_terms_html', :link => link_to(t('terms'), terms_path, :target => :_blank)), :class => 'inline'
-      / %fieldset
-      /   = form.input :reviewable, :label => t('.reviewable')
+      %fieldset
+        = form.input :reviewable, :label => t('.reviewable')
       = form.buttons do
         = form.commit_button t('.submit'), :button_html => {:disabled => true}
 = javascript_include_tag 'project_form'
