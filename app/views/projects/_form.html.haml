@@ -34,7 +34,7 @@
         = check_box_tag 'accept'
         = label_tag 'accept', t('accept_terms_html', :link => link_to(t('terms'), terms_path, :target => :_blank)), :class => 'inline'
       %fieldset
-        = form.input :reviewable, :label => t('.reviewable'), :class => 'inline'
+        = form.input :reviewable, :label => t('.reviewable')
       = form.buttons do
         = form.commit_button t('.submit'), :button_html => {:disabled => true}
 = javascript_include_tag 'project_form'
