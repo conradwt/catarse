@@ -2,9 +2,7 @@ class ProjectsMailer < MadMimiMailer
   
   include ERB::Util
   
-  # default :from => ENV['DEFAULT_EMAIL']
-  default :to   => "conradwt@gmail.com"
-  default :recipients => "conradwt@gmail.com"
+  default :from => ENV['DEFAULT_EMAIL']
 
   def project_confirmation( user, project )
     @user = user
@@ -18,7 +16,9 @@ class ProjectsMailer < MadMimiMailer
   def new_project_submission( user, project )
     subject         "#{ActionMailer::Base.default_url_options[:host]} - New Project Submission"
     # from            "newcampaigns@smartn.me"
-    # recipients      "newcampaigns@smartn.me" 
+    # recipients      "newcampaigns@smartn.me"
+    from            "conradwt@gmail.com"
+    recipients      "conradwt@gmail.com"
 
     body :full_name => user.name, :project_name => project.name, :project_url => project_url( project )
   end
@@ -27,6 +27,8 @@ class ProjectsMailer < MadMimiMailer
     subject         "#{ActionMailer::Base.default_url_options[:host]} - Update Project Submission"
     # from            "newcampaigns@smartn.me"
     # recipients      "newcampaigns@smartn.me"
+    from            "conradwt@gmail.com"
+    recipients      "conradwt@gmail.com"
 
     body :full_name => user.name, :project_name => project.name, :project_url => project_url( project )
   end
