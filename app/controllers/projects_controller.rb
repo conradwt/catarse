@@ -53,16 +53,10 @@ class ProjectsController < ApplicationController
   end
   
   def create
+    return unless require_login
+    
     validate_rewards_attributes if params[:project][:rewards_attributes].present?
-        
-    # @project = Project.new( params[:project] )
-    
-    # if @project.save
-    #   redirect_to @project, :notice => t('projects.create.success')
-    # else
-    #   render :action => 'new'
-    # end
-    
+  
     create!(:notice => t('projects.create.success'))
     
     unless @project.new_record?
@@ -70,14 +64,17 @@ class ProjectsController < ApplicationController
       @project.update_attribute( :short_url, URLShortener.shorten( project_url( @project ) ) )
       @project.projects_sites.create :site => current_site
     end
-
   end
   
   def edit
+    return unless require_login
+    
     @project = current_user.projects.find( params[:id] )
   end
   
   def update
+    return unless require_login
+    
     validate_rewards_attributes if params[:project][:rewards_attributes].present?
         
     @project = current_user.projects.find( params[:id] )
