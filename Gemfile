@@ -26,7 +26,7 @@ gem 'inherited_resources',        '>= 1.1.2'
 gem 'jquery-rails'
 
 gem "madmimi",                    "~> 1.0.15"
-gem 'mad_mimi_mailer',            :git => 'git://github.com/madmimi/mad_mimi_mailer.git'
+gem 'mad_mimi_mailer',            :git => 'git://github.com/elevation/mad_mimi_mailer.git'
 gem "meta_search"
 gem "meta-tags",                  "~> 1.2.4"
 gem 'moip',                       :git => 'git://github.com/danielweinmann/moip-ruby.git'
@@ -34,8 +34,6 @@ gem 'mustache'
 
 gem "newrelic_rpm",               "~> 3.3.1"
 gem "nokogiri",                   "~> 1.4.3"
-
-# gem 'omniauth',                   "~> 0.2.6"
 
 gem "omniauth",                   git: 'git://github.com/intridea/omniauth.git'
 gem "omniauth-facebook",          "~> 1.2.0"
