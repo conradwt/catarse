@@ -345,7 +345,8 @@ en:
     twitter: 
       take_a_look: "Check out the campaign"
     update: 
-      success: "Your campaign was successfully updated! We'll contact you soon. Thanks a lot!"
+      success: "Your campaign was successfully updated!  Thanks a lot!"
+      success_submitted: "Your campaign was successfully updated! We'll contact you soon. Thanks a lot!"
     video_embed: 
       a_project_by: "A campaign by"
   projects_mailer: 
