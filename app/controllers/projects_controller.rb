@@ -81,7 +81,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.update_attributes( params[:project] )
-        format.html { redirect_to @project, notice: @project.reviewable? ? t('projects.update.success_submitted') : t('projects.update.success_submitted') }
+        format.html { redirect_to @project, notice: @project.reviewable? ? t('projects.update.success_submitted') : t('projects.update.success') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
