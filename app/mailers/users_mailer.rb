@@ -17,7 +17,7 @@ class UsersMailer < MadMimiMailer
               
     options = { :promotion_name => 'new_project_confirmation', 
                 :recipients     => user.email,
-                :from           => "smartn.me team <newcampaign@smartn.me>",
+                :from           => "smartn.me team <newcampaigns@smartn.me>",
                 :subject        => "#{ActionMailer::Base.default_url_options[:host]} - Thank you for submitting your project"
               }
 
