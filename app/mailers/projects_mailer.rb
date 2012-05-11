@@ -1,4 +1,4 @@
-class ProjectsMailer < ActionMailer::Base
+class ProjectsMailer < MadMimiMailer
   
   include ERB::Util
   
