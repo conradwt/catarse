@@ -286,7 +286,7 @@ class Project < ActiveRecord::Base
   end
   
   def send_update_project_submission_email
-    Rails.logger.info( "Entering send_new_submission_email" )
+    Rails.logger.info( "Entering send_update_submission_email" )
     ProjectsMailer.update_project_submission( self.user, self ) unless new_record?
   end
   
