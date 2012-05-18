@@ -8,11 +8,11 @@ en:
       logo:
         title: smartn.me
       pre_header:
-        content_html: Want to learn more? %{link} for answers to our frequently asked questions.
+        content_html: Want to learn more? %{link} to find out how it works.
         help_link: Click here
       explore_header: 
         title: Explore Active Campaigns
-        subtitle: Get acquainted with these students from all walks of life.  They are actively pursuing alternative ways to fund their eductation. 
+        subtitle: Get acquainted with these students from all walks of life.<br/>They are actively pursuing alternative ways to fund their education. 
       index_header:
         title: Crowdfund Your Education!
         subtitle_html: The first crowdfunding platform in the U.S. to focus on education.<br/>Let's work together to transform the funding process!
