@@ -63,6 +63,6 @@ Forked by:  Conrad Taylor
 
 Copyright (c) 2011 Softa
 
-Copyright (c) Conrad Taylor
+Copyright (c) 2011 - 2012 Conrad Taylor
 
 Licensed under the MIT license (see MIT-LICENSE file)
